@@ -5,3 +5,7 @@ All scenes (and main nodes) will be named in camel caps
 
 All other nodes will be named with lowercase and underscores
 	i.e. main_character
+
+For storing/folders, all Scenes should have their own folder in their respective designation
+	i.e. >Scenes>Characters>Player
+	This folder will contain the scene itself as well as any scripts used
