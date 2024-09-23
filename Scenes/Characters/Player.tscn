@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsb6qweu63nh3"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Scripts/player.gd" id="1_vgpfv"]
+[ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/player_sprites/placeholder_player0.png" id="2_3nw8a"]
+[ext_resource type="Texture2D" uid="uid://cmlqelvo5pmsx" path="res://Sprites/Character Sprites/player_sprites/placeholder_player1.png" id="3_685g7"]
+[ext_resource type="Texture2D" uid="uid://hkgayhcfl74s" path="res://Sprites/Character Sprites/player_sprites/placeholder_player2.png" id="4_wscv8"]
+[ext_resource type="Texture2D" uid="uid://dme8mwl07o4t7" path="res://Sprites/Character Sprites/player_sprites/placeholder_player3.png" id="5_sgloj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xm8wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3nw8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_685g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wscv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sgloj")
+}],
+"loop": true,
+"name": &"Placeholder",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhojk"]
+radius = 60.0083
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vgpfv")
+
+[node name="player_sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_xm8wp")
+animation = &"Placeholder"
+frame_progress = 0.184119
+
+[node name="player_hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nhojk")

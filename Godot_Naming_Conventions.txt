@@ -1,0 +1,7 @@
+The naming conventions/etiquette for our Godot project is as follows:
+
+All scenes (and main nodes) will be named in camel caps
+	i.e. LevelOne
+
+All other nodes will be named with lowercase and underscores
+	i.e. main_character
