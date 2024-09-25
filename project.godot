@@ -13,7 +13,6 @@ config_version=5
 config/name="Moreau"
 run/main_scene="res://Scenes/Levels/LevelOne/LevelOne.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Sprites/Character Sprites/icon.svg"
 
 [input]
 
