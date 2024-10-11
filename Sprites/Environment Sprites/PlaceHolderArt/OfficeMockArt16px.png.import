@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1kixrj5x0ik2"
-path="res://.godot/imported/placeholder_concrete.png.png-08bd802d4ba9f9d4c6565801270781d5.ctex"
+uid="uid://dq0bdw67weymn"
+path="res://.godot/imported/OfficeMockArt16px.png-b1b0f54319a3954d179b49de7fd038b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment Sprites/placeholder_concrete.png.png"
-dest_files=["res://.godot/imported/placeholder_concrete.png.png-08bd802d4ba9f9d4c6565801270781d5.ctex"]
+source_file="res://Sprites/Environment Sprites/PlaceHolderArt/OfficeMockArt16px.png"
+dest_files=["res://.godot/imported/OfficeMockArt16px.png-b1b0f54319a3954d179b49de7fd038b2.ctex"]
 
 [params]
 
