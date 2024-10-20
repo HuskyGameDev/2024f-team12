@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=9 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Scenes/Characters/Player/Player.tscn" id="2_rgidp"]
 [ext_resource type="Texture2D" uid="uid://biuntbb4i3avi" path="res://Sprites/Environment Sprites/PlaceHolderArt/OfficeMockArt32px (2).png" id="3_l5cet"]
+[ext_resource type="PackedScene" uid="uid://cs72m54ygikjt" path="res://Scenes/Interactions/LevelOneInteractables/desk_interaction.tscn" id="5_f5ytj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d70sa"]
 texture = ExtResource("2_lfocg")
@@ -65,4 +66,7 @@ tile_map_data = PackedByteArray("AAAQAAgAAwAAAAEAAAAQAAkAAwABAAEAAAARAAgAAwAAAAE
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
-position = Vector2(560, 357)
+position = Vector2(559, 490)
+
+[node name="DeskInteraction" parent="." instance=ExtResource("5_f5ytj")]
+position = Vector2(558, 276)
