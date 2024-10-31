@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvua536ho6v3h"]
 
-[ext_resource type="Script" path="res://Scenes/Cutscenes/Cutscene1/cutscene_1.gd" id="1_r80i5"]
+[ext_resource type="Script" path="res://Scenes/Cutscenes/Textbox/cutscene_1.gd" id="1_r80i5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1jbp"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [node name="Cutscene1" type="CanvasLayer"]
@@ -47,6 +47,20 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 29
-text = "Please Work Please Work Please Work Please Work Please Work"
+theme_override_font_sizes/font_size = 30
+text = "Text Text Text! This is texttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+"
+autowrap_mode = 1
+clip_text = true
+
+[node name="SkipPrompt" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Space to Skip"
+horizontal_alignment = 2
+vertical_alignment = 2

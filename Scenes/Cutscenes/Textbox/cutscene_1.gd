@@ -4,11 +4,28 @@ const CHAR_READ_RATE = 0.05
 
 @onready var textbox_container = $TextboxContainer
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label
+@onready var skip_promt = $TextboxContainer/MarginContainer/HBoxContainer/SkipPrompt
+
+enum State 
+{
+	READY,
+	READ,
+	FINISHED
+}
+
+var current_state = State.READY
+var text_queue = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print ("Starting State: State.READY")
 	hide_textbox()
-	add_text("PLEASE WORK PLEASE WORK PLEASE WORK")
+	queue_text("PLEASE WORK PLEASE WORK PLEASE WORK")
+
+func _process(delta):
+	match current_state:
+		State.READY:
+			if !text //Line where I left off
 
 func hide_textbox():
 	label.text = ""
