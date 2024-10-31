@@ -7,11 +7,3 @@ func _ready():
 
 func _on_interact():
 	print("This is a desk, I want to sit but that has not been implemented yet!")
-
-func _send_text():
-	# Begins the cutscene, First only moreau is visible
-	# enqueue text "* It's a massive desk, and quite cluttered. *"
-	# enqueue text "Man, I gotta work on cleaning this place up"
-	# screen shakes, panicked woman enters
-	
-	pass
