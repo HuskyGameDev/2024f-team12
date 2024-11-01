@@ -8,7 +8,7 @@ var movdir = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$"Player Sprite".play("Idle_up") # Replace with function body.
 
 func _process(delta: float) -> void:
 	# User Input
@@ -19,4 +19,24 @@ func _process(delta: float) -> void:
 		
 		#if (Input.is_action_just_pressed("primary_action")):
 			#print("Pew Pew")
-	
+		
+			
+	# Movement Animations Shenanigans
+	if(!Input.is_anything_pressed()):
+		if(Input.is_action_just_released("down")):
+			$"Player Sprite".play("Idle_down")
+		if(Input.is_action_just_released("up")):
+			$"Player Sprite".play("Idle_up")
+		if(Input.is_action_just_released("left")):
+			$"Player Sprite".play("Idle_left")
+		if(Input.is_action_just_released("right")):
+			$"Player Sprite".play("Idle_right")
+		
+	if(Input.is_action_pressed("down")):
+		$"Player Sprite".play("walk_down")
+	if(Input.is_action_pressed("up")):
+		$"Player Sprite".play("walk_up")
+	if(Input.is_action_pressed("left")):
+		$"Player Sprite".play("walk_left")
+	if(Input.is_action_pressed("right")):
+		$"Player Sprite".play("walk_right")
