@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const CHAR_READ_RATE = 0.02
+var CHAR_READ_RATE = 0.04
 
 @onready var textbox_container = $TextboxContainer
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label
@@ -8,7 +8,9 @@ const CHAR_READ_RATE = 0.02
 @onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/StartSymbol
 @onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/EndSymbol
 
-@onready var startendsymbol = '*'
+var startendsymbol = "*"
+
+var time_to_output = false
 
 @onready var tween = get_tree().create_tween().bind_node(self)
 
@@ -26,34 +28,32 @@ var text_queue = []
 func _ready():
 	print ("Starting State: State.READY")
 	hide_textbox()
-	queue_text("FIRST TEXT QUEUEUEUE U EUEU EUEUEU EUEUEU")
-	queue_text("SECOND TEXT QUE UEU EU EUEUEU EUEUE UEU EUEU")
-	queue_text("THIRD TEXT QUEU EU EUEU EUEUE UEU EU EUEUEU")
-	queue_text("FOURTH TEXT QUE UE EUEU EUEUE UEU EUE UEU EU")
 
 func _process(delta):
 	match current_state:
 		State.READY:
-			if !text_queue.is_empty():
+			if !text_queue.is_empty() && time_to_output == true:
 				display_text()
 		State.READ:
-			# if Input.is_action_just_pressed("skip"):
-			# 	tween.kill()
-			# 	label.visible_characters = -1
-			# 	end_symbol = startendsymbol
-			# 	change_state(State.FINISHED)
+			if Input.is_action_just_pressed("skip"):
+				tween.stop()
+				label.visible_characters = label.text.length()
+				tween.kill()
+				end_symbol.text = startendsymbol
+				change_state(State.FINISHED)
 			pass
 		State.FINISHED:
 			if Input.is_action_just_pressed("skip"):
 				change_state(State.READY)
 				if text_queue.is_empty():
 					hide_textbox()
+					time_to_output = false
 
 func hide_textbox():
-	start_symbol.text = " "
-	end_symbol.text = " "
-	label.text = " "
-	skip_promt.text = " "
+	start_symbol.text = ""
+	end_symbol.text = ""
+	label.text = ""
+	skip_promt.text = ""
 	textbox_container.hide()
 	
 func show_textbox():
@@ -69,7 +69,7 @@ func display_text():
 	show_textbox()
 	tween = get_tree().create_tween()
 	tween.tween_property(label, "visible_characters", len(next_text), len(next_text) * CHAR_READ_RATE).from(0).finished
-	tween.connect("finished",on_tween_finished)
+	tween.connect("finished", on_tween_finished)
 
 func on_tween_finished():
 	end_symbol.text = startendsymbol

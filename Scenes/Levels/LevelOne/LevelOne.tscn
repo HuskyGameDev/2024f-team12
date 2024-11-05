@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=23 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scenes/Interactions/LevelOneInteractables/scripts/cork_board_interaction.gd" id="10_qkad4"]
 [ext_resource type="Script" path="res://Scenes/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Scenes/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
+[ext_resource type="PackedScene" uid="uid://bvua536ho6v3h" path="res://Scenes/Cutscenes/Textbox/Cutscene1.tscn" id="13_unlyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d70sa"]
 texture = ExtResource("2_lfocg")
@@ -167,3 +168,5 @@ action_name = "examine"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadPlantInteraction/InteractionArea"]
 position = Vector2(0.166667, 0.333333)
 shape = SubResource("CircleShape2D_eg3ga")
+
+[node name="Cutscene1" parent="." instance=ExtResource("13_unlyj")]
