@@ -12,6 +12,6 @@ func _on_interact():
 		_send_text()
 
 func _send_text():
-	text_box.queue_text("What a view... neon streets and endless rain.")
+	text_box.queue_text("","What a view... neon streets and endless rain.","*")
 	text_box.time_to_output = true
 	pass

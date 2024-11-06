@@ -7,10 +7,13 @@ var CHAR_READ_RATE = 0.04
 @onready var skip_promt = $TextboxContainer/MarginContainer/HBoxContainer/SkipText
 @onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/StartSymbol
 @onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/EndSymbol
+@onready var speaker = $speaker
 
-var startendsymbol = "*"
+var startendsymbol = []
+var speakers = []
 
 var time_to_output = false
+var blackscreen = false
 
 @onready var tween = get_tree().create_tween().bind_node(self)
 
@@ -39,7 +42,7 @@ func _process(delta):
 				tween.stop()
 				label.visible_characters = label.text.length()
 				tween.kill()
-				end_symbol.text = startendsymbol
+				end_symbol.text = startendsymbol.pop_front()
 				change_state(State.FINISHED)
 			pass
 		State.FINISHED:
@@ -48,20 +51,24 @@ func _process(delta):
 				if text_queue.is_empty():
 					hide_textbox()
 					time_to_output = false
+					blackscreen = false
 
 func hide_textbox():
 	start_symbol.text = ""
-	end_symbol.text = ""
+	end_symbol.text = " "
 	label.text = ""
 	skip_promt.text = ""
+	speaker.text = ""
 	textbox_container.hide()
-	
+
 func show_textbox():
-	start_symbol.text = startendsymbol
 	skip_promt.text = "Space to next"
 	textbox_container.show()
 
 func display_text():
+	end_symbol.text = "  "
+	start_symbol.text = startendsymbol.pop_front()
+	speaker.text = speakers.pop_front()
 	var next_text = text_queue.pop_front()
 	label.text = next_text
 	label.visible_characters = -1
@@ -72,11 +79,22 @@ func display_text():
 	tween.connect("finished", on_tween_finished)
 
 func on_tween_finished():
-	end_symbol.text = startendsymbol
+	end_symbol.text = startendsymbol.pop_front()
 	change_state(State.FINISHED)
 
-func queue_text(queabletext):
+func queue_text(speaker, queabletext, symbol):
 	text_queue.push_back(queabletext)
+	startendsymbol.push_back(symbol)
+	startendsymbol.push_back(symbol)
+	speakers.push_back(speaker)
+
+func queue_cutscene(speaker, queabletext, symbol):
+	blackscreen = true
+	text_queue.push_back(queabletext)
+	startendsymbol.push_back(symbol)
+	startendsymbol.push_back(symbol)
+	speakers.push_back(speaker)
+
 
 func change_state(st):
 	current_state = st

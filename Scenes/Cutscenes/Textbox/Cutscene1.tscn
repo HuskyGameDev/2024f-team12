@@ -80,3 +80,16 @@ theme_override_fonts/font = ExtResource("2_dyrlv")
 theme_override_font_sizes/font_size = 13
 text = "Space to Next"
 vertical_alignment = 2
+
+[node name="speaker" type="Label" parent="."]
+offset_left = 985.0
+offset_top = 489.0
+offset_right = 1130.0
+offset_bottom = 546.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_dyrlv")
+theme_override_font_sizes/font_size = 20
+text = "Mr Placehol"
+horizontal_alignment = 1
+autowrap_mode = 3

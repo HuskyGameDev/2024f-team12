@@ -11,7 +11,6 @@ func _on_interact():
 		_send_text()
 
 func _send_text():
-	text_box.queue_text("It's a sad, quite dead, potted plant.")
+	text_box.queue_text("","It's a sad, quite dead, potted plant.","*")
 	text_box.time_to_output = true
-	# enqueue text "* It's sad, quite dead, potted plant. *"
 	pass
