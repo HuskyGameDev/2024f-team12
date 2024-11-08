@@ -12,7 +12,7 @@ func _on_interact():
 		_send_text()
 
 func _send_text():
-	text_box.queue_text("","It's a cork board with lots of old cases.","*")
-	text_box.queue_text("Moreau","What a year it's been...","\"")
+	text_box.queue_text("","*It's a cork board with lots of old cases.*")
+	text_box.queue_text("Moreau","\"What a year it's been...\"")
 	text_box.time_to_output = true
 	pass

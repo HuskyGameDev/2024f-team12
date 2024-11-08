@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=28 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://Scenes/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
 [ext_resource type="PackedScene" uid="uid://bvua536ho6v3h" path="res://Scenes/Cutscenes/Textbox/Cutscene1.tscn" id="13_unlyj"]
+[ext_resource type="Texture2D" uid="uid://oae152jeyg0x" path="res://Scenes/Characters/CutsceneSprites/moreau_placeholder.png" id="15_ops4x"]
+[ext_resource type="Texture2D" uid="uid://cllcycmch7wrx" path="res://Scenes/Characters/CutsceneSprites/woman_placeholder.png" id="16_2t4gj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
 texture = ExtResource("13_hhd26")
@@ -302,3 +304,17 @@ position = Vector2(0.166667, 0.333333)
 shape = SubResource("CircleShape2D_eg3ga")
 
 [node name="Cutscene1" parent="." instance=ExtResource("13_unlyj")]
+
+[node name="MoreauPlaceholder" type="Sprite2D" parent="."]
+visible = false
+z_index = 31
+position = Vector2(807, 369)
+scale = Vector2(1.46875, 1.43466)
+texture = ExtResource("15_ops4x")
+
+[node name="WomanPlaceholder" type="Sprite2D" parent="."]
+visible = false
+z_index = 31
+position = Vector2(455, 238)
+scale = Vector2(1.45881, 1.42045)
+texture = ExtResource("16_2t4gj")

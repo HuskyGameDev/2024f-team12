@@ -5,12 +5,14 @@ var CHAR_READ_RATE = 0.04
 @onready var textbox_container = $TextboxContainer
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label
 @onready var skip_promt = $TextboxContainer/MarginContainer/HBoxContainer/SkipText
-@onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/StartSymbol
-@onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/EndSymbol
+
 @onready var speaker = $speaker
 
-var startendsymbol = []
+var speakerone = false
+var speakertwo = false
+
 var speakers = []
+var speakerson = []
 
 var time_to_output = false
 var blackscreen = false
@@ -42,7 +44,10 @@ func _process(delta):
 				tween.stop()
 				label.visible_characters = label.text.length()
 				tween.kill()
-				end_symbol.text = startendsymbol.pop_front()
+				if text_queue.is_empty():
+					skip_promt.text = "Space to exit"
+				else:
+					skip_promt.text = "Space to continue"
 				change_state(State.FINISHED)
 			pass
 		State.FINISHED:
@@ -52,23 +57,33 @@ func _process(delta):
 					hide_textbox()
 					time_to_output = false
 					blackscreen = false
+					speakerone = false
+					speakertwo = false
 
 func hide_textbox():
-	start_symbol.text = ""
-	end_symbol.text = " "
 	label.text = ""
 	skip_promt.text = ""
 	speaker.text = ""
 	textbox_container.hide()
 
 func show_textbox():
-	skip_promt.text = "Space to next"
+	skip_promt.text = "Space to skip"
 	textbox_container.show()
 
 func display_text():
-	end_symbol.text = "  "
-	start_symbol.text = startendsymbol.pop_front()
+	skip_promt.text = "Space to skip"
 	speaker.text = speakers.pop_front()
+	var spk = speakerson.pop_front()
+	if spk == 1:
+		if speakerone == true:
+			speakerone = false
+		else:
+			speakerone = true
+	if spk == 2:
+		if speakertwo == true:
+			speakertwo = false
+		else:
+			speakertwo = true
 	var next_text = text_queue.pop_front()
 	label.text = next_text
 	label.visible_characters = -1
@@ -79,21 +94,23 @@ func display_text():
 	tween.connect("finished", on_tween_finished)
 
 func on_tween_finished():
-	end_symbol.text = startendsymbol.pop_front()
+	if text_queue.is_empty():
+		skip_promt.text = "Space to exit"
+	else:
+		skip_promt.text = "Space to continue"
 	change_state(State.FINISHED)
 
-func queue_text(speaker, queabletext, symbol):
+func queue_text(speaker, queabletext):
 	text_queue.push_back(queabletext)
-	startendsymbol.push_back(symbol)
-	startendsymbol.push_back(symbol)
 	speakers.push_back(speaker)
 
-func queue_cutscene(speaker, queabletext, symbol):
+#note for 'shown', if 0 nothing happens, if 1 toggles speakerone
+#   if 2, toggles speakertwo
+func queue_cutscene(speaker, shown, queabletext):
 	blackscreen = true
 	text_queue.push_back(queabletext)
-	startendsymbol.push_back(symbol)
-	startendsymbol.push_back(symbol)
 	speakers.push_back(speaker)
+	speakerson.push_back(shown)
 
 
 func change_state(st):

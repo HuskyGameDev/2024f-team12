@@ -11,7 +11,7 @@ func _on_interact():
 		_send_text()
 
 func _send_text():
-	text_box.queue_text("","It's an old client sofa.", "*")
-	text_box.queue_text("Moreau", "I really need to a get a new couch for the office...", "\"")
+	text_box.queue_text("","*It's an old client sofa.*")
+	text_box.queue_text("Moreau", "\"I really need to a get a new couch for the office...\"")
 	text_box.time_to_output = true
 	pass
