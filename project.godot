@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 InteractionManager="*res://Scenes/Interactions/InteractionManager/InteractionManager.tscn"
+Player="*res://Scenes/Characters/Player/Player.tscn"
+Cutscene1="*res://Scenes/Cutscenes/Textbox/Cutscene1.tscn"
 
 [global_group]
 
