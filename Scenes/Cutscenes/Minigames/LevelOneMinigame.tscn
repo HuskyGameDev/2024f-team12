@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://xccki7ntucti"]
+
+[ext_resource type="Script" path="res://Scenes/Cutscenes/Minigames/path_2d.gd" id="1_ktg4x"]
+[ext_resource type="Texture2D" uid="uid://b0sm38ylnfo3h" path="res://Sprites/Minigame Sprites/Level One/Target.png" id="1_mlcyu"]
+[ext_resource type="Texture2D" uid="uid://d2v67i2evp1e4" path="res://Sprites/Minigame Sprites/Level One/Rim.png" id="2_dj3tf"]
+
+[sub_resource type="Curve2D" id="Curve2D_4nw8u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -36.3457, 0, 0, 0, 0, 0, 36.5432, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umkvx"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwfcs"]
+radius = 2.96296
+
+[node name="LevelOne" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="Range" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="Path2D" type="Path2D" parent="Range"]
+scale = Vector2(2.25, 2.25)
+curve = SubResource("Curve2D_4nw8u")
+script = ExtResource("1_ktg4x")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Range/Path2D"]
+rotation = 3.14159
+rotates = false
+
+[node name="Target" type="Sprite2D" parent="Range/Path2D/PathFollow2D"]
+rotation = 3.14159
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("1_mlcyu")
+
+[node name="TargCol" type="CollisionShape2D" parent="Range/Path2D/PathFollow2D/Target"]
+shape = SubResource("CapsuleShape2D_umkvx")
+
+[node name="Rim" type="Sprite2D" parent="Range"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_dj3tf")
+
+[node name="RimCol" type="CollisionShape2D" parent="Range/Rim"]
+shape = SubResource("CapsuleShape2D_jwfcs")

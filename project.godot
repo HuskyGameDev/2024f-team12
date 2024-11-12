@@ -20,6 +20,10 @@ InteractionManager="*res://Scenes/Interactions/InteractionManager/InteractionMan
 Player="*res://Scenes/Characters/Player/Player.tscn"
 Cutscene1="*res://Scenes/Cutscenes/Textbox/Cutscene1.tscn"
 
+[dotnet]
+
+project/assembly_name="Moreau"
+
 [global_group]
 
 player=""
