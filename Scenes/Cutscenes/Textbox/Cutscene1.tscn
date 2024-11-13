@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvua536ho6v3h"]
+[gd_scene load_steps=5 format=3 uid="uid://bvua536ho6v3h"]
 
 [ext_resource type="Script" path="res://Scenes/Cutscenes/Textbox/cutscene_1.gd" id="1_r80i5"]
 [ext_resource type="FontFile" uid="uid://dy6r7dnk3ocmw" path="res://Fonts/retro_computer_personal_use.ttf" id="2_dyrlv"]
+[ext_resource type="PackedScene" uid="uid://bfwyt0w4o8ger" path="res://Scenes/Cutscenes/Minigames/LevelOne/LevelOneMinigame.tscn" id="3_ar5fk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1jbp"]
 bg_color = Color(0, 0, 0, 1)
@@ -52,7 +53,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_dyrlv")
 theme_override_font_sizes/font_size = 30
-text = " Is there anything else you can think of, did anyone have any reason to hurt your husband or your business?"
 autowrap_mode = 3
 clip_text = true
 
@@ -63,7 +63,7 @@ size_flags_vertical = 8
 size_flags_stretch_ratio = 0.14
 theme_override_fonts/font = ExtResource("2_dyrlv")
 theme_override_font_sizes/font_size = 13
-text = "Space to skip"
+text = "Space to calm down"
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 2
@@ -77,6 +77,10 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_dyrlv")
 theme_override_font_sizes/font_size = 20
-text = "Mr Placehol"
+text = "Panic!"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="LOM" parent="." instance=ExtResource("3_ar5fk")]
+position = Vector2(576, 558)
+scale = Vector2(2, 2)

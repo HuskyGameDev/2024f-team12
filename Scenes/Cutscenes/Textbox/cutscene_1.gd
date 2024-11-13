@@ -5,6 +5,7 @@ var CHAR_READ_RATE = 0.04
 @onready var textbox_container = $TextboxContainer
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label
 @onready var skip_promt = $TextboxContainer/MarginContainer/HBoxContainer/SkipText
+@onready var LOM = $LOM
 
 @onready var speaker = $speaker
 
@@ -16,6 +17,8 @@ var speakerson = []
 
 var time_to_output = false
 var blackscreen = false
+var minigame = false
+var minigamevisible = false
 
 @onready var tween = get_tree().create_tween().bind_node(self)
 
@@ -33,6 +36,7 @@ var text_queue = []
 func _ready():
 	print ("Starting State: State.READY")
 	hide_textbox()
+	LOM.hide()
 
 func _process(delta):
 	match current_state:
@@ -51,7 +55,7 @@ func _process(delta):
 				change_state(State.FINISHED)
 			pass
 		State.FINISHED:
-			if Input.is_action_just_pressed("skip"):
+			if Input.is_action_just_pressed("skip") && minigame == false:
 				change_state(State.READY)
 				if text_queue.is_empty():
 					hide_textbox()
@@ -59,8 +63,19 @@ func _process(delta):
 					blackscreen = false
 					speakerone = false
 					speakertwo = false
+			if minigame == true && minigamevisible == false:
+				LOM.show()
+				LOM.board_wipe()
+				minigamevisible = true
+			if minigame == true && LOM.get_hits() == 2:
+				LOM.hide()
+				minigame = false
+				minigamevisible = false
+				change_state(State.READY)
 
 func hide_textbox():
+	if minigamevisible:
+		LOM.hide()
 	label.text = ""
 	skip_promt.text = ""
 	speaker.text = ""
@@ -71,9 +86,14 @@ func show_textbox():
 	textbox_container.show()
 
 func display_text():
-	skip_promt.text = "Space to skip"
-	speaker.text = speakers.pop_front()
 	var spk = speakerson.pop_front()
+	if skip_promt.hidden:
+		skip_promt.show()
+	if spk != 3:
+		skip_promt.text = "Space to skip"
+	else:
+		skip_promt.hide()
+	speaker.text = speakers.pop_front()
 	if spk == 1:
 		if speakerone == true:
 			speakerone = false
@@ -84,6 +104,9 @@ func display_text():
 			speakertwo = false
 		else:
 			speakertwo = true
+	if spk == 3:
+		minigame = true
+	
 	var next_text = text_queue.pop_front()
 	label.text = next_text
 	label.visible_characters = -1
@@ -96,6 +119,8 @@ func display_text():
 func on_tween_finished():
 	if text_queue.is_empty():
 		skip_promt.text = "Space to exit"
+	elif minigame:
+		pass
 	else:
 		skip_promt.text = "Space to continue"
 	change_state(State.FINISHED)
