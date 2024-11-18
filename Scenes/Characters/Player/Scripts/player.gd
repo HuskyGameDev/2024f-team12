@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Change this value to adjust how fast the character moves
-var speed = 75
+@export var speed = 75
 
 
 var moving = false
