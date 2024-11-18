@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 # Change this value to adjust how fast the character moves
-var speed = 200
+var speed = 75
+
 
 var moving = false
 var movdir = 0

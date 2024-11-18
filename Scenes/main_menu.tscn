@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dr72wmvgmhfml"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_yafju"]
-[ext_resource type="Texture2D" uid="uid://b5s04ty6cskne" path="res://Aseprite-Art/Moreau-Title.png" id="2_01y3n"]
+[ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_pm0ke"]
 [ext_resource type="FontFile" uid="uid://dy6r7dnk3ocmw" path="res://Fonts/retro_computer_personal_use.ttf" id="3_6fxy7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec74g"]
@@ -64,7 +64,7 @@ theme_override_constants/separation = 20
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_01y3n")
+texture = ExtResource("2_pm0ke")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2

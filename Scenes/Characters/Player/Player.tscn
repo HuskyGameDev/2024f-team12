@@ -208,7 +208,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhojk"]
-radius = 17.1172
+radius = 5.09902
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-252, -189)
@@ -223,5 +223,5 @@ animation = &"Idle_down"
 autoplay = "Placeholder"
 
 [node name="Player Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(1, -18)
+position = Vector2(2, -28)
 shape = SubResource("CircleShape2D_nhojk")

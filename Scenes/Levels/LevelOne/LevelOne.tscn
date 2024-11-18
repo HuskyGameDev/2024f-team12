@@ -493,13 +493,6 @@ tile_set = SubResource("TileSet_1ga11")
 tile_set = SubResource("TileSet_edjw7")
 format = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 1152.0
-offset_bottom = 38.0
-text = "Press [E] to pew (placeholder for interactions)"
-
 [node name="Flooring" type="TileMapLayer" parent="."]
 physics_interpolation_mode = 1
 use_parent_material = true
@@ -513,11 +506,11 @@ tile_map_data = PackedByteArray("AAAgAA4AAAAAAAYAAAAbABQAAAAEAAIAAAAbABMAAAAEAAE
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
-position = Vector2(559, 490)
+position = Vector2(520, 341)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -40)
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="Y-SortL" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -528,7 +521,6 @@ tile_set = SubResource("TileSet_edjw7")
 position = Vector2(349, 144)
 
 [node name="CouchInteraction" type="Node2D" parent="."]
-visible = false
 position = Vector2(300, 385)
 scale = Vector2(7, 7)
 script = ExtResource("6_sso3r")
@@ -540,7 +532,6 @@ action_name = "examine"
 shape = SubResource("CapsuleShape2D_c31wi")
 
 [node name="FilingCabinetInteraction" type="Node2D" parent="."]
-visible = false
 position = Vector2(275, 210)
 scale = Vector2(7, 9)
 script = ExtResource("8_t0jfh")
@@ -552,7 +543,6 @@ action_name = "examine"
 shape = SubResource("CircleShape2D_jlhwf")
 
 [node name="WindowInteraction" type="Node2D" parent="."]
-visible = false
 position = Vector2(560, 60)
 rotation = 1.5708
 scale = Vector2(10, 5.5)
@@ -565,7 +555,6 @@ action_name = "ponder..."
 shape = SubResource("CapsuleShape2D_aqfvi")
 
 [node name="CorkBoardInteraction" type="Node2D" parent="."]
-visible = false
 position = Vector2(750, 110)
 rotation = 1.5708
 scale = Vector2(6, 6)
@@ -578,7 +567,6 @@ action_name = "examine"
 shape = SubResource("CapsuleShape2D_x05nv")
 
 [node name="DeadWifeInteraction" type="Node2D" parent="."]
-visible = false
 position = Vector2(820, 380)
 scale = Vector2(8, 8)
 script = ExtResource("11_57t0l")
@@ -590,7 +578,6 @@ action_name = "examine"
 shape = SubResource("CircleShape2D_lcfs3")
 
 [node name="DeadPlantInteraction" type="Node2D" parent="."]
-visible = false
 position = Vector2(820, 500)
 scale = Vector2(8, 6)
 script = ExtResource("12_h2iin")
@@ -603,7 +590,6 @@ position = Vector2(0.166667, 0.333333)
 shape = SubResource("CircleShape2D_eg3ga")
 
 [node name="Cutscene1" parent="." instance=ExtResource("13_unlyj")]
-visible = false
 
 [node name="MoreauPlaceholder" type="Sprite2D" parent="."]
 visible = false
