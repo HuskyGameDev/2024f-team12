@@ -2,12 +2,19 @@ extends CanvasLayer
 
 var CHAR_READ_RATE = 0.04
 
+#NOTE
+# 1. clamp width of text box?
+# 2. change format of name to allow for two line names?
+
+
+
+
 @onready var textbox_container = $TextboxContainer
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label
-@onready var skip_promt = $TextboxContainer/MarginContainer/HBoxContainer/SkipText
+@onready var skip_promt = $TextboxContainer/MarginContainer/VBoxContainer/SkipText
 @onready var LOM = $LOM
 
-@onready var speaker = $speaker
+@onready var speaker = $TextboxContainer/MarginContainer/VBoxContainer/speaker
 
 var speakerone = false
 var speakertwo = false

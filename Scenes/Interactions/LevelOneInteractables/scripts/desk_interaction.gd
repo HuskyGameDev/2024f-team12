@@ -29,7 +29,7 @@ func _send_text():
 	text_box.queue_cutscene("Moreau", 0, "\" Is there anything else you can think of, did anyone have any reason to hurt your husband or your business?\"")
 	text_box.queue_cutscene("Woman", 0, "\"No, not that I can think of, we are just honest business owners.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Ah, I see... and what was your name, Mrs.-?\"")
-	text_box.queue_cutscene("Mrs. Placehol", 0, "\"Placeholder\"")
+	text_box.queue_cutscene("Mrs. Placeholder", 0, "\"Placeholder\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Alright, Mrs.Placeholder. I'll see what I can do to track down your husband and get to the bottom of this.\"")
 	text_box.queue_cutscene("Moreau", 2, "*Possible thought or connection to exposition*")
 	text_box.time_to_output = true

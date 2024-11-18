@@ -56,7 +56,30 @@ theme_override_font_sizes/font_size = 30
 autowrap_mode = 3
 clip_text = true
 
-[node name="SkipText" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "                                            "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="speaker" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_dyrlv")
+theme_override_font_sizes/font_size = 20
+text = "Panic!"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+
+
+"
+
+[node name="SkipText" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -64,21 +87,8 @@ size_flags_stretch_ratio = 0.14
 theme_override_fonts/font = ExtResource("2_dyrlv")
 theme_override_font_sizes/font_size = 13
 text = "Space to calm down"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 2
-autowrap_mode = 2
-
-[node name="speaker" type="Label" parent="."]
-offset_left = 990.0
-offset_top = 487.0
-offset_right = 1135.0
-offset_bottom = 544.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_dyrlv")
-theme_override_font_sizes/font_size = 20
-text = "Panic!"
-horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="LOM" parent="." instance=ExtResource("3_ar5fk")]
