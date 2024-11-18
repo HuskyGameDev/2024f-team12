@@ -21,7 +21,7 @@ func _send_text():
 	text_box.queue_cutscene("Woman", 0, "*frantically crying*")
 	#QTE? text box game?
 	# TEST
-	text_box.queue_cutscene("Quick!", 3, "")
+	# text_box.queue_cutscene("Quick!", 3, "")
 	# TEST
 	text_box.queue_cutscene("Moreau", 0, "\"What can you tell me about your husband Tony?\"")
 	text_box.queue_cutscene("Woman", 0, "\"I think he got involved with some bad people. We run a restaurant together, and we’ve fallen on tough times lately.\"")

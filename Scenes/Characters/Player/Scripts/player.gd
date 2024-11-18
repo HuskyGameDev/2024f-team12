@@ -7,6 +7,16 @@ var moving = false
 var movdir = 0
 @onready var text_box = $"../Cutscene1"
 
+enum direction
+{
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+}
+
+var curdir = direction.UP
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"Player Sprite".play("Idle_up") # Replace with function body.
@@ -24,21 +34,35 @@ func _process(delta: float) -> void:
 			
 				
 		# Movement Animations Shenanigans
-		if(!Input.is_anything_pressed()):
-			if(Input.is_action_just_released("down")):
+		if(!Input.is_action_pressed("down") && !Input.is_action_pressed("up") && !Input.is_action_pressed("left") && !Input.is_action_pressed("right")):
+			if(curdir == direction.DOWN):
 				$"Player Sprite".play("Idle_down")
-			if(Input.is_action_just_released("up")):
+			if(curdir == direction.UP):
 				$"Player Sprite".play("Idle_up")
-			if(Input.is_action_just_released("left")):
+			if(curdir == direction.LEFT):
 				$"Player Sprite".play("Idle_left")
-			if(Input.is_action_just_released("right")):
+			if(curdir == direction.RIGHT):
 				$"Player Sprite".play("Idle_right")
 			
 		if(Input.is_action_pressed("down")):
 			$"Player Sprite".play("walk_down")
+			curdir = direction.DOWN
 		if(Input.is_action_pressed("up")):
 			$"Player Sprite".play("walk_up")
-		if(Input.is_action_pressed("left")):
+			curdir = direction.UP
+		if(Input.is_action_pressed("left") && !Input.is_action_pressed("down") && !Input.is_action_pressed("up")):
 			$"Player Sprite".play("walk_left")
-		if(Input.is_action_pressed("right")):
+			curdir = direction.LEFT
+		if(Input.is_action_pressed("right") && !Input.is_action_pressed("down") && !Input.is_action_pressed("up")):
 			$"Player Sprite".play("walk_right")
+			curdir = direction.RIGHT
+	else:
+		if(curdir == direction.DOWN):
+			$"Player Sprite".play("Idle_down")
+		if(curdir == direction.UP):
+			$"Player Sprite".play("Idle_up")
+		if(curdir == direction.LEFT):
+			$"Player Sprite".play("Idle_left")
+		if(curdir == direction.RIGHT):
+			$"Player Sprite".play("Idle_right")
+	
