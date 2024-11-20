@@ -20,6 +20,11 @@ InteractionManager="*res://Scenes/Interactions/InteractionManager/InteractionMan
 Player="*res://Scenes/Characters/Player/Player.tscn"
 Cutscene1="*res://Scenes/Cutscenes/Textbox/Cutscene1.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
 [dotnet]
 
 project/assembly_name="Moreau"

@@ -10,10 +10,12 @@ func _on_interact():
 	if text_box.time_to_output == false:
 		_send_text()
 
+
 func _send_text():
 	text_box.queue_cutscene("", 0, "*It's a massive desk, and is suprisingly cluttered.*")
 	text_box.queue_cutscene("Moreau", 1, "\"Man, I've gotta work on cleaning this place up.\"")
 	#screen shakes? Woman enters
+	
 	text_box.queue_cutscene("Woman", 2, "\"Are you detective Moreau?!? I need your help!\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Indeed, I'm Moreau. What can I do for you?\"")
 	text_box.queue_cutscene("Woman", 0, "\"My husband Tony is missing! I don’t know what I’m going to do, I need someone to help me find him!\"")
@@ -29,8 +31,10 @@ func _send_text():
 	text_box.queue_cutscene("Moreau", 0, "\" Is there anything else you can think of, did anyone have any reason to hurt your husband or your business?\"")
 	text_box.queue_cutscene("Woman", 0, "\"No, not that I can think of, we are just honest business owners.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Ah, I see... and what was your name, Mrs.-?\"")
-	text_box.queue_cutscene("Mrs. Placeholder", 0, "\"Placeholder\"")
-	text_box.queue_cutscene("Moreau", 0, "\"Alright, Mrs.Placeholder. I'll see what I can do to track down your husband and get to the bottom of this.\"")
-	text_box.queue_cutscene("Moreau", 2, "*Possible thought or connection to exposition*")
+	text_box.queue_cutscene("Mrs. Duval", 0, "\"Duval\"")
+	text_box.queue_cutscene("Moreau", 0, "\"Alright, Mrs. Duval. I'll see what I can do to track down your husband and get to the bottom of this.\"")
+	text_box.queue_cutscene("Moreau", 2, "\"...\"")
+	text_box.queue_cutscene("Moreau", 0, "*Puffs cigarette*")
+	text_box.queue_cutscene("Moreau", 1, "\"This is all too familiar. I better get down to the warehouses to see what he knows about this whole ordeal.\"")
 	text_box.time_to_output = true
 	pass

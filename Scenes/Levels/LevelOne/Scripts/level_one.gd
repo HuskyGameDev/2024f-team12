@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var text_box = $Cutscene1
 @onready var blackscreen = $blackscreen
-@onready var woman = $WomanPlaceholder
-@onready var moreau = $MoreauPlaceholder
+@onready var woman = $Cutscene1/WomanCutscene
+@onready var moreau = $Cutscene1/MoreauCutscene
 
 # Main script for the first level of the game
 
@@ -20,10 +20,14 @@ func _process(delta: float) -> void:
 		blackscreen.z_index = 0
 	if text_box.speakertwo == true: # && !woman.visible:
 		woman.show()
+		woman.play("default")
 	elif text_box.speakertwo == false: # && woman.visible:
+		woman.stop()
 		woman.hide()
 	if text_box.speakerone == true: # && !moreau.visible:
 		moreau.show()
+		moreau.play("default")
 	elif text_box.speakertwo == false: # && moreau.visible:
+		moreau.stop()
 		moreau.hide()
 	pass
