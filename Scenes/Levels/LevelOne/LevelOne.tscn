@@ -655,7 +655,7 @@ shape = SubResource("CircleShape2D_eg3ga")
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene1"]
 visible = false
 z_index = 31
-position = Vector2(807, 263)
+position = Vector2(807, 262.1)
 scale = Vector2(3, 2.932)
 sprite_frames = SubResource("SpriteFrames_25ub8")
 frame_progress = 0.505788
@@ -663,7 +663,7 @@ frame_progress = 0.505788
 [node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene1"]
 visible = false
 z_index = 31
-position = Vector2(353, 300)
+position = Vector2(353, 299.6)
 scale = Vector2(1.5, 1.465)
 sprite_frames = SubResource("SpriteFrames_qngii")
 frame_progress = 0.0809704
