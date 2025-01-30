@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=43 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cs72m54ygikjt" path="res://Entities/Interactions/LevelOneInteractables/desk_interaction.tscn" id="5_f5ytj"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/couch_interaction.gd" id="6_sso3r"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_3wlxe"]
+[ext_resource type="Texture2D" uid="uid://ck5gkj0ukv1qn" path="res://Game/notebook/Notebook Icon.png" id="8_nb538"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/filing_cabinet_interaction.gd" id="8_t0jfh"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/window_interaction.gd" id="9_m21r0"]
+[ext_resource type="Script" path="res://Game/ui/door_button.gd" id="9_y1nln"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/cork_board_interaction.gd" id="10_qkad4"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
@@ -481,6 +483,32 @@ sources/1 = SubResource("TileSetAtlasSource_d70sa")
 sources/0 = SubResource("TileSetAtlasSource_f2gjk")
 sources/2 = SubResource("TileSetAtlasSource_novrv")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt3n2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssxyj"]
+bg_color = Color(0.525101, 0.525101, 0.525101, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecey5"]
+bg_color = Color(0.359069, 0.359069, 0.359069, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udldd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c31wi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlhwf"]
@@ -569,6 +597,39 @@ speed = 150
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -40)
+
+[node name="Control" type="Control" parent="Player/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -141.0
+offset_top = -76.0
+offset_right = 139.0
+offset_bottom = 76.0
+
+[node name="JournalButton" type="Button" parent="Player/Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -19.0
+offset_top = 1.75
+offset_right = -3.0
+offset_bottom = 17.75
+grow_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dt3n2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ssxyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ecey5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_udldd")
+icon = ExtResource("8_nb538")
+icon_alignment = 1
+script = ExtResource("9_y1nln")
+transition_type = "fade_to_dark"
+path_to_new_scene = "notebook.tscn"
 
 [node name="Y-SortL" type="TileMapLayer" parent="."]
 z_index = 1
@@ -667,3 +728,5 @@ position = Vector2(353, 299.6)
 scale = Vector2(1.5, 1.465)
 sprite_frames = SubResource("SpriteFrames_qngii")
 frame_progress = 0.0809704
+
+[connection signal="pressed" from="Player/Camera2D/Control/JournalButton" to="Player/Camera2D/Control/JournalButton" method="_on_pressed"]

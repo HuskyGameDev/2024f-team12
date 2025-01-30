@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://hv8ylsrnylwg"]
+
+[ext_resource type="Script" path="res://Game/ingredient_book/book.gd" id="1_wtaap"]
+[ext_resource type="Texture2D" uid="uid://w8okvx8go1b5" path="res://Game/notebook/Notebook Page.png" id="2_hih8t"]
+
+[node name="Book" type="Node2D"]
+script = ExtResource("1_wtaap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(15, 15)
+texture = ExtResource("2_hih8t")
+
+[node name="Exit" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+offset_left = 256.0
+offset_top = -246.0
+offset_right = 318.0
+offset_bottom = -196.0
+text = "X"
+
+[connection signal="pressed" from="Exit" to="." method="_move_up"]

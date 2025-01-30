@@ -6,7 +6,7 @@ extends Button
 
 func _on_pressed():
 	if path_to_new_scene != null:
-		var game_node: Game = get_tree().get_nodes_in_group("game")[0] as Game
+		var game_node: Game = get_tree().get_nodes_in_group("game")[0wadswa] as Game
 		var unload: Node = game_node.current_level # we're now responsible for tracking this
 		
 		if unload != null and is_instance_valid(unload):
