@@ -11,19 +11,22 @@ config_version=5
 [application]
 
 config/name="Moreau"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Entities/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-InteractionManager="*res://Scenes/Interactions/InteractionManager/InteractionManager.tscn"
-Player="*res://Scenes/Characters/Player/Player.tscn"
-Cutscene1="*res://Scenes/Cutscenes/Textbox/Cutscene1.tscn"
+InteractionManager="*res://Entities/Interactions/InteractionManager/InteractionManager.tscn"
+Player="*res://Entities/Characters/Player/Player.tscn"
+Cutscene1="*res://Entities/Cutscenes/Textbox/Cutscene1.tscn"
+SceneManager="*res://Common/Autoloads/scene_manager.gd"
 
 [display]
 
+window/size/always_on_top=true
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -32,6 +35,7 @@ project/assembly_name="Moreau"
 [global_group]
 
 player=""
+game=""
 
 [input]
 

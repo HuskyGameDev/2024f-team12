@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyur1xsv5u6rc"]
+
+[ext_resource type="Script" path="res://Game/ui/door_button.gd" id="1_hadow"]
+
+[node name="DoorButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_hadow")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

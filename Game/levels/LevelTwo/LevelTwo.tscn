@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvx3svk6wr1j1"]
+
+[ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
+
+
+[node name="Level Two" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2x4m1")]
+position = Vector2(573, 323)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1152.0
+offset_bottom = 38.0
+text = "Press [E] to pew (placeholder for interactions)"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)

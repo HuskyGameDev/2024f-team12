@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfwyt0w4o8ger"]
+
+[ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/LevelOne/level_one_minigame.gd" id="1_ic7bi"]
+[ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/LevelOne/path_2d.gd" id="2_c00xj"]
+[ext_resource type="Texture2D" uid="uid://b0sm38ylnfo3h" path="res://Sprites/Minigame Sprites/Level One/Target.png" id="2_y1q6l"]
+[ext_resource type="Texture2D" uid="uid://d2v67i2evp1e4" path="res://Sprites/Minigame Sprites/Level One/Rim.png" id="3_8ylls"]
+[ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/LevelOne/MiniGameOneZone.gd" id="4_6l4pf"]
+
+[sub_resource type="Curve2D" id="Curve2D_4nw8u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -36.3457, 0, 0, 0, 0, 0, 36.5432, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umkvx"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwfcs"]
+radius = 2.96296
+
+[node name="LOM" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_ic7bi")
+
+[node name="Range" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="Path2D" type="Path2D" parent="Range"]
+scale = Vector2(2.25, 2.25)
+curve = SubResource("Curve2D_4nw8u")
+script = ExtResource("2_c00xj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Range/Path2D"]
+position = Vector2(-20.0071, 0)
+rotation = 3.14159
+progress = 20.0
+rotates = false
+
+[node name="Target" type="Sprite2D" parent="Range/Path2D/PathFollow2D"]
+rotation = 3.14159
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("2_y1q6l")
+
+[node name="TargetArea" type="Area2D" parent="Range/Path2D/PathFollow2D/Target"]
+
+[node name="TargCol" type="CollisionShape2D" parent="Range/Path2D/PathFollow2D/Target/TargetArea"]
+shape = SubResource("CapsuleShape2D_umkvx")
+
+[node name="Rim" type="Sprite2D" parent="Range"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_8ylls")
+
+[node name="MiniGameOneZone" type="Area2D" parent="Range/Rim"]
+script = ExtResource("4_6l4pf")
+
+[node name="RimCol" type="CollisionShape2D" parent="Range/Rim/MiniGameOneZone"]
+shape = SubResource("CapsuleShape2D_jwfcs")
+
+[connection signal="area_entered" from="Range/Rim/MiniGameOneZone" to="Range/Rim/MiniGameOneZone" method="_on_area_entered"]
+[connection signal="area_exited" from="Range/Rim/MiniGameOneZone" to="Range/Rim/MiniGameOneZone" method="_on_area_exited"]

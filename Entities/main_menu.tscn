@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr72wmvgmhfml"]
+
+[ext_resource type="Script" path="res://Entities/main_menu.gd" id="1_yafju"]
+[ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_pm0ke"]
+[ext_resource type="FontFile" uid="uid://dy6r7dnk3ocmw" path="res://Fonts/retro_computer_personal_use.ttf" id="3_6fxy7"]
+[ext_resource type="Script" path="res://Game/ui/door_button.gd" id="4_m8iwg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec74g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e13o"]
+bg_color = Color(0.525101, 0.525101, 0.525101, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gusu"]
+bg_color = Color(0.359069, 0.359069, 0.359069, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4vkf"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yafju")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.5
+offset_top = -302.5
+offset_right = 333.5
+offset_bottom = 302.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_pm0ke")
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6fxy7")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ec74g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6e13o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5gusu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4vkf")
+text = "Start Game"
+script = ExtResource("4_m8iwg")
+transition_type = "fade_to_dark"
+path_to_new_scene = "res://Game/levels/LevelOne/LevelOne.tscn"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6fxy7")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ec74g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6e13o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5gusu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4vkf")
+text = "Options"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6fxy7")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ec74g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6e13o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5gusu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4vkf")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
