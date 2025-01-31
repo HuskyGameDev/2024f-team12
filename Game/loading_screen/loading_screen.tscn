@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://d13yggkw2yru4"]
 
 [ext_resource type="Script" path="res://Game/loading_screen/loading_screen.gd" id="1_k5r6i"]
-[ext_resource type="Shader" path="res://common/shaders/palette_swap.gdshader" id="2_exvlp"]
-[ext_resource type="Texture2D" uid="uid://crj7rs72sn3pp" path="res://Common/Palettes/golden-sunset-1x.png" id="3_gkxn4"]
+[ext_resource type="Shader" path="res://common/shaders/palette_swap.gdshader" id="2_aqicp"]
+[ext_resource type="Texture2D" uid="uid://dgj6h8sutjsun" path="res://common/palettes/Grayscale 5 palette.png" id="3_w5q77"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awhaq"]
 bg_color = Color(1, 1, 1, 1)
@@ -24,10 +24,10 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fcthq"]
-shader = ExtResource("2_exvlp")
+shader = ExtResource("2_aqicp")
 shader_parameter/brightness = 0.0
-shader_parameter/source_palette = ExtResource("3_gkxn4")
-shader_parameter/target_palette = ExtResource("3_gkxn4")
+shader_parameter/source_palette = ExtResource("3_w5q77")
+shader_parameter/target_palette = ExtResource("3_w5q77")
 
 [sub_resource type="Animation" id="Animation_p3sxh"]
 length = 0.001
@@ -634,8 +634,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 320.0
-offset_bottom = 180.0
+offset_right = -512.0
+offset_bottom = -288.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_awhaq")

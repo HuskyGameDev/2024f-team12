@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crj7rs72sn3pp"
-path="res://.godot/imported/golden-sunset-1x.png-6c5b3db5b4dd05b6f6eb693f99c80720.ctex"
+uid="uid://dgj6h8sutjsun"
+path="res://.godot/imported/Grayscale 5 palette.png-9671e671f0fcc7ef359d97e182be0dfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/palettes/golden-sunset-1x.png"
-dest_files=["res://.godot/imported/golden-sunset-1x.png-6c5b3db5b4dd05b6f6eb693f99c80720.ctex"]
+source_file="res://common/palettes/Grayscale 5 palette.png"
+dest_files=["res://.godot/imported/Grayscale 5 palette.png-9671e671f0fcc7ef359d97e182be0dfa.ctex"]
 
 [params]
 

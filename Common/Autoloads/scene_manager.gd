@@ -45,6 +45,11 @@ signal _content_finished_loading(content)	## internal - triggered when content i
 signal _content_invalid(content_path:String)	## internal - triggered when attempting to load invalid content (e.g. an asset does not exist or path is incorrect)
 signal _content_failed_to_load(content_path:String)	## internal - triggered when loading has started but failed to complete
 
+signal load_start_signal # connect to this if you want something to happen before the scene transition happens
+signal scene_added_signal # connect to this if you want something to happen right in the middle of the scene transition
+signal load_complete_signal # connect to this if you want something to happen after the scene transition finishes
+
+
 var _loading_screen_scene:PackedScene = preload("res://Game/loading_screen/loading_screen.tscn")	## reference to loading screen PackedScene
 var _loading_screen:LoadingScreen	## internal - reference to loading screen instance
 var _transition:String	## internal - transition being used for current load
@@ -134,6 +139,7 @@ func swap_scenes_zelda(scene_to_load:String, load_into:Node, scene_to_unload:Nod
 func _load_content(content_path:String) -> void:
 	
 	load_start.emit(_loading_screen)
+	load_start_signal.emit()
 	
 	# zelda transition doesn't use a loading screen
 	if _transition != "zelda":
@@ -212,6 +218,7 @@ func _on_content_finished_loading(incoming_scene) -> void:
 		# listen for this if you want to perform tasks on the scene immeidately after adding it to the tree
 	# ex: moveing the HUD back up to the top of the stack
 	scene_added.emit(incoming_scene,_loading_screen)
+	scene_added_signal.emit()
 	
 #	This block is only used by the zelda transition, which is a special case that doesn't use the loading screen
 	if _transition == "zelda":
@@ -255,3 +262,4 @@ func _on_content_finished_loading(incoming_scene) -> void:
 	# load is complete, free up SceneManager to load something else and report load_complete signal
 	_loading_in_progress = false
 	load_complete.emit(incoming_scene)
+	load_complete_signal.emit()
