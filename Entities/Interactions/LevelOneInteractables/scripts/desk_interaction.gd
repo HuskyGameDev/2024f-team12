@@ -24,8 +24,14 @@ func _send_text():
 	#QTE? text box game?
 	# TEST
 	# text_box.queue_cutscene("Quick!", 3, "")
+	text_box.queue_cutscene("Moreau", 4, "\"What can you tell me about your-\"")
+	text_box.queue_cutscene("Moreau", 4, "Husband")
+	text_box.queue_cutscene("Moreau", 5, "Son")
+	text_box.queue_cutscene("Moreau", 6, "Dog")
+	text_box.queue_cutscene("Moreau", 7, "...")
+	text_box.queue_cutscene("Moreau", 8, "...")
 	# TEST
-	text_box.queue_cutscene("Moreau", 0, "\"What can you tell me about your husband Tony?\"")
+	# text_box.queue_cutscene("Moreau", 0, "\"What can you tell me about your husband Tony?\"")
 	text_box.queue_cutscene("Woman", 0, "\"I think he got involved with some bad people. We run a restaurant together, and we’ve fallen on tough times lately.\"")
 	text_box.queue_cutscene("Woman", 0, "\"He mentioned something about The Mafia being able to help us with our issues so that we can stay afloat.\"")
 	text_box.queue_cutscene("Moreau", 0, "\" Is there anything else you can think of, did anyone have any reason to hurt your husband or your business?\"")
