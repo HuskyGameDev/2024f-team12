@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgj6h8sutjsun"
-path="res://.godot/imported/Grayscale 5 palette.png-5bd8432b69b9ff0446be10d85adabbd5.ctex"
+uid="uid://dja6ickbmp2g4"
+path="res://.godot/imported/Woman-BW-300pcnt.png-2897f41f767936ba928e80078c654f67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Common/Palettes/Grayscale 5 palette.png"
-dest_files=["res://.godot/imported/Grayscale 5 palette.png-5bd8432b69b9ff0446be10d85adabbd5.ctex"]
+source_file="res://Aseprite-Art/Woman-BW-300pcnt.png"
+dest_files=["res://.godot/imported/Woman-BW-300pcnt.png-2897f41f767936ba928e80078c654f67.ctex"]
 
 [params]
 

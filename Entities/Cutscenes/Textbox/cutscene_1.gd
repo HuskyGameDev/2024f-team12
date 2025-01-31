@@ -123,6 +123,8 @@ func show_textbox():
 
 func display_text():
 	var spk = speakerson.pop_front()
+	if spk == null:
+		spk = 0
 	if skip_promt.hidden:
 		skip_promt.show()
 	if spk < 3:
