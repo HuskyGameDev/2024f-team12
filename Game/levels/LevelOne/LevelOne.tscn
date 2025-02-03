@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=47 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://bvua536ho6v3h" path="res://Entities/Cutscenes/Textbox/Cutscene1.tscn" id="13_unlyj"]
 [ext_resource type="Texture2D" uid="uid://cwu548edk5dng" path="res://Aseprite-Art/Moreau-Cutscene.png" id="16_mb5ea"]
 [ext_resource type="Texture2D" uid="uid://bq1tdtbxt1weh" path="res://Aseprite-Art/Woman.png" id="17_l4bwn"]
+[ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/Player/placeholder_player0.png" id="20_dt1aq"]
+[ext_resource type="Script" path="res://common/resources/text_interaction.gd" id="20_fnd58"]
+[ext_resource type="Resource" uid="uid://dclpwcnih0kqr" path="res://common/resources/test.tres" id="22_xvl05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
 texture = ExtResource("13_hhd26")
@@ -566,6 +569,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fm3e0"]
+radius = 55.1453
+
 [node name="Level One" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_5k5ub")
@@ -728,5 +734,16 @@ position = Vector2(353, 299.6)
 scale = Vector2(1.5, 1.465)
 sprite_frames = SubResource("SpriteFrames_qngii")
 frame_progress = 0.0809704
+
+[node name="TextInteraction" type="Sprite2D" parent="."]
+position = Vector2(698, 391)
+texture = ExtResource("20_dt1aq")
+script = ExtResource("20_fnd58")
+resource = ExtResource("22_xvl05")
+
+[node name="InteractionArea" parent="TextInteraction" instance=ExtResource("7_3wlxe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextInteraction/InteractionArea"]
+shape = SubResource("CircleShape2D_fm3e0")
 
 [connection signal="pressed" from="Player/Camera2D/Control/JournalButton" to="Player/Camera2D/Control/JournalButton" method="_on_pressed"]

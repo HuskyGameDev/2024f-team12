@@ -3,6 +3,9 @@ class_name InteractionArea
 
 @export var action_name: String = "interact"
 
+func _ready() -> void:
+	pass
+
 var interact: Callable = func():
 	pass
 

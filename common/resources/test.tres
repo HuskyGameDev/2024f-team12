@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InteractionInfo" load_steps=2 format=3 uid="uid://dclpwcnih0kqr"]
+
+[ext_resource type="Script" path="res://common/resources/interaction_info.gd" id="1_5oquu"]
+
+[resource]
+script = ExtResource("1_5oquu")
+speaking_character = Array[int]([1, 0, 0])
+text = Array[String](["*It's an old client sofa.*", "Here is the second sentence, My it is so very long. Very, very long", "Now the third"])
