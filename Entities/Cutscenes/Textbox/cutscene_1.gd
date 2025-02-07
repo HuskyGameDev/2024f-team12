@@ -34,6 +34,9 @@ var mcv = true
 var correctanswer = 0
 var buttonjustpressed = false
 var buttonpressed = -5
+var waspeaker = "nobody"
+var waspeakerson = 0
+var watext = "blank"
 
 @onready var tween = get_tree().create_tween().bind_node(self)
 
@@ -98,6 +101,9 @@ func _process(delta):
 				mcv = false
 				correctanswer = 0
 				buttonpressed = -5
+				speakerson.pop_front()
+				speakers.pop_front()
+				text_queue.pop_front()
 				change_state(State.READY)
 			if buttonjustpressed == true && buttonpressed != correctanswer:
 				multichoice.hide()
@@ -109,12 +115,10 @@ func _process(delta):
 				speakerson.clear()
 				speakers.clear()
 				text_queue.clear()
+				speakerson.push_back(waspeakerson)
+				speakers.push_back(waspeaker)
+				text_queue.push_back(watext)
 				change_state(State.READY)
-				hide_textbox()
-				time_to_output = false
-				blackscreen = false
-				speakerone = false
-				speakertwo = false
 
 func hide_textbox():
 	if minigamevisible:
@@ -231,6 +235,10 @@ func place_buttons():
 	correctanswer = curbutt
 	multichoice.show()
 	adjust_button_box()
+	
+	waspeakerson = speakerson.pop_front()
+	waspeaker = speakers.pop_front()
+	watext = text_queue.pop_front()
 
 func _on_button_pressed() -> void:
 	buttonjustpressed = true
@@ -247,6 +255,9 @@ func _on_button_3_pressed() -> void:
 func _on_button_4_pressed() -> void:
 	buttonjustpressed = true
 	buttonpressed = 4
+
+func wrong_answer():
+	pass
 
 func change_state(st):
 	current_state = st
