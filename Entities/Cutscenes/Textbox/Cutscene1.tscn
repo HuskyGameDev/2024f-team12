@@ -104,8 +104,9 @@ position = Vector2(576, 558)
 scale = Vector2(2, 2)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 32
 offset_left = 900.0
-offset_top = 151.0
+offset_top = 131.0
 offset_right = 1138.0
 offset_bottom = 474.0
 
@@ -121,44 +122,32 @@ offset_right = 232.0
 offset_bottom = 317.0
 
 [node name="Button" type="Button" parent="MarginContainer/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dyrlv")
-button_mask = 0
 text = "The test button of the testing test"
 autowrap_mode = 3
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="MarginContainer/Panel2/VBoxContainer/Button"]
-position = Vector2(12, 11)
-
 [node name="Button2" type="Button" parent="MarginContainer/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dyrlv")
-button_mask = 0
 text = "Hmm yes perhaps further testing is in order"
 autowrap_mode = 3
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="MarginContainer/Panel2/VBoxContainer/Button2"]
-position = Vector2(11, 13)
-
 [node name="Button3" type="Button" parent="MarginContainer/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dyrlv")
-button_mask = 0
 text = "..."
 autowrap_mode = 3
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="MarginContainer/Panel2/VBoxContainer/Button3"]
-position = Vector2(15, 12)
 
 [node name="Button4" type="Button" parent="MarginContainer/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dyrlv")
-button_mask = 0
 text = "..."
 autowrap_mode = 3
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="MarginContainer/Panel2/VBoxContainer/Button4"]
-position = Vector2(16, 12)
 
 [connection signal="pressed" from="MarginContainer/Panel2/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel2/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -144,9 +144,6 @@ func display_text():
 			speakertwo = true
 	if spk == 3:
 		minigame = true
-	if spk >= 4 && spk <= 7:
-		place_buttons()
-		multiplechoice = true
 	
 	var next_text = text_queue.pop_front()
 	label.text = next_text
@@ -156,6 +153,10 @@ func display_text():
 	tween = get_tree().create_tween()
 	tween.tween_property(label, "visible_characters", len(next_text), len(next_text) * CHAR_READ_RATE).from(0).finished
 	tween.connect("finished", on_tween_finished)
+	
+	if spk >= 4 && spk <= 7:
+		place_buttons()
+		multiplechoice = true
 
 func on_tween_finished():
 	if text_queue.is_empty():
