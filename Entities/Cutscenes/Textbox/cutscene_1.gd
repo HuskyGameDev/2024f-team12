@@ -98,6 +98,7 @@ func _process(delta):
 				mcv = false
 				correctanswer = 0
 				buttonpressed = -5
+				change_state(State.READY)
 			if buttonjustpressed == true && buttonpressed != correctanswer:
 				multichoice.hide()
 				buttonjustpressed = false
@@ -105,6 +106,15 @@ func _process(delta):
 				mcv = false
 				correctanswer = 0
 				buttonpressed = -5
+				speakerson.clear()
+				speakers.clear()
+				text_queue.clear()
+				change_state(State.READY)
+				hide_textbox()
+				time_to_output = false
+				blackscreen = false
+				speakerone = false
+				speakertwo = false
 
 func hide_textbox():
 	if minigamevisible:
@@ -214,6 +224,10 @@ func place_buttons():
 			b4.text = text_queue.pop_front()
 		speakers.pop_front()
 		curbutt = speakerson.pop_front()
+	text_queue.pop_front()
+	text_queue.pop_front()
+	speakers.pop_front()
+	curbutt = speakerson.pop_front()
 	correctanswer = curbutt
 	multichoice.show()
 	adjust_button_box()

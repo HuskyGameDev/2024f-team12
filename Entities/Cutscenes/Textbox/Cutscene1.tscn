@@ -20,6 +20,7 @@ border_width_right = 2
 border_width_bottom = 2
 
 [node name="Cutscene1" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_r80i5")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
