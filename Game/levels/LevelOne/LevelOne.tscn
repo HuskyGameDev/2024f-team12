@@ -150,7 +150,7 @@ texture = ExtResource("13_hhd26")
 [sub_resource type="TileSet" id="TileSet_1ga11"]
 sources/1 = SubResource("TileSetAtlasSource_fwfxp")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2gjk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72ccs"]
 texture = ExtResource("3_2putp")
 0:0/0 = 0
 2:0/0 = 0
@@ -205,13 +205,13 @@ texture = ExtResource("3_2putp")
 0:3/0 = 0
 1:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d70sa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo0qw"]
 texture = ExtResource("2_lfocg")
 texture_region_size = Vector2i(34, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_novrv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n45m4"]
 texture = ExtResource("13_hhd26")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -456,7 +456,7 @@ texture = ExtResource("13_hhd26")
 10:10/0 = 0
 10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsrow"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sxev"]
 texture = ExtResource("3_l5cet")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -481,10 +481,10 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 4
 terrain_set_0/mode = 0
 navigation_layer_0/layers = 4
-sources/3 = SubResource("TileSetAtlasSource_nsrow")
-sources/1 = SubResource("TileSetAtlasSource_d70sa")
-sources/0 = SubResource("TileSetAtlasSource_f2gjk")
-sources/2 = SubResource("TileSetAtlasSource_novrv")
+sources/3 = SubResource("TileSetAtlasSource_2sxev")
+sources/1 = SubResource("TileSetAtlasSource_oo0qw")
+sources/0 = SubResource("TileSetAtlasSource_72ccs")
+sources/2 = SubResource("TileSetAtlasSource_n45m4")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt3n2"]
 
@@ -583,23 +583,20 @@ tile_set = SubResource("TileSet_1ga11")
 [node name="Flooring" type="TileMapLayer" parent="."]
 physics_interpolation_mode = 1
 use_parent_material = true
-scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAEAAMAAAAAAAAAAAAFAAMAAAABAAAAAAAGAAMAAAACAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAMAAAACAAAAAAAKAAMAAAAAAAAAAAALAAMAAAABAAAAAAAMAAMAAAACAAAAAAAKAAQAAAAAAAAAAAALAAQAAAABAAAAAAAMAAQAAAACAAAAAAAKAAUAAAAAAAAAAAALAAUAAAABAAAAAAAMAAUAAAACAAAAAAAKAAYAAAAAAAAAAAALAAYAAAABAAAAAAAMAAYAAAACAAAAAAAKAAcAAAAAAAAAAAALAAcAAAABAAAAAAAMAAcAAAACAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAABAAAAAAAJAAcAAAACAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAABAAAAAAAGAAcAAAACAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAYAAAACAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAABAAAAAAAJAAYAAAACAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAABAAAAAAAJAAUAAAACAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAABAAAAAAAGAAUAAAACAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAABAAAAAAAGAAQAAAACAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAABAAAAAAAJAAQAAAACAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAABAAAAAAAGAAgAAAACAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAABAAAAAAAJAAgAAAACAAAAAAAKAAgAAAAAAAAAAAALAAgAAAABAAAAAAAMAAgAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_edjw7")
 collision_enabled = false
 
 [node name="TangiblesL" type="TileMapLayer" parent="."]
 use_parent_material = true
-scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAdABUAAgAAAAUAAAAeABUAAgAAAAUAAAAfABUAAgAAAAUAAAAgABUAAgAAAAUAAAAhABUAAgAAAAUAAAAiABUAAgAAAAUAAAAjABUAAgAAAAUAAAAEAAAAAAAGAAEAAAAFAAAAAAAGAAEAAAAGAAAAAAAGAAEAAAAHAAAAAAAGAAEAAAAIAAAAAAAGAAEAAAAJAAAAAAAGAAEAAAAKAAAAAAAGAAEAAAALAAAAAAAGAAEAAAAMAAAAAAAGAAEAAAANAAAAAAAHAAAAAAANAAEAAAAHAAEAAAANAAIAAAAHAAIAAAANAAMAAAAHAAEAAAANAAYAAAAHAAEAAAANAAcAAAAIAAEAAAADAAAAAAAFAAAAAAADAAEAAAAFAAEAAAADAAIAAAAFAAIAAAADAAMAAAAFAAEAAAADAAQAAAAFAAIAAAADAAUAAAAFAAEAAAADAAYAAAAFAAEAAAADAAcAAAAEAAEAAAANAAQAAAAHAAIAAAANAAUAAAAHAAEAAAADAAgAAAAEAAIAAAANAAgAAAAIAAIAAAAEAAMAAAADAAAAAAAIAAEAAAAAAAYAAAAIAAQAAAAAAAIAAAAEAAkAAAAFAAQAAAAFAAkAAAAFAAQAAAAGAAkAAAAFAAQAAAAHAAkAAAAFAAQAAAAIAAkAAAAFAAQAAAAJAAkAAAAFAAQAAAAKAAkAAAAFAAQAAAALAAkAAAAFAAQAAAAMAAkAAAAFAAQAAAAEAAYAAAAAAAQAAAAFAAYAAAABAAQAAAAEAAcAAAAAAAUAAAAFAAcAAAABAAUAAAA=")
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(538, 563)
-scale = Vector2(4, 4)
-speed = 150
+position = Vector2(135, 141)
+speed = 48
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -40)
@@ -641,16 +638,16 @@ path_to_new_scene = "notebook.tscn"
 z_index = 1
 y_sort_enabled = true
 use_parent_material = true
-scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAIAAMAAAAAAAEAAAAEAAUAAAAAAAMAAAAFAAUAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="DeskInteraction" parent="." instance=ExtResource("5_f5ytj")]
-position = Vector2(544, 250)
+position = Vector2(136, 61)
+scale = Vector2(0.375, 0.25)
 
 [node name="CouchInteraction" type="Node2D" parent="."]
-position = Vector2(300, 413)
-scale = Vector2(7, 7)
+position = Vector2(77.0001, 108)
+scale = Vector2(1.75, 1.75)
 script = ExtResource("6_sso3r")
 
 [node name="InteractionArea" parent="CouchInteraction" instance=ExtResource("7_3wlxe")]
@@ -660,8 +657,8 @@ action_name = "examine"
 shape = SubResource("CapsuleShape2D_c31wi")
 
 [node name="FilingCabinetInteraction" type="Node2D" parent="."]
-position = Vector2(279, 220)
-scale = Vector2(7, 9)
+position = Vector2(72, 58)
+scale = Vector2(1.75, 2.25)
 script = ExtResource("8_t0jfh")
 
 [node name="InteractionArea" parent="FilingCabinetInteraction" instance=ExtResource("7_3wlxe")]
@@ -671,9 +668,9 @@ action_name = "examine"
 shape = SubResource("CircleShape2D_jlhwf")
 
 [node name="WindowInteraction" type="Node2D" parent="."]
-position = Vector2(545, 113)
+position = Vector2(136, 29)
 rotation = 1.5708
-scale = Vector2(10, 5.5)
+scale = Vector2(2.5, 1.375)
 script = ExtResource("9_m21r0")
 
 [node name="InteractionArea" parent="WindowInteraction" instance=ExtResource("7_3wlxe")]
@@ -683,9 +680,9 @@ action_name = "ponder..."
 shape = SubResource("CapsuleShape2D_aqfvi")
 
 [node name="CorkBoardInteraction" type="Node2D" parent="."]
-position = Vector2(718, 150)
+position = Vector2(180, 37)
 rotation = 1.5708
-scale = Vector2(6, 6)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("10_qkad4")
 
 [node name="InteractionArea" parent="CorkBoardInteraction" instance=ExtResource("7_3wlxe")]
@@ -695,8 +692,8 @@ action_name = "examine"
 shape = SubResource("CapsuleShape2D_x05nv")
 
 [node name="DeadWifeInteraction" type="Node2D" parent="."]
-position = Vector2(935, 380)
-scale = Vector2(8, 8)
+position = Vector2(234, 95)
+scale = Vector2(2, 2)
 script = ExtResource("11_57t0l")
 
 [node name="InteractionArea" parent="DeadWifeInteraction" instance=ExtResource("7_3wlxe")]
@@ -706,8 +703,8 @@ action_name = "examine"
 shape = SubResource("CircleShape2D_lcfs3")
 
 [node name="DeadPlantInteraction" type="Node2D" parent="."]
-position = Vector2(931, 500)
-scale = Vector2(8, 6)
+position = Vector2(233, 125)
+scale = Vector2(2, 1.5)
 script = ExtResource("12_h2iin")
 
 [node name="InteractionArea" parent="DeadPlantInteraction" instance=ExtResource("7_3wlxe")]
@@ -722,7 +719,7 @@ shape = SubResource("CircleShape2D_eg3ga")
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene1"]
 visible = false
 z_index = 31
-position = Vector2(807, 262.1)
+position = Vector2(807, 334.1)
 scale = Vector2(3, 2.932)
 sprite_frames = SubResource("SpriteFrames_25ub8")
 frame_progress = 0.505788
@@ -730,13 +727,13 @@ frame_progress = 0.505788
 [node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene1"]
 visible = false
 z_index = 31
-position = Vector2(353, 299.6)
+position = Vector2(353, 371.6)
 scale = Vector2(1.5, 1.465)
 sprite_frames = SubResource("SpriteFrames_qngii")
 frame_progress = 0.0809704
 
 [node name="TextInteraction" type="Sprite2D" parent="."]
-position = Vector2(698, 391)
+position = Vector2(175, 98)
 texture = ExtResource("20_dt1aq")
 script = ExtResource("20_fnd58")
 resource = ExtResource("22_xvl05")
@@ -744,6 +741,7 @@ resource = ExtResource("22_xvl05")
 [node name="InteractionArea" parent="TextInteraction" instance=ExtResource("7_3wlxe")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextInteraction/InteractionArea"]
+scale = Vector2(0.25, 0.25)
 shape = SubResource("CircleShape2D_fm3e0")
 
 [connection signal="pressed" from="Player/Camera2D/Control/JournalButton" to="Player/Camera2D/Control/JournalButton" method="_on_pressed"]

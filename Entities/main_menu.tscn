@@ -40,6 +40,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_yafju")
 
 [node name="Panel" type="Panel" parent="."]
