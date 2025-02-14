@@ -65,7 +65,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_dyrlv")
 theme_override_font_sizes/font_size = 30
-text = "Hello Testing Testing"
+text = "Hello! How are you? I am quite well thank you for asking, What might you be up to this fine day?"
 autowrap_mode = 3
 clip_text = true
 
