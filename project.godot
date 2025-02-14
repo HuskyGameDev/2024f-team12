@@ -43,6 +43,15 @@ game=""
 
 fonts/dynamic_fonts/use_oversampling=false
 
+[importer_defaults]
+
+font_data_bmfont={
+"scaling_mode": 1
+}
+font_data_dynamic={
+"subpixel_positioning": 0
+}
+
 [input]
 
 left={
@@ -89,5 +98,8 @@ mouse_left={
 
 textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+<<<<<<< Updated upstream
 2d/snap/snap_2d_transforms_to_pixel=true
+=======
+>>>>>>> Stashed changes
 2d/sdf/scale=0
