@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="2_rgidp"]
-[ext_resource type="Texture2D" uid="uid://bljq7de6bjk0f" path="res://Aseprite-Art/Office-TileSet2.png" id="3_2putp"]
 [ext_resource type="Texture2D" uid="uid://biuntbb4i3avi" path="res://Sprites/Environment Sprites/PlaceHolderArt/OfficeMockArt32px (2).png" id="3_l5cet"]
+[ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="3_lsehm"]
 [ext_resource type="PackedScene" uid="uid://cs72m54ygikjt" path="res://Entities/Interactions/LevelOneInteractables/desk_interaction.tscn" id="5_f5ytj"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/couch_interaction.gd" id="6_sso3r"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_3wlxe"]
@@ -151,7 +151,7 @@ texture = ExtResource("13_hhd26")
 sources/1 = SubResource("TileSetAtlasSource_fwfxp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72ccs"]
-texture = ExtResource("3_2putp")
+texture = ExtResource("3_lsehm")
 0:0/0 = 0
 2:0/0 = 0
 1:0/0 = 0

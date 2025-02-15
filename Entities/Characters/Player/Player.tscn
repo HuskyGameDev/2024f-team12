@@ -215,7 +215,7 @@ script = ExtResource("1_vgpfv")
 [node name="Player Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -38.25)
 sprite_frames = SubResource("SpriteFrames_xm8wp")
-animation = &"walk_up"
+animation = &"Idle_down"
 autoplay = "Placeholder"
 
 [node name="Player Hitbox" type="CollisionShape2D" parent="."]
