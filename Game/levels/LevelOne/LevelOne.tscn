@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=46 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -18,10 +18,9 @@
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
-[ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/Player/placeholder_player0.png" id="20_dt1aq"]
-[ext_resource type="Script" path="res://common/resources/text_interaction.gd" id="20_fnd58"]
+[ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="20_x2lce"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
-[ext_resource type="Resource" uid="uid://dclpwcnih0kqr" path="res://Common/resources/test.tres" id="22_xvl05"]
+[ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
 texture = ExtResource("13_hhd26")
@@ -569,8 +568,7 @@ radius = 8.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eg3ga"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fm3e0"]
-radius = 55.1453
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhjwe"]
 
 [node name="Level One" type="Node2D"]
 y_sort_enabled = true
@@ -732,15 +730,13 @@ position = Vector2(0.166667, 0.333333)
 shape = SubResource("CircleShape2D_eg3ga")
 
 [node name="TextInteraction" type="Sprite2D" parent="."]
-position = Vector2(175, 98)
-texture = ExtResource("20_dt1aq")
-script = ExtResource("20_fnd58")
-resource = ExtResource("22_xvl05")
+position = Vector2(176, 98)
+script = ExtResource("20_x2lce")
+resource = ExtResource("21_shhoy")
 
 [node name="InteractionArea" parent="TextInteraction" instance=ExtResource("7_3wlxe")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextInteraction/InteractionArea"]
-scale = Vector2(0.25, 0.25)
-shape = SubResource("CircleShape2D_fm3e0")
+shape = SubResource("CircleShape2D_lhjwe")
 
 [connection signal="pressed" from="Player/Camera2D/Control/JournalButton" to="Player/Camera2D/Control/JournalButton" method="_on_pressed"]

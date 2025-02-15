@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InteractionInfo" load_steps=2 format=3 uid="uid://cxs6e61ye1cjs"]
+
+[ext_resource type="Script" path="res://Common/resources/interaction_info.gd" id="1_cyllm"]
+
+[resource]
+script = ExtResource("1_cyllm")
+speaking_character = Array[int]([0])
+text = Array[String](["Thing thingnthbsidkujhgkj,zsdfbkljszdhfhbgilkushdfgiuhsdigu"])

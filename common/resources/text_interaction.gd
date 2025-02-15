@@ -2,7 +2,7 @@ extends Sprite2D
 class_name TextInteraction
 
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var text_box = $"../Cutscene1"
+@onready var text_box = $"../Cutscene"
 @onready var blackscreen = $"../blackscreen"
 
 @export var resource: InteractionInfo
