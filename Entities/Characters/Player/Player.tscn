@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dsb6qweu63nh3"]
+[gd_scene load_steps=28 format=3 uid="uid://dsb6qweu63nh3"]
 
 [ext_resource type="Script" path="res://Entities/Characters/Player/Scripts/player.gd" id="1_vgpfv"]
 [ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/Player/placeholder_player0.png" id="2_3nw8a"]
@@ -82,10 +82,6 @@ region = Rect2(32, 96, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uapmr"]
 atlas = ExtResource("2_fqu73")
 region = Rect2(48, 96, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwlb1"]
-atlas = ExtResource("2_fqu73")
-region = Rect2(64, 96, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xm8wp"]
 animations = [{
@@ -200,7 +196,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uapmr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dwlb1")
+"texture": SubResource("AtlasTexture_80gun")
 }],
 "loop": true,
 "name": &"walk_up",
@@ -219,9 +215,8 @@ script = ExtResource("1_vgpfv")
 [node name="Player Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -38.25)
 sprite_frames = SubResource("SpriteFrames_xm8wp")
-animation = &"Idle_down"
+animation = &"walk_up"
 autoplay = "Placeholder"
-frame_progress = 0.11243
 
 [node name="Player Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(2, -28)
