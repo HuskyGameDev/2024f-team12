@@ -30,8 +30,8 @@ func _send_text():
 	text_box.queue_cutscene("Moreau", 6, "Dog")
 	text_box.queue_cutscene("Moreau", 7, "...")
 	text_box.queue_cutscene("Moreau", 8, "...")
-	text_box.queue_cutscene("Moreau", 1, "Correct answer is 1")
-	text_box.queue_cutscene("Woman", 0, "Tony is my husband! Were you even listening to me?!?!?!?")
+	text_box.queue_cutscene("Moreau", 1, "Correct answer is 1") # doesn't actually print this, only uses the number
+	text_box.queue_cutscene("Woman", 0, "Tony is my husband! Were you even listening to me?!?!?!?") # only prints if fail
 	# TEST
 	# text_box.queue_cutscene("Moreau", 0, "\"What can you tell me about your husband Tony?\"")
 	text_box.queue_cutscene("Woman", 0, "\"I think he got involved with some bad people. We run a restaurant together, and we’ve fallen on tough times lately.\"")

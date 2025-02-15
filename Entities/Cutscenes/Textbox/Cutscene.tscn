@@ -22,6 +22,7 @@ border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
 [node name="Cutscene" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_4rhby")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
@@ -51,15 +52,15 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(238, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
-text = "Test text test text test text test text test text test text test text test text test text test text test text test text"
+text = "Tony is my husband! Were you even listening to me???"
 vertical_alignment = 1
 autowrap_mode = 3
-clip_text = true
 text_overrun_behavior = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="TextboxContainer/MarginContainer/HBoxContainer"]
@@ -70,20 +71,23 @@ texture = ExtResource("2_ovxxn")
 layout_mode = 2
 
 [node name="Speaker" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_h1bbo")
 theme_override_font_sizes/font_size = 8
-text = "Mrs. Duval"
+text = "Test Text"
 horizontal_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="SkipText" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
-text = "Space to skip"
-horizontal_alignment = 2
+text = "Test Text
+"
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 244.0
@@ -93,6 +97,7 @@ offset_bottom = 136.0
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4p7s")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
@@ -109,6 +114,7 @@ size_flags_vertical = 0
 theme_override_constants/separation = 1
 
 [node name="Button" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
+z_index = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -120,8 +126,10 @@ Test"
 autowrap_mode = 3
 
 [node name="Button2" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
+z_index = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
 text = "Testy test o
@@ -129,16 +137,20 @@ Test"
 autowrap_mode = 3
 
 [node name="Button3" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
+z_index = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
 text = "..."
 autowrap_mode = 3
 
 [node name="Button4" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
+z_index = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
 text = "..."

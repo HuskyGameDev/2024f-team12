@@ -8,16 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://cs72m54ygikjt" path="res://Entities/Interactions/LevelOneInteractables/desk_interaction.tscn" id="5_f5ytj"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/couch_interaction.gd" id="6_sso3r"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_3wlxe"]
+[ext_resource type="Texture2D" uid="uid://jg0jo6pe13u6" path="res://Aseprite-Art/Moreau-Cutscene_rightsize.png" id="7_ayxbh"]
 [ext_resource type="Texture2D" uid="uid://ck5gkj0ukv1qn" path="res://Game/notebook/Notebook Icon.png" id="8_nb538"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/filing_cabinet_interaction.gd" id="8_t0jfh"]
+[ext_resource type="Texture2D" uid="uid://bqwnjncaoee4i" path="res://Aseprite-Art/Woman-BW.png" id="8_u0o6y"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/window_interaction.gd" id="9_m21r0"]
 [ext_resource type="Script" path="res://Game/ui/door_button.gd" id="9_y1nln"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/cork_board_interaction.gd" id="10_qkad4"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
-[ext_resource type="Texture2D" uid="uid://cwu548edk5dng" path="res://Aseprite-Art/Moreau-Cutscene.png" id="16_mb5ea"]
-[ext_resource type="Texture2D" uid="uid://bq1tdtbxt1weh" path="res://Aseprite-Art/Woman.png" id="17_l4bwn"]
 [ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/Player/placeholder_player0.png" id="20_dt1aq"]
 [ext_resource type="Script" path="res://common/resources/text_interaction.gd" id="20_fnd58"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
@@ -486,44 +486,44 @@ sources/1 = SubResource("TileSetAtlasSource_oo0qw")
 sources/0 = SubResource("TileSetAtlasSource_72ccs")
 sources/2 = SubResource("TileSetAtlasSource_n45m4")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7ip2"]
-atlas = ExtResource("16_mb5ea")
-region = Rect2(0, 0, 150, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yjhd"]
+atlas = ExtResource("7_ayxbh")
+region = Rect2(0, 0, 50, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngjbd"]
-atlas = ExtResource("16_mb5ea")
-region = Rect2(150, 0, 150, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v27xb"]
+atlas = ExtResource("7_ayxbh")
+region = Rect2(50, 0, 50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25ub8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j7ip2")
+"texture": SubResource("AtlasTexture_6yjhd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ngjbd")
+"texture": SubResource("AtlasTexture_v27xb")
 }],
 "loop": true,
 "name": &"default",
 "speed": 2.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xryf"]
-atlas = ExtResource("17_l4bwn")
-region = Rect2(0, 0, 149, 249)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hfn3"]
+atlas = ExtResource("8_u0o6y")
+region = Rect2(0, 0, 50, 83)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajdl8"]
-atlas = ExtResource("17_l4bwn")
-region = Rect2(150, 0, 149, 249)
+[sub_resource type="AtlasTexture" id="AtlasTexture_onqdf"]
+atlas = ExtResource("8_u0o6y")
+region = Rect2(50, 0, 50, 83)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qngii"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2xryf")
+"texture": SubResource("AtlasTexture_8hfn3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ajdl8")
+"texture": SubResource("AtlasTexture_onqdf")
 }],
 "loop": true,
 "name": &"default",
@@ -597,16 +597,15 @@ tile_set = SubResource("TileSet_edjw7")
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
 visible = false
 z_index = 31
-position = Vector2(807, 334.1)
-scale = Vector2(3, 2.932)
+position = Vector2(194, 87)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_25ub8")
 frame_progress = 0.505788
 
 [node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene"]
 visible = false
 z_index = 31
-position = Vector2(353, 371.6)
-scale = Vector2(1.5, 1.465)
+position = Vector2(74, 95)
 sprite_frames = SubResource("SpriteFrames_qngii")
 frame_progress = 0.0809704
 

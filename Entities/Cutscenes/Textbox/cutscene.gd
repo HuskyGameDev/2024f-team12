@@ -178,7 +178,7 @@ func on_tween_finished():
 	elif minigame:
 		pass
 	else:
-		skip_promt.text = "Space to continue"
+		skip_promt.text = "Space to cont"
 	change_state(State.FINISHED)
 
 func queue_text(speaker, queabletext):
