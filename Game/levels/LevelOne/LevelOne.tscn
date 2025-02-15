@@ -16,12 +16,12 @@
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
-[ext_resource type="PackedScene" uid="uid://bvua536ho6v3h" path="res://Entities/Cutscenes/Textbox/Cutscene1.tscn" id="13_unlyj"]
 [ext_resource type="Texture2D" uid="uid://cwu548edk5dng" path="res://Aseprite-Art/Moreau-Cutscene.png" id="16_mb5ea"]
 [ext_resource type="Texture2D" uid="uid://bq1tdtbxt1weh" path="res://Aseprite-Art/Woman.png" id="17_l4bwn"]
 [ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/Player/placeholder_player0.png" id="20_dt1aq"]
 [ext_resource type="Script" path="res://common/resources/text_interaction.gd" id="20_fnd58"]
-[ext_resource type="Resource" uid="uid://dclpwcnih0kqr" path="res://common/resources/test.tres" id="22_xvl05"]
+[ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
+[ext_resource type="Resource" uid="uid://dclpwcnih0kqr" path="res://Common/resources/test.tres" id="22_xvl05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
 texture = ExtResource("13_hhd26")
@@ -486,45 +486,6 @@ sources/1 = SubResource("TileSetAtlasSource_oo0qw")
 sources/0 = SubResource("TileSetAtlasSource_72ccs")
 sources/2 = SubResource("TileSetAtlasSource_n45m4")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt3n2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssxyj"]
-bg_color = Color(0.525101, 0.525101, 0.525101, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecey5"]
-bg_color = Color(0.359069, 0.359069, 0.359069, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udldd"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c31wi"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jlhwf"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqfvi"]
-radius = 8.1
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x05nv"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lcfs3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_eg3ga"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7ip2"]
 atlas = ExtResource("16_mb5ea")
 region = Rect2(0, 0, 150, 150)
@@ -569,6 +530,45 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt3n2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssxyj"]
+bg_color = Color(0.525101, 0.525101, 0.525101, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecey5"]
+bg_color = Color(0.359069, 0.359069, 0.359069, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udldd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c31wi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlhwf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqfvi"]
+radius = 8.1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x05nv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcfs3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eg3ga"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_fm3e0"]
 radius = 55.1453
 
@@ -591,6 +591,24 @@ collision_enabled = false
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAdABUAAgAAAAUAAAAeABUAAgAAAAUAAAAfABUAAgAAAAUAAAAgABUAAgAAAAUAAAAhABUAAgAAAAUAAAAiABUAAgAAAAUAAAAjABUAAgAAAAUAAAAEAAAAAAAGAAEAAAAFAAAAAAAGAAEAAAAGAAAAAAAGAAEAAAAHAAAAAAAGAAEAAAAIAAAAAAAGAAEAAAAJAAAAAAAGAAEAAAAKAAAAAAAGAAEAAAALAAAAAAAGAAEAAAAMAAAAAAAGAAEAAAANAAAAAAAHAAAAAAANAAEAAAAHAAEAAAANAAIAAAAHAAIAAAANAAMAAAAHAAEAAAANAAYAAAAHAAEAAAANAAcAAAAIAAEAAAADAAAAAAAFAAAAAAADAAEAAAAFAAEAAAADAAIAAAAFAAIAAAADAAMAAAAFAAEAAAADAAQAAAAFAAIAAAADAAUAAAAFAAEAAAADAAYAAAAFAAEAAAADAAcAAAAEAAEAAAANAAQAAAAHAAIAAAANAAUAAAAHAAEAAAADAAgAAAAEAAIAAAANAAgAAAAIAAIAAAAEAAMAAAADAAAAAAAIAAEAAAAAAAYAAAAIAAQAAAAAAAIAAAAEAAkAAAAFAAQAAAAFAAkAAAAFAAQAAAAGAAkAAAAFAAQAAAAHAAkAAAAFAAQAAAAIAAkAAAAFAAQAAAAJAAkAAAAFAAQAAAAKAAkAAAAFAAQAAAALAAkAAAAFAAQAAAAMAAkAAAAFAAQAAAAEAAYAAAAAAAQAAAAFAAYAAAABAAQAAAAEAAcAAAAAAAUAAAAFAAcAAAABAAUAAAA=")
 tile_set = SubResource("TileSet_edjw7")
+
+[node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
+
+[node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
+visible = false
+z_index = 31
+position = Vector2(807, 334.1)
+scale = Vector2(3, 2.932)
+sprite_frames = SubResource("SpriteFrames_25ub8")
+frame_progress = 0.505788
+
+[node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene"]
+visible = false
+z_index = 31
+position = Vector2(353, 371.6)
+scale = Vector2(1.5, 1.465)
+sprite_frames = SubResource("SpriteFrames_qngii")
+frame_progress = 0.0809704
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
 z_index = 1
@@ -713,25 +731,6 @@ action_name = "examine"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadPlantInteraction/InteractionArea"]
 position = Vector2(0.166667, 0.333333)
 shape = SubResource("CircleShape2D_eg3ga")
-
-[node name="Cutscene1" parent="." instance=ExtResource("13_unlyj")]
-visible = false
-
-[node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene1"]
-visible = false
-z_index = 31
-position = Vector2(807, 334.1)
-scale = Vector2(3, 2.932)
-sprite_frames = SubResource("SpriteFrames_25ub8")
-frame_progress = 0.505788
-
-[node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene1"]
-visible = false
-z_index = 31
-position = Vector2(353, 371.6)
-scale = Vector2(1.5, 1.465)
-sprite_frames = SubResource("SpriteFrames_qngii")
-frame_progress = 0.0809704
 
 [node name="TextInteraction" type="Sprite2D" parent="."]
 position = Vector2(175, 98)

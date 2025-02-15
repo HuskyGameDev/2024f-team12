@@ -18,8 +18,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 InteractionManager="*res://Entities/Interactions/InteractionManager/InteractionManager.tscn"
 Player="*res://Entities/Characters/Player/Player.tscn"
-Cutscene1="*res://Entities/Cutscenes/Textbox/Cutscene1.tscn"
 SceneManager="*res://common/autoloads/scene_manager.gd"
+Cutscene="*res://Entities/Cutscenes/Textbox/Cutscene.tscn"
 
 [display]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgj6h8sutjsun"
-path="res://.godot/imported/Grayscale 5 palette.png-5bd8432b69b9ff0446be10d85adabbd5.ctex"
+uid="uid://777o1caubrk7"
+path="res://.godot/imported/JustAWhiteLine.png-5c2bfa5b071c3210b8ad1cc46b5209cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Common/Palettes/Grayscale 5 palette.png"
-dest_files=["res://.godot/imported/Grayscale 5 palette.png-5bd8432b69b9ff0446be10d85adabbd5.ctex"]
+source_file="res://Aseprite-Art/JustAWhiteLine.png"
+dest_files=["res://.godot/imported/JustAWhiteLine.png-5c2bfa5b071c3210b8ad1cc46b5209cf.ctex"]
 
 [params]
 

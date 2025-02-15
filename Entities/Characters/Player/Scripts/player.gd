@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var moving = false
 var movdir = 0
-@onready var text_box = $"../Cutscene1"
+@onready var text_box = $"../Cutscene"
 
 enum direction
 {

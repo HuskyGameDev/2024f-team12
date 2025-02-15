@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var text_box = $Cutscene1
+@onready var text_box = $Cutscene
 @onready var blackscreen = $blackscreen
-@onready var woman = $Cutscene1/WomanCutscene
-@onready var moreau = $Cutscene1/MoreauCutscene
+@onready var woman = $Cutscene/WomanCutscene
+@onready var moreau = $Cutscene/MoreauCutscene
 
 # Main script for the first level of the game
 

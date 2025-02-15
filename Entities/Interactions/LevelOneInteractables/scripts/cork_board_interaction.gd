@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var text_box = $"../Cutscene1"
+@onready var text_box = $"../Cutscene"
 
 
 func _ready():

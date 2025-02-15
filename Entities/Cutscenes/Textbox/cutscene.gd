@@ -69,7 +69,7 @@ func _process(delta):
 				if text_queue.is_empty():
 					skip_promt.text = "Space to exit"
 				else:
-					skip_promt.text = "Space to continue"
+					skip_promt.text = "Space to cont"
 				change_state(State.FINISHED)
 			pass
 		State.FINISHED:
