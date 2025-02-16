@@ -7,7 +7,6 @@
 script = ExtResource("1_wtaap")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(15, 15)
 texture = ExtResource("2_hih8t")
 
 [node name="Exit" type="Button" parent="."]
@@ -19,4 +18,4 @@ offset_right = 318.0
 offset_bottom = -196.0
 text = "X"
 
-[connection signal="pressed" from="Exit" to="." method="_move_up"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
