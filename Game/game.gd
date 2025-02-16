@@ -2,6 +2,8 @@ class_name Game
 extends Node2D
 
 @onready var screen_holder: Node2D = $ScreenHolder
+@onready var pause_menu: Node2D = $CanvasLayer/UI/PauseMenu
+
 #@onready var hud: Control = $HUD
 
 var current_level:MyLevel
@@ -16,9 +18,15 @@ func _ready() -> void:
 	SceneManager.scene_added.connect(_on_level_added)
 	current_level = screen_holder.get_child(0) as MyLevel
 
+func _process(delta):
+	if Input.is_action_just_pressed("Pause"):
+		get_tree().paused = true
+		pause_menu.show()
+
 func _on_level_loaded(level) -> void:
 	if level is MyLevel:
 		current_level = level
+		pause_menu.sho
 
 # shows how we can use this signal to make sure the loading screen stays on top
 func _on_level_added(_level,_loading_screen) -> void:
