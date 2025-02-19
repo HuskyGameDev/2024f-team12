@@ -9,6 +9,7 @@ func _ready() -> void:
 
 
 func button_pressed():
+	$Click.play()
 	hide()
 
 

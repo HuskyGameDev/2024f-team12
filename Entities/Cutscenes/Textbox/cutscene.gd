@@ -66,8 +66,7 @@ func _process(delta):
 		State.READY:
 			if !text_queue.is_empty() && time_to_output == true:
 				display_text()
-			if text_queue.is_empty():
-				change_state(State.FINISHED)
+			
 		State.READ:
 			if Input.is_action_just_pressed("skip"):
 				tween.stop()
@@ -111,11 +110,12 @@ func _process(delta):
 				mcv = false
 				correctanswer = 0
 				buttonpressed = -5
-				speakerson.pop_front()
-				speakers.pop_front()
-				text_queue.pop_front()
+				# speakerson.pop_front()
+				# speakers.pop_front()
+				# text_queue.pop_front()
 				change_state(State.READY)
 			if buttonjustpressed == true && buttonpressed != correctanswer:
+				wathistry = true
 				multichoice.hide()
 				buttonjustpressed = false
 				multiplechoice = false

@@ -34,4 +34,7 @@ func _process(delta: float) -> void:
 		$DeskInteraction.hide()
 		$DeskInteraction.position.x = 10000
 		$LeaveOffice.position.y = 150
+	if text_box.level1exit[1] > 0:
+		var game_node: Game = get_tree().get_nodes_in_group("game")[0] as Game
+		SceneManager.swap_scenes("res://Game/levels/LevelTwo/LevelTwo.tscn", game_node.screen_holder, $"." , "fade_to_dark")
 	pass

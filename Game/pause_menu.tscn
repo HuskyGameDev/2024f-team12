@@ -1,11 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://df82tboxasmw2"]
+[gd_scene load_steps=11 format=3 uid="uid://df82tboxasmw2"]
 
 [ext_resource type="Script" path="res://Game/pause_menu.gd" id="1_s31eo"]
 [ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_5j1i6"]
+[ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="3_dvqt8"]
 [ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="3_ghqy7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igqlw"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_wn6o5"]
+default_font = ExtResource("3_dvqt8")
+default_font_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl3nt"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onufb"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlhvc"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjqib"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
 
 [node name="PauseMenu" type="Node2D"]
 process_mode = 2
@@ -35,6 +92,7 @@ offset_right = 180.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 8
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
@@ -43,10 +101,36 @@ expand_mode = 5
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_wn6o5")
+theme_override_fonts/font = ExtResource("3_dvqt8")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_onufb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hl3nt")
 text = "Resume"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dvqt8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlhvc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xjqib")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hl3nt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xjqib")
 text = "Exit
 "
 
