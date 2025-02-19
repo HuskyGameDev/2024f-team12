@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 				
 		# Movement Animations Shenanigans
 		if(!Input.is_action_pressed("down") && !Input.is_action_pressed("up") && !Input.is_action_pressed("left") && !Input.is_action_pressed("right")):
+			$Footstep.play()
 			if(curdir == direction.DOWN):
 				$"Player Sprite".play("Idle_down")
 			if(curdir == direction.UP):

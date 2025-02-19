@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=41 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
+[ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_ihkaf"]
 [ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="20_x2lce"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
 [ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
@@ -685,3 +686,8 @@ resource = ExtResource("21_shhoy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextInteraction/InteractionArea"]
 shape = SubResource("CircleShape2D_lhjwe")
+
+[node name="IndoorRain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_ihkaf")
+volume_db = -5.0
+autoplay = true

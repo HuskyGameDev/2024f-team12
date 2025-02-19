@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dsb6qweu63nh3"]
+[gd_scene load_steps=29 format=3 uid="uid://dsb6qweu63nh3"]
 
 [ext_resource type="Script" path="res://Entities/Characters/Player/Scripts/player.gd" id="1_vgpfv"]
 [ext_resource type="Texture2D" uid="uid://cos6pkyfy8fhs" path="res://Sprites/Character Sprites/Player/placeholder_player0.png" id="2_3nw8a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmlqelvo5pmsx" path="res://Sprites/Character Sprites/Player/placeholder_player1.png" id="3_685g7"]
 [ext_resource type="Texture2D" uid="uid://hkgayhcfl74s" path="res://Sprites/Character Sprites/Player/placeholder_player2.png" id="4_wscv8"]
 [ext_resource type="Texture2D" uid="uid://dme8mwl07o4t7" path="res://Sprites/Character Sprites/Player/placeholder_player3.png" id="5_sgloj"]
+[ext_resource type="AudioStream" uid="uid://d24b4bknrvuuu" path="res://Sounds/64325-Tennis_shoe_footsteps_on_wood_run-BLASTWAVEFX-02723.wav" id="7_yud26"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkmtn"]
 atlas = ExtResource("2_fqu73")
@@ -215,9 +216,15 @@ script = ExtResource("1_vgpfv")
 [node name="Player Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -38.25)
 sprite_frames = SubResource("SpriteFrames_xm8wp")
-animation = &"Idle_down"
+animation = &"walk_right"
 autoplay = "Placeholder"
+frame = 1
+frame_progress = 0.370812
 
 [node name="Player Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(2, -28)
 shape = SubResource("CircleShape2D_nhojk")
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yud26")
+volume_db = -10.0

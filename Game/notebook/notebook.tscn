@@ -7,9 +7,10 @@
 script = ExtResource("1_wtaap")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(284, 63)
 texture = ExtResource("2_hih8t")
 
-[node name="Exit" type="Button" parent="."]
+[node name="Show_Hide" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 3
 offset_left = 256.0
@@ -18,4 +19,4 @@ offset_right = 318.0
 offset_bottom = -196.0
 text = "X"
 
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Show_Hide" to="." method="_on_exit_pressed"]

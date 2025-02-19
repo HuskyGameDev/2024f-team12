@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr72wmvgmhfml"]
+[gd_scene load_steps=10 format=3 uid="uid://dr72wmvgmhfml"]
 
 [ext_resource type="Script" path="res://Entities/main_menu.gd" id="1_yafju"]
 [ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_pm0ke"]
 [ext_resource type="FontFile" uid="uid://dy6r7dnk3ocmw" path="res://Fonts/retro_computer_personal_use.ttf" id="3_6fxy7"]
 [ext_resource type="Script" path="res://Game/ui/door_button.gd" id="4_m8iwg"]
+[ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="5_ftjtf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec74g"]
 
@@ -117,6 +118,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6e13o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5gusu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b4vkf")
 text = "Exit"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ftjtf")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

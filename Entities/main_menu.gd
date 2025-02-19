@@ -13,8 +13,11 @@ func button_pressed():
 
 
 func _on_options_pressed() -> void:
+	$Click.play()
 	pass
 
 
 func _on_exit_pressed():
+	$Click.play()
+	await get_tree().create_timer(.3).timeout
 	get_tree().quit()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck6ccavdcy4dj"]
+[gd_scene load_steps=5 format=3 uid="uid://df82tboxasmw2"]
 
 [ext_resource type="Script" path="res://Game/pause_menu.gd" id="1_s31eo"]
 [ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_5j1i6"]
+[ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="3_ghqy7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igqlw"]
 bg_color = Color(0, 0, 0, 1)
@@ -48,6 +49,9 @@ text = "Resume"
 layout_mode = 2
 text = "Exit
 "
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ghqy7")
 
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

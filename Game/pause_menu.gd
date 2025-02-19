@@ -12,8 +12,12 @@ func _process(delta):
 	
 
 func _on_resume_pressed():
+	$Click.play()
+	await get_tree().create_timer(.1).timeout
 	hide()
 	get_tree().paused = false
 
 func _on_exit_pressed():
+	$Click.play()
+	await get_tree().create_timer(.3).timeout
 	get_tree().quit()
