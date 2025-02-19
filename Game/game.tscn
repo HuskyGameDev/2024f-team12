@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://it6s8rht48gy"]
+[gd_scene load_steps=7 format=3 uid="uid://it6s8rht48gy"]
 
 [ext_resource type="PackedScene" uid="uid://dr72wmvgmhfml" path="res://Entities/main_menu.tscn" id="1_eoxss"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_jbnbe"]
 [ext_resource type="PackedScene" uid="uid://df82tboxasmw2" path="res://Game/pause_menu.tscn" id="3_y6uf2"]
-[ext_resource type="Script" path="res://Game/journal.gd" id="4_475pv"]
 [ext_resource type="Texture2D" uid="uid://ck5gkj0ukv1qn" path="res://Game/notebook/Notebook Icon.png" id="4_fxpgg"]
+[ext_resource type="PackedScene" uid="uid://hv8ylsrnylwg" path="res://Game/notebook/notebook.tscn" id="5_w53pr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mwop"]
 
 [node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_jbnbe")
@@ -34,7 +36,10 @@ offset_left = 3.0
 offset_top = 8.0
 offset_right = 46.0
 offset_bottom = 34.0
-script = ExtResource("4_475pv")
+
+[node name="Book" parent="CanvasLayer/UI/Journal" instance=ExtResource("5_w53pr")]
+visible = false
+position = Vector2(10, -15)
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/Journal"]
 layout_mode = 1
@@ -47,9 +52,15 @@ offset_left = -7.99103
 offset_top = -9.996
 offset_right = 8.00897
 offset_bottom = 6.004
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4mwop")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/UI/Journal/Button"]
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer/UI/Journal/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_fxpgg")
-centered = false
 
-[connection signal="pressed" from="CanvasLayer/UI/Journal/Button" to="CanvasLayer/UI/Journal" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Journal/Button" to="CanvasLayer/UI/Journal/Book" method="_on_button_pressed"]
