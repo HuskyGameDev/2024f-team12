@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_ihkaf"]
 [ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="20_x2lce"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
-[ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
+[ext_resource type="Resource" path="res://Common/resources/thing1.tres" id="21_shhoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
 texture = ExtResource("13_hhd26")
