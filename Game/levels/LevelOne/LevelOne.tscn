@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=43 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -18,8 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_ihkaf"]
 [ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="20_x2lce"]
+[ext_resource type="Script" path="res://Game/levels/LevelOne/leave_office.gd" id="21_2q6k4"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
-[ext_resource type="Resource" path="res://Common/resources/thing1.tres" id="21_shhoy"]
+[ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
 texture = ExtResource("13_hhd26")
@@ -543,6 +544,9 @@ radius = 8.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhjwe"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xvn1"]
+size = Vector2(144, 20)
+
 [node name="Level One" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_5k5ub")
@@ -691,3 +695,13 @@ shape = SubResource("CircleShape2D_lhjwe")
 stream = ExtResource("20_ihkaf")
 volume_db = -5.0
 autoplay = true
+
+[node name="LeaveOffice" type="Node2D" parent="."]
+position = Vector2(136, 150)
+script = ExtResource("21_2q6k4")
+
+[node name="InteractionArea" parent="LeaveOffice" instance=ExtResource("7_3wlxe")]
+action_name = "leave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveOffice/InteractionArea"]
+shape = SubResource("RectangleShape2D_4xvn1")

@@ -12,6 +12,7 @@ func _on_interact():
 
 
 func _send_text():
+	text_box.set_cutscene(1)
 	text_box.queue_cutscene("", 0, "*It's a massive desk, and is suprisingly cluttered.*")
 	text_box.queue_cutscene("Moreau", 1, "\"Man, I've gotta work on cleaning this place up.\"")
 	#screen shakes? Woman enters

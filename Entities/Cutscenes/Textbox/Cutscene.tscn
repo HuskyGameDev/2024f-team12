@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcon53b86l4sh"]
+[gd_scene load_steps=8 format=3 uid="uid://dcon53b86l4sh"]
 
 [ext_resource type="Script" path="res://Entities/Cutscenes/Textbox/cutscene.gd" id="1_4rhby"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="1_h1bbo"]
 [ext_resource type="FontFile" uid="uid://dchpm1lksy6ar" path="res://Fonts/MinecraftStandard.otf" id="2_ck6t5"]
 [ext_resource type="Texture2D" uid="uid://777o1caubrk7" path="res://Aseprite-Art/JustAWhiteLine.png" id="2_ovxxn"]
+[ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="5_3xqgy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yur3d"]
 bg_color = Color(0, 0, 0, 1)
@@ -132,8 +133,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
-text = "Testy test o
-Test"
+text = "I'll think about it"
 autowrap_mode = 3
 
 [node name="Button3" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
@@ -155,6 +155,10 @@ theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
 text = "..."
 autowrap_mode = 3
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3xqgy")
+volume_db = -15.0
 
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

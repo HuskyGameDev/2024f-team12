@@ -30,4 +30,8 @@ func _process(delta: float) -> void:
 	elif text_box.speakertwo == false: # && moreau.visible:
 		moreau.stop()
 		moreau.hide()
+	if text_box.level1cutscene[1] > 0  && $DeskInteraction.visible:
+		$DeskInteraction.hide()
+		$DeskInteraction.position.x = 10000
+		$LeaveOffice.position.y = 150
 	pass

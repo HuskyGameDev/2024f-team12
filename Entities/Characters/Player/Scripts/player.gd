@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 			$"Player Sprite".play("walk_right")
 			curdir = direction.RIGHT
 	else:
+		$Footstep.stop()
 		if(curdir == direction.DOWN):
 			$"Player Sprite".play("Idle_down")
 		if(curdir == direction.UP):

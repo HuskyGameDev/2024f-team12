@@ -25,6 +25,10 @@ var speakertwo = false
 var speakers = []
 var speakerson = []
 
+var curcutscene = 0 # Number is based on order of the following arrays
+var level1cutscene = [0, 0, 0] # if active, if succeeded, num of fails
+var level1exit = [0, 0, 0] # if active, if succeeded, num of fails
+
 var time_to_output = false
 var blackscreen = false
 var minigame = false
@@ -37,6 +41,7 @@ var buttonpressed = -5
 var waspeaker = "nobody"
 var waspeakerson = 0
 var watext = "blank"
+var wathistry = false
 
 @onready var tween = get_tree().create_tween().bind_node(self)
 
@@ -61,6 +66,8 @@ func _process(delta):
 		State.READY:
 			if !text_queue.is_empty() && time_to_output == true:
 				display_text()
+			if text_queue.is_empty():
+				change_state(State.FINISHED)
 		State.READ:
 			if Input.is_action_just_pressed("skip"):
 				tween.stop()
@@ -76,6 +83,9 @@ func _process(delta):
 			if Input.is_action_just_pressed("skip") && minigame == false && multiplechoice == false:
 				change_state(State.READY)
 				if text_queue.is_empty():
+					updatecutscene()
+					wathistry = false
+					curcutscene = 0
 					hide_textbox()
 					time_to_output = false
 					blackscreen = false
@@ -242,18 +252,22 @@ func place_buttons():
 
 
 func _on_button_pressed() -> void:
+	$Click.play()
 	buttonjustpressed = true
 	buttonpressed = 1
 
 func _on_button_2_pressed() -> void:
+	$Click.play()
 	buttonjustpressed = true
 	buttonpressed = 2
 
 func _on_button_3_pressed() -> void:
+	$Click.play()
 	buttonjustpressed = true
 	buttonpressed = 3
 
 func _on_button_4_pressed() -> void:
+	$Click.play()
 	buttonjustpressed = true
 	buttonpressed = 4
 
@@ -269,3 +283,23 @@ func change_state(st):
 			print("Changing state to READ")
 		State.FINISHED:
 			print("Changing state to FINISHED")
+
+func set_cutscene(cutname):
+	if cutname == 1:
+		level1cutscene[0] = 1
+		curcutscene = 1
+	
+	if cutname == 2:
+		level1exit[0] = 1
+		curcutscene = 2
+
+func updatecutscene():
+	var success = 2
+	if wathistry == false:
+		success = 1
+	
+	if curcutscene == 1:
+		level1cutscene[success] += 1
+	
+	if curcutscene == 2:
+		level1exit[success] += 1
