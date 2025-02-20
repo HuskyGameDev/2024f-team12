@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://it6s8rht48gy"]
+[gd_scene load_steps=8 format=3 uid="uid://it6s8rht48gy"]
 
 [ext_resource type="PackedScene" uid="uid://dr72wmvgmhfml" path="res://Entities/main_menu.tscn" id="1_eoxss"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_jbnbe"]
+[ext_resource type="Script" path="res://Game/ui_manager.gd" id="2_xum5a"]
 [ext_resource type="PackedScene" uid="uid://df82tboxasmw2" path="res://Game/pause_menu.tscn" id="3_y6uf2"]
 [ext_resource type="Texture2D" uid="uid://ck5gkj0ukv1qn" path="res://Game/notebook/Notebook Icon.png" id="4_fxpgg"]
 [ext_resource type="PackedScene" uid="uid://hv8ylsrnylwg" path="res://Game/notebook/notebook.tscn" id="5_w53pr"]
@@ -15,13 +16,14 @@ script = ExtResource("1_jbnbe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" type="Control" parent="CanvasLayer"]
+[node name="UI" type="Control" parent="CanvasLayer" groups=["ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_xum5a")
 
 [node name="MainMenu" parent="CanvasLayer/UI" instance=ExtResource("1_eoxss")]
 layout_mode = 1

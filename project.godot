@@ -38,6 +38,7 @@ project/assembly_name="Moreau"
 
 player=""
 game=""
+ui="group specifically for the ui parent node"
 
 [gui]
 

@@ -43,6 +43,9 @@ var waspeakerson = 0
 var watext = "blank"
 var wathistry = false
 
+var ui_node: Control
+
+
 @onready var tween = get_tree().create_tween().bind_node(self)
 
 enum State 
@@ -58,6 +61,9 @@ var text_queue = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print ("Starting State: State.READY")
+	
+	ui_node = get_tree().get_nodes_in_group("ui")[0] as Control
+	
 	hide_textbox()
 	# LOM.hide()
 
@@ -65,6 +71,7 @@ func _process(delta):
 	match current_state:
 		State.READY:
 			if !text_queue.is_empty() && time_to_output == true:
+				ui_node.inDialogue = true
 				display_text()
 			
 		State.READ:
@@ -90,6 +97,7 @@ func _process(delta):
 					blackscreen = false
 					speakerone = false
 					speakertwo = false
+					ui_node.inDialogue = false
 			# if minigame == true && minigamevisible == false:
 				# LOM.show()
 				# LOM.board_wipe()
@@ -129,6 +137,7 @@ func _process(delta):
 				speakers.push_back(waspeaker)
 				text_queue.push_back(watext)
 				change_state(State.READY)
+			
 
 func hide_textbox():
 	# if minigamevisible:
