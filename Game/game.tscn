@@ -40,8 +40,7 @@ offset_right = 46.0
 offset_bottom = 34.0
 
 [node name="Book" parent="CanvasLayer/UI/Journal" instance=ExtResource("5_w53pr")]
-visible = false
-position = Vector2(10, -15)
+position = Vector2(287, 41)
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/Journal"]
 layout_mode = 1
@@ -54,6 +53,8 @@ offset_left = -7.99103
 offset_top = -9.996
 offset_right = 8.00897
 offset_bottom = 6.004
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4mwop")
 
 [node name="Sprite2D" type="TextureRect" parent="CanvasLayer/UI/Journal/Button"]
