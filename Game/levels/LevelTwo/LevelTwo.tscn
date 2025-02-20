@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://dvx3svk6wr1j1"]
+[gd_scene load_steps=21 format=4 uid="uid://dvx3svk6wr1j1"]
 
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
 [ext_resource type="Texture2D" uid="uid://78vi66spod41" path="res://Aseprite-Art/Warehouse-TileSet.png" id="2_cx3uv"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="3_7vp1j"]
 [ext_resource type="Texture2D" uid="uid://iv68uvn7twwj" path="res://Aseprite-Art/Warehouse-Concept-400.png" id="3_swrx1"]
+[ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="5_u6g7p"]
+[ext_resource type="Script" path="res://Common/resources/interaction_info.gd" id="6_s4m5l"]
+[ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_sbmx7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
 texture = ExtResource("2_cx3uv")
@@ -150,6 +153,28 @@ texture = ExtResource("2_cx3uv")
 [sub_resource type="TileSet" id="TileSet_lagm8"]
 sources/0 = SubResource("TileSetAtlasSource_qcwio")
 
+[sub_resource type="Resource" id="Resource_o6ak5"]
+script = ExtResource("6_s4m5l")
+speaking_character = Array[int]([1, 1, 1, 1])
+text = Array[String](["Welcome to the warehouse!", "Sadly, this is the end of the playtest.", "However, please do look around the in-progress tileset!", "Whenerever you're ready to leave, just press escape and click 'exit'"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yrj7"]
+size = Vector2(66, 69)
+
+[sub_resource type="Resource" id="Resource_kq01g"]
+script = ExtResource("6_s4m5l")
+speaking_character = Array[int]([0])
+text = Array[String](["\"Odd, there really isn't anything here\""])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72boy"]
+
+[sub_resource type="Resource" id="Resource_2u4s0"]
+script = ExtResource("6_s4m5l")
+speaking_character = Array[int]([0])
+text = Array[String](["\"FRA-GEE-LAY? Must be Italian.\""])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g3r1"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h38k"]
 size = Vector2(750, 59)
 
@@ -198,13 +223,48 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAYAAwAAAABAAAAAAAXAA8AAAABAAAAAAAYAA4AAAABAAAAAAAYAA8AAAABAAAAAAAZAA4AAAABAAAAAAAXAA0AAAABAAAAAAAXAA4AAAABAAAAAAAaAA4AAAABAAAAAAAZAA0AAAABAAAAAAAYAA0AAAABAAAAAAAhABwAAAACAAAAAAAhABsAAAADAAAAAAAeABwAAAACAAAAAAAeABsAAAADAAAAAAAdABsAAAADAAAAAAAdABwAAAACAAAAAAAaABwAAAACAAAAAAAaABsAAAADAAAAAAAfABwAAAAFAAAAAAAgABwAAAAFAAAAAAAgABsAAAAFAAAAAAAfABsAAAAFAAAAAAAcABwAAAAFAAAAAAAbABwAAAAFAAAAAAAbABsAAAAFAAAAAAAcABsAAAAFAAAAAAAnABsAAAAFAAAAAAAoABsAAAAFAAAAAAAoABwAAAAFAAAAAAAnABwAAAAFAAAAAAArABwAAAAFAAAAAAAsABwAAAAFAAAAAAAsABsAAAAFAAAAAAArABsAAAAFAAAAAAAbABYAAAACAAEAAAAcABYAAAACAAEAAAAbABUAAAAFAAAAAAAcABUAAAAFAAAAAAAfABUAAAAFAAAAAAAgABUAAAAFAAAAAAAgABYAAAAAAAEAAAAfABYAAAACAAEAAAAnABYAAAABAAEAAAAoABYAAAAAAAEAAAAoABUAAAAFAAAAAAAnABUAAAAFAAAAAAArABUAAAAFAAAAAAAsABUAAAAFAAAAAAAsABYAAAABAAEAAAArABYAAAAAAAEAAAAdABYAAAACAAAAAAAdABUAAAADAAAAAAAaABYAAAACAAAAAAAeABYAAAACAAAAAAAhABYAAAACAAAAAAAeABUAAAADAAAAAAAaABUAAAADAAAAAAAhABUAAAADAAAAAAAmABUAAAADAAAAAAApABUAAAADAAAAAAAqABUAAAADAAAAAAAtABUAAAADAAAAAAAmABYAAAACAAAAAAApABYAAAACAAAAAAAqABYAAAACAAAAAAAtABYAAAACAAAAAAAmABwAAAACAAAAAAApABwAAAACAAAAAAAqABwAAAACAAAAAAAtABwAAAACAAAAAAAmABsAAAADAAAAAAApABsAAAADAAAAAAAqABsAAAADAAAAAAAtABsAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_lagm8")
 
-[node name="Cutscene" parent="ySort" instance=ExtResource("3_7vp1j")]
-visible = false
-
 [node name="Warehouse-concept-400" type="Sprite2D" parent="ySort"]
 position = Vector2(848, 972)
 scale = Vector2(0.414062, 0.357812)
 texture = ExtResource("3_swrx1")
+
+[node name="Cutscene" parent="ySort" instance=ExtResource("3_7vp1j")]
+
+[node name="TextInteraction" type="Sprite2D" parent="ySort"]
+position = Vector2(556, 394)
+script = ExtResource("5_u6g7p")
+resource = SubResource("Resource_o6ak5")
+
+[node name="InteractionArea" parent="ySort/TextInteraction" instance=ExtResource("7_sbmx7")]
+position = Vector2(20, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ySort/TextInteraction/InteractionArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8yrj7")
+
+[node name="SecretInteraction1" type="Sprite2D" parent="ySort"]
+position = Vector2(424, 228)
+script = ExtResource("5_u6g7p")
+resource = SubResource("Resource_kq01g")
+
+[node name="InteractionArea" parent="ySort/SecretInteraction1" instance=ExtResource("7_sbmx7")]
+action_name = "inspect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ySort/SecretInteraction1/InteractionArea"]
+shape = SubResource("RectangleShape2D_72boy")
+
+[node name="SecretInteraction2" type="Sprite2D" parent="ySort"]
+position = Vector2(712, 387)
+script = ExtResource("5_u6g7p")
+resource = SubResource("Resource_2u4s0")
+
+[node name="InteractionArea" parent="ySort/SecretInteraction2" instance=ExtResource("7_sbmx7")]
+position = Vector2(0, -1)
+action_name = "inspect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ySort/SecretInteraction2/InteractionArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4g3r1")
 
 [node name="Area2D" type="Area2D" parent="."]
 

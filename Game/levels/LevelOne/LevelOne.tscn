@@ -570,12 +570,14 @@ tile_set = SubResource("TileSet_edjw7")
 [node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
 
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
+visible = false
 z_index = 31
 position = Vector2(194, 87)
 sprite_frames = SubResource("SpriteFrames_25ub8")
 frame_progress = 0.505788
 
 [node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene"]
+visible = false
 z_index = 31
 position = Vector2(74, 95)
 sprite_frames = SubResource("SpriteFrames_qngii")
@@ -679,7 +681,7 @@ position = Vector2(0.166667, 0.333333)
 shape = SubResource("CircleShape2D_eg3ga")
 
 [node name="TextInteraction" type="Sprite2D" parent="."]
-position = Vector2(176, 98)
+position = Vector2(227, 73)
 script = ExtResource("20_x2lce")
 resource = ExtResource("21_shhoy")
 
@@ -694,7 +696,7 @@ volume_db = -5.0
 autoplay = true
 
 [node name="LeaveOffice" type="Node2D" parent="."]
-position = Vector2(136, 180)
+position = Vector2(136, 150)
 script = ExtResource("21_2q6k4")
 
 [node name="InteractionArea" parent="LeaveOffice" instance=ExtResource("7_3wlxe")]

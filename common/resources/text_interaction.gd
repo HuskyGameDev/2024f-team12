@@ -11,7 +11,7 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	if text_box.time_to_output == false:
+	if text_box.time_to_output == false:  
 		_send_text()
 
 func _send_text():
