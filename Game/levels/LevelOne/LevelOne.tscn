@@ -696,7 +696,7 @@ volume_db = -5.0
 autoplay = true
 
 [node name="LeaveOffice" type="Node2D" parent="."]
-position = Vector2(136, 150)
+position = Vector2(136, 180)
 script = ExtResource("21_2q6k4")
 
 [node name="InteractionArea" parent="LeaveOffice" instance=ExtResource("7_3wlxe")]
