@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cs72m54ygikjt" path="res://Entities/Interactions/LevelOneInteractables/desk_interaction.tscn" id="5_f5ytj"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/couch_interaction.gd" id="6_sso3r"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_3wlxe"]
-[ext_resource type="Texture2D" uid="uid://jg0jo6pe13u6" path="res://Aseprite-Art/Moreau-Cutscene_rightsize.png" id="7_ayxbh"]
+[ext_resource type="Texture2D" uid="uid://bn0xy4jjx7su3" path="res://Aseprite-Art/Moreau-Cutscene-200.png" id="7_ypnx0"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/filing_cabinet_interaction.gd" id="8_t0jfh"]
 [ext_resource type="Texture2D" uid="uid://bqwnjncaoee4i" path="res://Aseprite-Art/Woman-BW.png" id="8_u0o6y"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/window_interaction.gd" id="9_m21r0"]
@@ -485,22 +485,22 @@ sources/1 = SubResource("TileSetAtlasSource_oo0qw")
 sources/0 = SubResource("TileSetAtlasSource_72ccs")
 sources/2 = SubResource("TileSetAtlasSource_n45m4")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6yjhd"]
-atlas = ExtResource("7_ayxbh")
-region = Rect2(0, 0, 50, 50)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib062"]
+atlas = ExtResource("7_ypnx0")
+region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v27xb"]
-atlas = ExtResource("7_ayxbh")
-region = Rect2(50, 0, 50, 50)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ng2a"]
+atlas = ExtResource("7_ypnx0")
+region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25ub8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6yjhd")
+"texture": SubResource("AtlasTexture_ib062")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v27xb")
+"texture": SubResource("AtlasTexture_1ng2a")
 }],
 "loop": true,
 "name": &"default",
@@ -570,15 +570,12 @@ tile_set = SubResource("TileSet_edjw7")
 [node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
 
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
-visible = false
 z_index = 31
 position = Vector2(194, 87)
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_25ub8")
 frame_progress = 0.505788
 
 [node name="WomanCutscene" type="AnimatedSprite2D" parent="Cutscene"]
-visible = false
 z_index = 31
 position = Vector2(74, 95)
 sprite_frames = SubResource("SpriteFrames_qngii")
