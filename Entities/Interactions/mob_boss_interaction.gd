@@ -38,7 +38,7 @@ func _send_text():
 	text_box.queue_cutscene("???", 0, "\"If you were really gonna go looking, I'd start with the damn gang.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"I appreciate the help… and if you wouldn’t mind, it would be awfully convenient to be able to just walk in next time.\"")
 	text_box.queue_cutscene("???", 2, "\"Yeah, yeah. Get outta here!\"")
-	text_box.queue_cutscene("Moreau", 1, "*Leaves through fire exit*")
-	text_box.queue_cutscene("Moreau", 0, "\"I probably shouldn’t just take his word for it, I need to go check out this restaurant to see what actually happened.\"")
+	text_box.queue_cutscene("Moreau", 9, "*Leaves through fire exit*")
+	text_box.queue_cutscene("Moreau", 1, "\"I probably shouldn’t just take his word for it, I need to go check out this restaurant to see what actually happened.\"")
 	text_box.time_to_output = true
 	pass

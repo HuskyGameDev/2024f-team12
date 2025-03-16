@@ -4,6 +4,10 @@ extends Node2D
 @onready var blackscreen = $blackscreen
 @onready var woman = $Cutscene/WomanCutscene
 @onready var moreau = $Cutscene/MoreauCutscene
+@onready var womanvoice = $Cutscene/WomanVoice
+@onready var moreauvoice = $Cutscene/MoreauVoice
+
+var voiceplaying = false
 
 # Main script for the first level of the game
 
@@ -30,6 +34,21 @@ func _process(delta: float) -> void:
 	elif text_box.speakertwo == false: # && moreau.visible:
 		moreau.stop()
 		moreau.hide()
+	
+	if text_box.curspeaker == "Woman" && voiceplaying == false:
+		womanvoice.play()
+		voiceplaying = true
+	if text_box.curspeaker == "Mrs. Duval" && voiceplaying == false:
+		womanvoice.play()
+		voiceplaying = true
+	elif text_box.curspeaker == "Moreau" && voiceplaying == false:
+		moreauvoice.play()
+		voiceplaying = true
+	elif text_box.curspeaker == "" && voiceplaying == true:
+		moreauvoice.stop()
+		womanvoice.stop()
+		voiceplaying = false
+	
 	if text_box.level1cutscene[1] > 0  && $DeskInteraction.visible:
 		$DeskInteraction.hide()
 		$DeskInteraction.position.x = 10000

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=45 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bn0xy4jjx7su3" path="res://Aseprite-Art/Moreau-Cutscene-200.png" id="7_ypnx0"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/filing_cabinet_interaction.gd" id="8_t0jfh"]
 [ext_resource type="Texture2D" uid="uid://bqwnjncaoee4i" path="res://Aseprite-Art/Woman-BW.png" id="8_u0o6y"]
+[ext_resource type="AudioStream" uid="uid://b7qt3hldl6h7g" path="res://Sounds/Mrs. Duval Voice.wav" id="9_5sq3f"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/window_interaction.gd" id="9_m21r0"]
+[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Moreau_Voice.wav" id="10_0b55f"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/cork_board_interaction.gd" id="10_qkad4"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
@@ -582,6 +584,13 @@ z_index = 31
 position = Vector2(74, 95)
 sprite_frames = SubResource("SpriteFrames_qngii")
 frame_progress = 0.0809704
+
+[node name="WomanVoice" type="AudioStreamPlayer" parent="Cutscene"]
+stream = ExtResource("9_5sq3f")
+pitch_scale = 1.12
+
+[node name="MoreauVoice" type="AudioStreamPlayer" parent="Cutscene"]
+stream = ExtResource("10_0b55f")
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
 z_index = 1

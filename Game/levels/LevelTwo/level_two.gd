@@ -4,8 +4,11 @@ extends Node2D
 @onready var blackscreen = $ySort/Cutscene/blackscreen
 @onready var moreau = $ySort/Cutscene/MoreauCutscene
 @onready var mobboss = $ySort/Cutscene/MobBossCutscene
+@onready var mobbossvoice = $ySort/Cutscene/MobBossVoice
+@onready var moreauvoice = $ySort/Cutscene/MoreauVoice
 
 var blackscreenvisible = false
+var voiceplaying = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,3 +35,14 @@ func _process(delta: float) -> void:
 	elif text_box.speakertwo == false: # && moreau.visible:
 		moreau.stop()
 		moreau.hide()
+	
+	if text_box.curspeaker == "???" && voiceplaying == false:
+		mobbossvoice.play()
+		voiceplaying = true
+	elif text_box.curspeaker == "Moreau" && voiceplaying == false:
+		moreauvoice.play()
+		voiceplaying = true
+	elif text_box.curspeaker == "" && voiceplaying == true:
+		moreauvoice.stop()
+		mobbossvoice.stop()
+		voiceplaying = false

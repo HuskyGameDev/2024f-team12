@@ -25,6 +25,7 @@ var speakertwo = false
 var speakers = []
 var speakerson = []
 
+var curspeaker = ""
 var curcutscene = 0 # Number is based on order of the following arrays
 var level1cutscene = [0, 0, 0] # if active, if succeeded, num of fails
 var level1exit = [0, 0, 0] # if active, if succeeded, num of fails
@@ -87,6 +88,8 @@ func _process(delta):
 				change_state(State.FINISHED)
 			pass
 		State.FINISHED:
+			if curspeaker != "":
+				curspeaker = ""
 			if Input.is_action_just_pressed("skip") && minigame == false && multiplechoice == false:
 				change_state(State.READY)
 				if text_queue.is_empty():
@@ -178,6 +181,11 @@ func display_text():
 			speakertwo = true
 	if spk == 3:
 		minigame = true
+	if spk == 9:
+		curspeaker = ""
+	else:
+		curspeaker = speaker.text
+	
 	
 	var next_text = text_queue.pop_front()
 	label.text = next_text
@@ -204,6 +212,7 @@ func on_tween_finished():
 func queue_text(speaker, queabletext):
 	text_queue.push_back(queabletext)
 	speakers.push_back(speaker)
+
 
 #note for 'shown', if 0 nothing happens, if 1 toggles speakerone
 #   if 2, toggles speakertwo

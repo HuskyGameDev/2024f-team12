@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7qt3hldl6h7g"
+path="res://.godot/imported/Mrs. Duval Voice.wav-6a244bf766e4e75e2b893d57607c1556.sample"
+
+[deps]
+
+source_file="res://Sounds/Mrs. Duval Voice.wav"
+dest_files=["res://.godot/imported/Mrs. Duval Voice.wav-6a244bf766e4e75e2b893d57607c1556.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
