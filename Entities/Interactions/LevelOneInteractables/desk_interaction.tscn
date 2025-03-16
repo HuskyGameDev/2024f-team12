@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/desk_interaction.gd" id="1_awe4x"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="2_622cf"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_smd7l"]
 radius = 69.0
 

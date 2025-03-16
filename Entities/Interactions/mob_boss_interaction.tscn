@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bofbidbwi71je"]
+
+[ext_resource type="Script" path="res://Entities/Interactions/mob_boss_interaction.gd" id="1_40w82"]
+[ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="1_s5bfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yash"]
+size = Vector2(44, 20)
+
+[node name="MobBossInteraction" type="Node2D"]
+script = ExtResource("1_40w82")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_s5bfk")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_2yash")

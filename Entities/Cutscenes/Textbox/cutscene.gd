@@ -28,6 +28,7 @@ var speakerson = []
 var curcutscene = 0 # Number is based on order of the following arrays
 var level1cutscene = [0, 0, 0] # if active, if succeeded, num of fails
 var level1exit = [0, 0, 0] # if active, if succeeded, num of fails
+var level2cutscene = [0, 0, 0] # if active, if succeeded, num of fails 
 
 var time_to_output = false
 var blackscreen = false
@@ -301,14 +302,23 @@ func set_cutscene(cutname):
 	if cutname == 2:
 		level1exit[0] = 1
 		curcutscene = 2
+	
+	if cutname == 3:
+		level2cutscene[0] = 1
+		curcutscene = 3
 
 func updatecutscene():
 	var success = 2
 	if wathistry == false:
 		success = 1
 	
-	if curcutscene == 1:
-		level1cutscene[success] += 1
-	
-	if curcutscene == 2:
-		level1exit[success] += 1
+	match curcutscene:
+		1:
+			level1cutscene[success] += 1
+			level1cutscene[0] = 0
+		2:
+			level1exit[success] += 1
+			level1exit[0] = 0
+		3:
+			level1cutscene[success] += 1
+			level1cutscene[0] = 0

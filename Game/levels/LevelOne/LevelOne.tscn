@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
 [ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwfxp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3p2h"]
 texture = ExtResource("13_hhd26")
 0:0/0 = 0
 1:0/0 = 0
@@ -147,7 +147,7 @@ texture = ExtResource("13_hhd26")
 10:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1ga11"]
-sources/1 = SubResource("TileSetAtlasSource_fwfxp")
+sources/1 = SubResource("TileSetAtlasSource_g3p2h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72ccs"]
 texture = ExtResource("3_lsehm")
