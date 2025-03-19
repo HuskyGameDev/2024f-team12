@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=46 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://Game/levels/LevelOne/leave_office.gd" id="21_2q6k4"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
 [ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
+[ext_resource type="AudioStream" uid="uid://bbjnq5k7gtgyl" path="res://Sounds/Investigation.mp3" id="22_t841a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3p2h"]
 texture = ExtResource("13_hhd26")
@@ -698,6 +699,12 @@ resource = ExtResource("21_shhoy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextInteraction/InteractionArea"]
 shape = SubResource("CircleShape2D_lhjwe")
+
+[node name="MusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_t841a")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
 
 [node name="IndoorRain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_ihkaf")
