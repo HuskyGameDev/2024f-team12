@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=48 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://biuntbb4i3avi" path="res://Sprites/Environment Sprites/PlaceHolderArt/OfficeMockArt32px (2).png" id="3_l5cet"]
 [ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="3_lsehm"]
 [ext_resource type="PackedScene" uid="uid://cs72m54ygikjt" path="res://Entities/Interactions/LevelOneInteractables/desk_interaction.tscn" id="5_f5ytj"]
+[ext_resource type="Texture2D" uid="uid://78vi66spod41" path="res://Aseprite-Art/Warehouse-TileSet.png" id="6_5sdff"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/couch_interaction.gd" id="6_sso3r"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_3wlxe"]
 [ext_resource type="Texture2D" uid="uid://bn0xy4jjx7su3" path="res://Aseprite-Art/Moreau-Cutscene-200.png" id="7_ypnx0"]
@@ -478,6 +479,45 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qmff"]
+texture = ExtResource("6_5sdff")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+8:2/0/modulate = Color(1, 1, 1, 0.647059)
+8:2/0/y_sort_origin = 23
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+8:3/0 = 0
+8:3/0/modulate = Color(1, 1, 1, 0.647059)
+8:3/0/y_sort_origin = 23
+9:3/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_edjw7"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 4
@@ -487,6 +527,7 @@ sources/3 = SubResource("TileSetAtlasSource_2sxev")
 sources/1 = SubResource("TileSetAtlasSource_oo0qw")
 sources/0 = SubResource("TileSetAtlasSource_72ccs")
 sources/2 = SubResource("TileSetAtlasSource_n45m4")
+sources/5 = SubResource("TileSetAtlasSource_7qmff")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ib062"]
 atlas = ExtResource("7_ypnx0")
@@ -561,7 +602,7 @@ tile_set = SubResource("TileSet_1ga11")
 [node name="Flooring" type="TileMapLayer" parent="."]
 physics_interpolation_mode = 1
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAEAAMAAAAAAAAAAAAFAAMAAAABAAAAAAAGAAMAAAACAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAMAAAACAAAAAAAKAAMAAAAAAAAAAAALAAMAAAABAAAAAAAMAAMAAAACAAAAAAAKAAQAAAAAAAAAAAALAAQAAAABAAAAAAAMAAQAAAACAAAAAAAKAAUAAAAAAAAAAAALAAUAAAABAAAAAAAMAAUAAAACAAAAAAAKAAYAAAAAAAAAAAALAAYAAAABAAAAAAAMAAYAAAACAAAAAAAKAAcAAAAAAAAAAAALAAcAAAABAAAAAAAMAAcAAAACAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAABAAAAAAAJAAcAAAACAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAABAAAAAAAGAAcAAAACAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAYAAAACAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAABAAAAAAAJAAYAAAACAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAABAAAAAAAJAAUAAAACAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAABAAAAAAAGAAUAAAACAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAABAAAAAAAGAAQAAAACAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAABAAAAAAAJAAQAAAACAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAABAAAAAAAGAAgAAAACAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAABAAAAAAAJAAgAAAACAAAAAAAKAAgAAAAAAAAAAAALAAgAAAABAAAAAAAMAAgAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAMAAAAAAAAAAAAFAAMAAAABAAAAAAAGAAMAAAACAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAMAAAACAAAAAAAKAAMAAAAAAAAAAAALAAMAAAABAAAAAAAMAAMAAAACAAAAAAAKAAQAAAAAAAAAAAALAAQAAAABAAAAAAAMAAQAAAACAAAAAAAKAAUAAAAAAAAAAAALAAUAAAABAAAAAAAMAAUAAAACAAAAAAAKAAYAAAAAAAAAAAALAAYAAAABAAAAAAAMAAYAAAACAAAAAAAKAAcAAAAAAAAAAAALAAcAAAABAAAAAAAMAAcAAAACAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAABAAAAAAAJAAcAAAACAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAABAAAAAAAGAAcAAAACAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAYAAAACAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAABAAAAAAAJAAYAAAACAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAABAAAAAAAJAAUAAAACAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAABAAAAAAAGAAUAAAACAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAABAAAAAAAGAAQAAAACAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAABAAAAAAAJAAQAAAACAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAABAAAAAAAGAAgAAAACAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAABAAAAAAAJAAgAAAACAAAAAAAKAAgAAAAAAAAAAAALAAgAAAABAAAAAAAMAAgAAAACAAAAAAAIAAkAAAABAAAAAAAHAAkAAAAEAAEAAAAJAAkAAAAIAAEAAAA=")
 tile_set = SubResource("TileSet_edjw7")
 collision_enabled = false
 
@@ -571,6 +612,7 @@ tile_map_data = PackedByteArray("AAAdABUAAgAAAAUAAAAeABUAAgAAAAUAAAAfABUAAgAAAAU
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
+visible = false
 
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
 visible = false
@@ -614,7 +656,7 @@ offset_bottom = 76.0
 z_index = 1
 y_sort_enabled = true
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAIAAMAAAAAAAEAAAAEAAUAAAAAAAMAAAAFAAUAAAABAAMAAAA=")
+tile_map_data = PackedByteArray("AAAIAAMAAAAAAAEAAAAEAAUAAAAAAAMAAAAFAAUAAAABAAMAAAAJAAkAAAAIAAEAAAAHAAkAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="DeskInteraction" parent="." instance=ExtResource("5_f5ytj")]
