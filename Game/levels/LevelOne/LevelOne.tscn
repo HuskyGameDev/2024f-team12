@@ -760,4 +760,5 @@ script = ExtResource("21_2q6k4")
 action_name = "leave"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveOffice/InteractionArea"]
+position = Vector2(-3, -9)
 shape = SubResource("RectangleShape2D_4xvn1")
