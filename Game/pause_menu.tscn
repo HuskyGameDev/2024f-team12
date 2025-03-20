@@ -66,6 +66,8 @@ expand_margin_bottom = 3.0
 
 [node name="PauseMenu" type="Node2D"]
 process_mode = 2
+top_level = true
+z_index = 4096
 script = ExtResource("1_s31eo")
 
 [node name="Panel" type="Panel" parent="."]

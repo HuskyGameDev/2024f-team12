@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcon53b86l4sh"]
+[gd_scene load_steps=12 format=3 uid="uid://dcon53b86l4sh"]
 
 [ext_resource type="Script" path="res://Entities/Cutscenes/Textbox/cutscene.gd" id="1_4rhby"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="1_h1bbo"]
 [ext_resource type="FontFile" uid="uid://dchpm1lksy6ar" path="res://Fonts/MinecraftStandard.otf" id="2_ck6t5"]
 [ext_resource type="Texture2D" uid="uid://777o1caubrk7" path="res://Aseprite-Art/JustAWhiteLine.png" id="2_ovxxn"]
 [ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="5_3xqgy"]
+[ext_resource type="PackedScene" uid="uid://nlp6l66bs2r1" path="res://Entities/Cutscenes/Minigames/lock_pick_game.tscn" id="6_buxqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yur3d"]
 bg_color = Color(0, 0, 0, 1)
@@ -194,6 +195,8 @@ autowrap_mode = 3
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3xqgy")
 volume_db = -15.0
+
+[node name="LockPickGame" parent="." instance=ExtResource("6_buxqd")]
 
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
