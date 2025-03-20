@@ -17,9 +17,7 @@ func _process(delta: float) -> void:
 					hide()
 		else: #If in dialogue, hide the notebook & button
 			get_parent().hide()
-	
-	
-	
+
 
 func _on_button_pressed() -> void:
 	if !visible:

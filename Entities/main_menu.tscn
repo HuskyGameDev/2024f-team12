@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr72wmvgmhfml"]
+[gd_scene load_steps=12 format=3 uid="uid://dr72wmvgmhfml"]
 
 [ext_resource type="Script" path="res://Entities/main_menu.gd" id="1_yafju"]
 [ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_pm0ke"]
 [ext_resource type="FontFile" uid="uid://dy6r7dnk3ocmw" path="res://Fonts/retro_computer_personal_use.ttf" id="3_6fxy7"]
 [ext_resource type="Script" path="res://Game/ui/door_button.gd" id="4_m8iwg"]
 [ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="5_ftjtf"]
+[ext_resource type="Script" path="res://Entities/settings.gd" id="6_hikwo"]
+[ext_resource type="FontFile" uid="uid://dchpm1lksy6ar" path="res://Fonts/MinecraftStandard.otf" id="7_l1wpv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec74g"]
 
@@ -122,6 +124,201 @@ text = "Exit"
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ftjtf")
 
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_hikwo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l1wpv")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings_Tab_Container" type="Control" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = 600.0
+grow_horizontal = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Sound" type="TabBar" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Mute" type="CheckBox" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_l1wpv")
+text = "Mute"
+
+[node name="Master_Volume" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_l1wpv")
+text = "Master Volume"
+
+[node name="Master" type="HSlider" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Graphics" type="TabBar" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Display_Size" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_l1wpv")
+text = "Display Size"
+
+[node name="Resolutions" type="OptionButton" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+selected = 1
+item_count = 3
+popup/item_0/text = "1980x1020"
+popup/item_1/text = "320x180"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Controls" type="TabBar" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Keys" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_l1wpv")
+text = "Not yet implemented
+"
+
+[node name="Accessibility" type="TabBar" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Accessibility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Accessibility/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Idk" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_l1wpv")
+text = "Not yet implemented"
+
+[node name="Options_Exit" type="Button" parent="Settings/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("7_l1wpv")
+theme_override_font_sizes/font_size = 16
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="tab_clicked" from="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" to="Settings" method="_on_tab_container_tab_clicked"]
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer/Master" to="Settings" method="_on_master_value_changed"]
+[connection signal="item_selected" from="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/VBoxContainer/Resolutions" to="Settings" method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/Options_Exit" to="." method="_on_options_exit_pressed"]

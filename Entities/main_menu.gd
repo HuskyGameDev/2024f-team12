@@ -1,21 +1,26 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	SceneManager.scene_added_signal.connect(button_pressed)
-	
-
-
-
 func button_pressed():
+	$Click.play()
+	hide()
+
+
+func _on_start_pressed() -> void:
 	$Click.play()
 	hide()
 
 
 func _on_options_pressed() -> void:
 	$Click.play()
-	pass
+	$VBoxContainer.visible = false
+	$Settings.visible = true
+
+
+func _on_options_exit_pressed() -> void:
+	$Click.play()
+	$VBoxContainer.visible = true
+	$Settings.visible = false
 
 
 func _on_exit_pressed():
