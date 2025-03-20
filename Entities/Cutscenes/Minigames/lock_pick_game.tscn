@@ -1,0 +1,238 @@
+[gd_scene load_steps=29 format=3 uid="uid://nlp6l66bs2r1"]
+
+[ext_resource type="Texture2D" uid="uid://b4eipx8r0jofq" path="res://Aseprite-Art/LockpickGame.png" id="1_lycla"]
+[ext_resource type="Texture2D" uid="uid://drgqdas0n1nx8" path="res://Aseprite-Art/LockpickPins.png" id="2_3sewj"]
+[ext_resource type="Texture2D" uid="uid://crfctleiknumg" path="res://Aseprite-Art/LockpickLockpick.png" id="3_dvpq3"]
+[ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="4_r2e3b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c53vh"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(0, 0, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgvkj"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(0, 56, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l474c"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(0, 112, 14, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hr8v6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c53vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgvkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l474c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecdkm"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(14, 0, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c016f"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(14, 56, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqkfx"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(14, 112, 14, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hq5o0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecdkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c016f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqkfx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3f64"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(28, 0, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a46as"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(28, 56, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_houkm"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(28, 112, 14, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03v55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3f64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a46as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_houkm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwgeb"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(42, 0, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed7x8"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(42, 56, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ab6"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(42, 112, 14, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1wij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwgeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed7x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ab6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgqpq"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(56, 0, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf78l"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(56, 56, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpgxj"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(56, 112, 14, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyqh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgqpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf78l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpgxj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rihh"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(70, 0, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udo7v"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(70, 56, 14, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfp0l"]
+atlas = ExtResource("2_3sewj")
+region = Rect2(70, 112, 14, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6dkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rihh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udo7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfp0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LockPickGame" type="Node2D"]
+
+[node name="LockpickGame" type="Sprite2D" parent="."]
+position = Vector2(119, 68)
+texture = ExtResource("1_lycla")
+
+[node name="PinSix" type="AnimatedSprite2D" parent="LockpickGame"]
+z_index = -1
+position = Vector2(-31, -10)
+sprite_frames = SubResource("SpriteFrames_hr8v6")
+frame = 2
+frame_progress = 0.310497
+
+[node name="PinFive" type="AnimatedSprite2D" parent="LockpickGame"]
+z_index = -1
+position = Vector2(-11, -10)
+sprite_frames = SubResource("SpriteFrames_hq5o0")
+frame = 1
+frame_progress = 0.585942
+
+[node name="PinFour" type="AnimatedSprite2D" parent="LockpickGame"]
+z_index = -1
+position = Vector2(9, -10)
+sprite_frames = SubResource("SpriteFrames_03v55")
+
+[node name="PinThree" type="AnimatedSprite2D" parent="LockpickGame"]
+z_index = -1
+position = Vector2(29, -10)
+sprite_frames = SubResource("SpriteFrames_r1wij")
+
+[node name="PinTwo" type="AnimatedSprite2D" parent="LockpickGame"]
+z_index = -1
+position = Vector2(49, -10)
+sprite_frames = SubResource("SpriteFrames_tyqh3")
+frame = 2
+frame_progress = 0.955527
+
+[node name="PinOne" type="AnimatedSprite2D" parent="LockpickGame"]
+z_index = -1
+position = Vector2(69, -10)
+sprite_frames = SubResource("SpriteFrames_o6dkg")
+
+[node name="LockpickLockpick" type="Sprite2D" parent="LockpickGame"]
+position = Vector2(52, 16)
+texture = ExtResource("3_dvpq3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 91.0
+offset_right = 58.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("4_r2e3b")
+theme_override_font_sizes/font_size = 8
+text = "Move
+Pick
+"
+horizontal_alignment = 1
