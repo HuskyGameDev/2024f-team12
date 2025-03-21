@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b4eipx8r0jofq" path="res://Aseprite-Art/LockpickGame.png" id="1_lycla"]
 [ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/lock_pick_game.gd" id="1_xg1em"]
 [ext_resource type="Texture2D" uid="uid://drgqdas0n1nx8" path="res://Aseprite-Art/LockpickPins.png" id="2_3sewj"]
+[ext_resource type="Texture2D" uid="uid://crfctleiknumg" path="res://Aseprite-Art/LockpickLockpick.png" id="3_dvpq3"]
 [ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/lockpick_lockpick.gd" id="4_jnaoc"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="4_r2e3b"]
-[ext_resource type="Texture2D" uid="uid://875mugd2wlcj" path="res://Aseprite-Art/LockpickLockpickrevised.png" id="5_2anv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c53vh"]
 atlas = ExtResource("2_3sewj")
@@ -296,18 +296,16 @@ shape = SubResource("RectangleShape2D_c8cck")
 polygon = PackedVector2Array(197, 104, 201, 104, 201, 110, 75, 110, 75, 26, 201, 26, 201, 88, 197, 88, 197, 86, 193, 86, 193, 82, 197, 82, 197, 60, 179, 60, 179, 82, 183, 82, 183, 86, 173, 86, 173, 82, 177, 82, 177, 60, 159, 60, 159, 82, 163, 82, 163, 86, 153, 86, 153, 82, 157, 82, 157, 60, 139, 60, 139, 82, 143, 82, 143, 86, 133, 86, 133, 82, 137, 82, 137, 60, 119, 60, 119, 82, 123, 82, 123, 86, 113, 86, 113, 82, 117, 82, 117, 60, 99, 60, 99, 82, 103, 82, 103, 86, 93, 86, 93, 82, 97, 82, 97, 60, 81, 60, 79, 60, 79, 82, 83, 82, 83, 86, 79, 86, 79, 106, 197, 106)
 
 [node name="LockpickLockpick" type="CharacterBody2D" parent="."]
-position = Vector2(504, 366)
+position = Vector2(257, 96)
 collision_layer = 128
 collision_mask = 128
 script = ExtResource("4_jnaoc")
 
 [node name="LockpickSprite" type="Sprite2D" parent="LockpickLockpick"]
-position = Vector2(0, -1)
-texture = ExtResource("5_2anv2")
+texture = ExtResource("3_dvpq3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LockpickLockpick"]
-position = Vector2(0, -1)
-polygon = PackedVector2Array(-66, -6, -66, 8, 66, 8, 66, 4, -58, 4, -58, 2, -60, 2, -60, -6)
+polygon = PackedVector2Array(-66, -8, -66, 8, 66, 8, 66, 4, -58, 4, -58, 2, -60, 2, -60, -8)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 18.0
