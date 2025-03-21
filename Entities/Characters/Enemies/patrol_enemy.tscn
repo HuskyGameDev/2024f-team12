@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0uco6jg40sj5"]
+
+[ext_resource type="Script" path="res://Entities/Characters/Enemies/patrol_enemy.gd" id="1_qslcu"]
+[ext_resource type="Texture2D" uid="uid://bn7yqve3dfy8l" path="res://Sprites/icon.svg" id="2_3ecwn"]
+[ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="3_2xuee"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18ggq"]
+
+[node name="PatrolEnemy" type="CharacterBody2D" node_paths=PackedStringArray("vision_renderer")]
+position = Vector2(152, 68)
+script = ExtResource("1_qslcu")
+vision_renderer = NodePath("VisionCone2D/VisionConeRenderer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_18ggq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3ecwn")
+
+[node name="VisionCone2D" parent="." instance=ExtResource("3_2xuee")]
+angle_deg = 70
+ray_count = 10
+max_distance = 90.0
+collision_layer_mask = 3
+recalculate_if_static = false
+
+[connection signal="body_entered" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
+[connection signal="body_exited" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
+
+[editable path="VisionCone2D"]

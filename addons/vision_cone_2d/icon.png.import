@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crj7rs72sn3pp"
-path="res://.godot/imported/golden-sunset-1x.png-7f28b1fb1f1cd3056a164ccab5a41fbf.ctex"
+uid="uid://cptjb58b56ipm"
+path="res://.godot/imported/icon.png-0aa5bba4af5a332d87a18103ccdae1a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Common/palettes/golden-sunset-1x.png"
-dest_files=["res://.godot/imported/golden-sunset-1x.png-7f28b1fb1f1cd3056a164ccab5a41fbf.ctex"]
+source_file="res://addons/vision_cone_2d/icon.png"
+dest_files=["res://.godot/imported/icon.png-0aa5bba4af5a332d87a18103ccdae1a1.ctex"]
 
 [params]
 
