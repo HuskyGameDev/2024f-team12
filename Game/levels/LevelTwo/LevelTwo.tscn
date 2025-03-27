@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://dvx3svk6wr1j1"]
+[gd_scene load_steps=38 format=4 uid="uid://dvx3svk6wr1j1"]
 
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/level_two.gd" id="1_b5p0r"]
@@ -15,8 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Moreau_Voice.wav" id="9_lcjgr"]
 [ext_resource type="Texture2D" uid="uid://cv0tsrqkeb4jf" path="res://Aseprite-Art/Mob-Boss.png" id="10_rjiyk"]
 [ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/ModBoss Voice.wav" id="10_xiyit"]
-[ext_resource type="PackedScene" uid="uid://b0uco6jg40sj5" path="res://Entities/Characters/Enemies/patrol_enemy.tscn" id="16_xfjxi"]
-[ext_resource type="PackedScene" uid="uid://bulute7i5ksyy" path="res://addons/vision_cone_2d/examples/enemy.tscn" id="17_tl52x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
 texture = ExtResource("2_cx3uv")
@@ -533,25 +531,3 @@ shape = SubResource("RectangleShape2D_8h38k")
 
 [node name="MobBossInteraction" parent="." instance=ExtResource("8_fajru")]
 position = Vector2(575, 225)
-
-[node name="PatrolEnemy" parent="." instance=ExtResource("16_xfjxi")]
-position = Vector2(576, 486)
-alert_color = Color(0, 0, 0, 0.615686)
-is_rotating = true
-rotation_speed = 0.5
-
-[node name="VisionCone2D" parent="PatrolEnemy" index="2"]
-angle_deg = 45
-ray_count = 20
-recalculate_if_static = true
-
-[node name="Enemy" parent="." instance=ExtResource("17_tl52x")]
-position = Vector2(665, 470)
-
-[node name="VisionCone2D" parent="Enemy" index="1"]
-angle_deg = 180
-
-[editable path="PatrolEnemy"]
-[editable path="PatrolEnemy/VisionCone2D"]
-[editable path="Enemy"]
-[editable path="Enemy/VisionCone2D"]
