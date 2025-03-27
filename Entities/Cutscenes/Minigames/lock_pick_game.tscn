@@ -1,11 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://nlp6l66bs2r1"]
+[gd_scene load_steps=29 format=3 uid="uid://nlp6l66bs2r1"]
 
 [ext_resource type="Texture2D" uid="uid://b4eipx8r0jofq" path="res://Aseprite-Art/LockpickGame.png" id="1_lycla"]
-[ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/lock_pick_game.gd" id="1_xg1em"]
 [ext_resource type="Texture2D" uid="uid://drgqdas0n1nx8" path="res://Aseprite-Art/LockpickPins.png" id="2_3sewj"]
-[ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/lockpick_lockpick.gd" id="4_jnaoc"]
+[ext_resource type="Texture2D" uid="uid://crfctleiknumg" path="res://Aseprite-Art/LockpickLockpick.png" id="3_dvpq3"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="4_r2e3b"]
-[ext_resource type="Texture2D" uid="uid://875mugd2wlcj" path="res://Aseprite-Art/LockpickLockpickrevised.png" id="5_2anv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c53vh"]
 atlas = ExtResource("2_3sewj")
@@ -36,9 +34,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_urb8b"]
-size = Vector2(14, 25)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecdkm"]
 atlas = ExtResource("2_3sewj")
 region = Rect2(14, 0, 14, 56)
@@ -67,9 +62,6 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipdb3"]
-size = Vector2(14, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3f64"]
 atlas = ExtResource("2_3sewj")
@@ -100,9 +92,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfr61"]
-size = Vector2(14, 25)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwgeb"]
 atlas = ExtResource("2_3sewj")
 region = Rect2(42, 0, 14, 56)
@@ -131,9 +120,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efaf8"]
-size = Vector2(14, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgqpq"]
 atlas = ExtResource("2_3sewj")
@@ -164,9 +150,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdrr0"]
-size = Vector2(14, 25)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rihh"]
 atlas = ExtResource("2_3sewj")
 region = Rect2(70, 0, 14, 56)
@@ -196,118 +179,51 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8cck"]
-size = Vector2(14, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cntmw"]
-size = Vector2(6, 76)
-
 [node name="LockPickGame" type="Node2D"]
-position = Vector2(21, 1)
-script = ExtResource("1_xg1em")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 128
-collision_mask = 128
-
-[node name="LockpickGame" type="Sprite2D" parent="StaticBody2D"]
+[node name="LockpickGame" type="Sprite2D" parent="."]
 position = Vector2(119, 68)
 texture = ExtResource("1_lycla")
 
-[node name="PinSix" type="AnimatedSprite2D" parent="StaticBody2D/LockpickGame"]
+[node name="PinSix" type="AnimatedSprite2D" parent="LockpickGame"]
 z_index = -1
 position = Vector2(-31, -10)
 sprite_frames = SubResource("SpriteFrames_hr8v6")
+frame = 2
+frame_progress = 0.310497
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D/LockpickGame/PinSix"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LockpickGame/PinSix/Area2D"]
-position = Vector2(0, 14.5)
-shape = SubResource("RectangleShape2D_urb8b")
-
-[node name="PinFive" type="AnimatedSprite2D" parent="StaticBody2D/LockpickGame"]
+[node name="PinFive" type="AnimatedSprite2D" parent="LockpickGame"]
 z_index = -1
 position = Vector2(-11, -10)
 sprite_frames = SubResource("SpriteFrames_hq5o0")
+frame = 1
+frame_progress = 0.585942
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D/LockpickGame/PinFive"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LockpickGame/PinFive/Area2D"]
-position = Vector2(0, 14.5)
-shape = SubResource("RectangleShape2D_ipdb3")
-
-[node name="PinFour" type="AnimatedSprite2D" parent="StaticBody2D/LockpickGame"]
+[node name="PinFour" type="AnimatedSprite2D" parent="LockpickGame"]
 z_index = -1
 position = Vector2(9, -10)
 sprite_frames = SubResource("SpriteFrames_03v55")
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D/LockpickGame/PinFour"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LockpickGame/PinFour/Area2D"]
-position = Vector2(0, 14.5)
-shape = SubResource("RectangleShape2D_pfr61")
-
-[node name="PinThree" type="AnimatedSprite2D" parent="StaticBody2D/LockpickGame"]
+[node name="PinThree" type="AnimatedSprite2D" parent="LockpickGame"]
 z_index = -1
 position = Vector2(29, -10)
 sprite_frames = SubResource("SpriteFrames_r1wij")
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D/LockpickGame/PinThree"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LockpickGame/PinThree/Area2D"]
-position = Vector2(0, 14.5)
-shape = SubResource("RectangleShape2D_efaf8")
-
-[node name="PinTwo" type="AnimatedSprite2D" parent="StaticBody2D/LockpickGame"]
+[node name="PinTwo" type="AnimatedSprite2D" parent="LockpickGame"]
 z_index = -1
 position = Vector2(49, -10)
 sprite_frames = SubResource("SpriteFrames_tyqh3")
+frame = 2
+frame_progress = 0.955527
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D/LockpickGame/PinTwo"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LockpickGame/PinTwo/Area2D"]
-position = Vector2(0, 14.5)
-shape = SubResource("RectangleShape2D_bdrr0")
-
-[node name="PinOne" type="AnimatedSprite2D" parent="StaticBody2D/LockpickGame"]
+[node name="PinOne" type="AnimatedSprite2D" parent="LockpickGame"]
 z_index = -1
 position = Vector2(69, -10)
 sprite_frames = SubResource("SpriteFrames_o6dkg")
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D/LockpickGame/PinOne"]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LockpickGame/PinOne/Area2D"]
-position = Vector2(0, 14.5)
-shape = SubResource("RectangleShape2D_c8cck")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(197, 104, 201, 104, 201, 110, 75, 110, 75, 26, 201, 26, 201, 88, 197, 88, 197, 86, 193, 86, 193, 82, 197, 82, 197, 60, 179, 60, 179, 82, 183, 82, 183, 86, 173, 86, 173, 82, 177, 82, 177, 60, 159, 60, 159, 82, 163, 82, 163, 86, 153, 86, 153, 82, 157, 82, 157, 60, 139, 60, 139, 82, 143, 82, 143, 86, 133, 86, 133, 82, 137, 82, 137, 60, 119, 60, 119, 82, 123, 82, 123, 86, 113, 86, 113, 82, 117, 82, 117, 60, 99, 60, 99, 82, 103, 82, 103, 86, 93, 86, 93, 82, 97, 82, 97, 60, 81, 60, 79, 60, 79, 82, 83, 82, 83, 86, 79, 86, 79, 106, 197, 106)
-
-[node name="LockpickLockpick" type="CharacterBody2D" parent="."]
-position = Vector2(504, 366)
-collision_layer = 128
-collision_mask = 128
-script = ExtResource("4_jnaoc")
-
-[node name="LockpickSprite" type="Sprite2D" parent="LockpickLockpick"]
-position = Vector2(0, -1)
-texture = ExtResource("5_2anv2")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LockpickLockpick"]
-position = Vector2(0, -1)
-polygon = PackedVector2Array(-66, -6, -66, 8, 66, 8, 66, 4, -58, 4, -58, 2, -60, 2, -60, -6)
+[node name="LockpickLockpick" type="Sprite2D" parent="LockpickGame"]
+position = Vector2(52, 16)
+texture = ExtResource("3_dvpq3")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 18.0
@@ -320,26 +236,3 @@ text = "Move
 Pick
 "
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(334, 104)
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-8, -2)
-shape = SubResource("RectangleShape2D_cntmw")
-
-[connection signal="body_entered" from="StaticBody2D/LockpickGame/PinSix/Area2D" to="." method="_pin_six_entered"]
-[connection signal="body_exited" from="StaticBody2D/LockpickGame/PinSix/Area2D" to="." method="_pin_six_exited"]
-[connection signal="body_entered" from="StaticBody2D/LockpickGame/PinFive/Area2D" to="." method="_pin_five_entered"]
-[connection signal="body_exited" from="StaticBody2D/LockpickGame/PinFive/Area2D" to="." method="_pin_five_exited"]
-[connection signal="body_entered" from="StaticBody2D/LockpickGame/PinFour/Area2D" to="." method="_pin_four_entered"]
-[connection signal="body_exited" from="StaticBody2D/LockpickGame/PinFour/Area2D" to="." method="_pin_four_exited"]
-[connection signal="body_entered" from="StaticBody2D/LockpickGame/PinThree/Area2D" to="." method="_pin_three_entered"]
-[connection signal="body_exited" from="StaticBody2D/LockpickGame/PinThree/Area2D" to="." method="_pin_three_exited"]
-[connection signal="body_entered" from="StaticBody2D/LockpickGame/PinTwo/Area2D" to="." method="_pin_two_entered"]
-[connection signal="body_exited" from="StaticBody2D/LockpickGame/PinTwo/Area2D" to="." method="_pin_two_exited"]
-[connection signal="body_entered" from="StaticBody2D/LockpickGame/PinOne/Area2D" to="." method="_pin_one_entered"]
-[connection signal="body_exited" from="StaticBody2D/LockpickGame/PinOne/Area2D" to="." method="_pin_one_exited"]

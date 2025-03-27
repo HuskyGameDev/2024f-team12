@@ -30,6 +30,7 @@ layout_mode = 1
 
 [node name="PauseMenu" parent="CanvasLayer/UI" instance=ExtResource("3_y6uf2")]
 visible = false
+z_index = 4096
 
 [node name="Journal" type="Control" parent="CanvasLayer/UI"]
 anchors_preset = 0
