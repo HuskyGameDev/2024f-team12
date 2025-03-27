@@ -17,6 +17,10 @@ var CHAR_READ_RATE = 0.04
 @onready var b3 = $MarginContainer/MarginContainer/VBoxContainer/Button3
 @onready var b4 = $MarginContainer/MarginContainer/VBoxContainer/Button4
 
+@onready var camera = $"../Player/Camera2D"
+
+var cameraprevloc = [0, 0]
+
 @onready var speaker = $TextboxContainer/MarginContainer/HBoxContainer/VBoxContainer/Speaker
 
 var speakerone = false
@@ -44,6 +48,8 @@ var waspeaker = "nobody"
 var waspeakerson = 0
 var watext = "blank"
 var wathistry = false
+
+var lockpickmode = false
 
 var ui_node: Control
 
@@ -96,7 +102,7 @@ func _process(delta):
 		State.FINISHED:
 			if curspeaker != "":
 				curspeaker = ""
-			if Input.is_action_just_pressed("skip") && minigame == false && multiplechoice == false:
+			if Input.is_action_just_pressed("skip") && minigame == false && multiplechoice == false && lockpickmode == false:
 				change_state(State.READY)
 				if text_queue.is_empty():
 					updatecutscene()
@@ -152,6 +158,10 @@ func _process(delta):
 func hide_textbox():
 	# if minigamevisible:
 		# LOM.hide()
+	if $LockPickGame.visible:
+		$LockPickGame.hide()
+		$LockPickGame/LockpickLockpick.playtime = false
+
 	if mcv:
 		multichoice.hide()
 		mcv = false
@@ -165,6 +175,11 @@ func show_textbox():
 	textbox_container.show()
 
 func display_text():
+	if lockpickmode == true:
+		$LockPickGame.show()
+		$LockPickGame.reset_pins()
+		$LockPickGame/LockpickLockpick.playtime = true
+	
 	var spk = speakerson.pop_front()
 	if spk == null:
 		spk = 0
