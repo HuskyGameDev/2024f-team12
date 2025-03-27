@@ -17,12 +17,14 @@ var pinstates = [pinstate.unpressed, pinstate.unpressed, pinstate.unpressed, pin
 
 var correctorder = [2, 1, 6, 4, 5, 3]
 var curcorrect = 0
+var curwrong = 0
 
 func _ready() -> void:
 	reset_pins()
 
 func reset_pins():
 	curcorrect = 0
+	curwrong = 0
 	for i in range(6):
 		pinstates[i] = pinstate.unpressed
 		var updater = i + 1
@@ -80,12 +82,15 @@ func _rotate_state(pin):
 	pin = pin - 1
 	match pinstates[pin]:
 		pinstate.unpressed:
+			$Try.play()
 			pinstates[pin] = pinstate.pressed
 		pinstate.pressed:
+			$Release.play()
 			if correctorder[curcorrect] == pin + 1:
 				pinstates[pin] = pinstate.unlocked
 				curcorrect = curcorrect + 1
 				if curcorrect == 6:
+					$Success.play()
 					$LockpickLockpick.playtime = false
 					$"..".lockpickmode = false
 			else:
@@ -93,8 +98,13 @@ func _rotate_state(pin):
 					if correctorder[i] == pin + 1:
 						pinstates[pin] = pinstate.unlocked
 				if pinstates[pin] != pinstate.unlocked:
+					curwrong += 1
 					pinstates[pin] = pinstate.unpressed
+					if curwrong == 5:
+						$Fail.play()
+						reset_pins()
 		pinstate.unlocked:
+			$Try.play()
 			pinstates[pin] = pinstate.pressed
 	
 	pin = pin + 1

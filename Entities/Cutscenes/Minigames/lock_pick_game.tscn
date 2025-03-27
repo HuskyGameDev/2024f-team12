@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://nlp6l66bs2r1"]
+[gd_scene load_steps=42 format=3 uid="uid://nlp6l66bs2r1"]
 
 [ext_resource type="Texture2D" uid="uid://b4eipx8r0jofq" path="res://Aseprite-Art/LockpickGame.png" id="1_lycla"]
 [ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/lock_pick_game.gd" id="1_xg1em"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" path="res://Entities/Cutscenes/Minigames/lockpick_lockpick.gd" id="4_jnaoc"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="4_r2e3b"]
 [ext_resource type="Texture2D" uid="uid://875mugd2wlcj" path="res://Aseprite-Art/LockpickLockpickrevised.png" id="5_2anv2"]
+[ext_resource type="AudioStream" uid="uid://dn5i4b7gejm0l" path="res://Sounds/Door_Lock_HH_Hunt.wav" id="7_8r5l8"]
+[ext_resource type="AudioStream" uid="uid://dgjqaotknuk6s" path="res://Sounds/PinPress.wav" id="8_beuan"]
+[ext_resource type="AudioStream" uid="uid://wxxuavcdjo2m" path="res://Sounds/PinUnpress.wav" id="9_6jx2t"]
+[ext_resource type="AudioStream" uid="uid://b36l3cx1aufmv" path="res://Sounds/Reverb Pipe Drop_FOL_Gust.wav" id="10_vgyjd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c53vh"]
 atlas = ExtResource("2_3sewj")
@@ -330,6 +334,24 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-8, -2)
 shape = SubResource("RectangleShape2D_cntmw")
+
+[node name="Success" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8r5l8")
+volume_db = 8.873
+pitch_scale = 1.4
+
+[node name="Try" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_beuan")
+volume_db = -0.067
+pitch_scale = 2.8
+
+[node name="Release" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_6jx2t")
+pitch_scale = 1.85
+
+[node name="Fail" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_vgyjd")
+pitch_scale = 0.44
 
 [connection signal="body_entered" from="StaticBody2D/LockpickGame/PinSix/Area2D" to="." method="_pin_six_entered"]
 [connection signal="body_exited" from="StaticBody2D/LockpickGame/PinSix/Area2D" to="." method="_pin_six_exited"]
