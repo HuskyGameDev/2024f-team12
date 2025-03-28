@@ -64,11 +64,7 @@ var text_queue = []
 func _ready():
 	print ("Starting State: State.READY")
 	
-	var ui_nodes = get_tree().get_nodes_in_group("ui")
-	if ui_nodes.size() > 0:
-		ui_node = ui_nodes[0] as Control
-	else:
-		ui_node = null 
+	ui_node = get_tree().get_nodes_in_group("ui")[0] as Control
 	
 	hide_textbox()
 	# LOM.hide()
