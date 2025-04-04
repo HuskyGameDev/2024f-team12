@@ -10,6 +10,8 @@ extends Node2D
 var blackscreenvisible = false
 var voiceplaying = false
 
+var evidencefound = [0,0,0,0]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -46,3 +48,8 @@ func _process(delta: float) -> void:
 		moreauvoice.stop()
 		mobbossvoice.stop()
 		voiceplaying = false
+	
+	if text_box.level2cutscene[1] > 0:
+		print("EndOfLevel2")
+		var game_node: Game = get_tree().get_nodes_in_group("game")[0] as Game
+		SceneManager.swap_scenes("res://Game/levels/LevelThree/LevelThree.tscn", game_node.screen_holder, $"." , "fade_to_dark")

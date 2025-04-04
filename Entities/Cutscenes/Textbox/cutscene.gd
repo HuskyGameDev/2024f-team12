@@ -348,5 +348,5 @@ func updatecutscene():
 			level1exit[success] += 1
 			level1exit[0] = 0
 		3:
-			level1cutscene[success] += 1
-			level1cutscene[0] = 0
+			level2cutscene[success] += 1
+			level2cutscene[0] = 0
