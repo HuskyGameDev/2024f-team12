@@ -612,6 +612,7 @@ tile_map_data = PackedByteArray("AAAdABUAAgAAAAUAAAAeABUAAgAAAAUAAAAfABUAAgAAAAU
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
+visible = false
 
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
 visible = false
