@@ -40,7 +40,7 @@ offset_bottom = 34.0
 
 [node name="Book" parent="CanvasLayer/UI/Journal" instance=ExtResource("5_w53pr")]
 visible = false
-position = Vector2(287, 41)
+position = Vector2(161, 78)
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/Journal"]
 layout_mode = 1

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bkpbh5lrlugs6"
-path="res://.godot/imported/Moreau_Voice.wav-430abec3eee9693bafe2a3cee0fffc3d.sample"
+path="res://.godot/imported/Moreau_Voice.wav-d2132e561b3bd31d4759455f1811338c.sample"
 
 [deps]
 
-source_file="res://Sounds/Moreau_Voice.wav"
-dest_files=["res://.godot/imported/Moreau_Voice.wav-430abec3eee9693bafe2a3cee0fffc3d.sample"]
+source_file="res://Sounds/Voices/Moreau_Voice.wav"
+dest_files=["res://.godot/imported/Moreau_Voice.wav-d2132e561b3bd31d4759455f1811338c.sample"]
 
 [params]
 

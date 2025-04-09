@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://yb52t4hijc40"
-path="res://.godot/imported/ModBoss Voice.wav-9a35be18e40d1622c0c91ab51e0e6578.sample"
+path="res://.godot/imported/ModBoss Voice.wav-6928e4bf4b03df45d8fadae138f8a987.sample"
 
 [deps]
 
-source_file="res://Sounds/ModBoss Voice.wav"
-dest_files=["res://.godot/imported/ModBoss Voice.wav-9a35be18e40d1622c0c91ab51e0e6578.sample"]
+source_file="res://Sounds/Voices/ModBoss Voice.wav"
+dest_files=["res://.godot/imported/ModBoss Voice.wav-6928e4bf4b03df45d8fadae138f8a987.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bnuppscnyians"
-path="res://.godot/imported/Tony Voice.wav-9d57b881372a5ca1485af6b7c17dea85.sample"
+path="res://.godot/imported/Tony Voice.wav-75ebcb3eaed336a190ae6357f8d5caa6.sample"
 
 [deps]
 
-source_file="res://Sounds/Tony Voice.wav"
-dest_files=["res://.godot/imported/Tony Voice.wav-9d57b881372a5ca1485af6b7c17dea85.sample"]
+source_file="res://Sounds/Voices/Tony Voice.wav"
+dest_files=["res://.godot/imported/Tony Voice.wav-75ebcb3eaed336a190ae6357f8d5caa6.sample"]
 
 [params]
 

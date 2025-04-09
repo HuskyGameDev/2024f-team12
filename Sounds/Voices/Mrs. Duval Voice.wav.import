@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b7qt3hldl6h7g"
-path="res://.godot/imported/Mrs. Duval Voice.wav-6a244bf766e4e75e2b893d57607c1556.sample"
+path="res://.godot/imported/Mrs. Duval Voice.wav-5874f4cc13a60b115246a6da7e31ddc3.sample"
 
 [deps]
 
-source_file="res://Sounds/Mrs. Duval Voice.wav"
-dest_files=["res://.godot/imported/Mrs. Duval Voice.wav-6a244bf766e4e75e2b893d57607c1556.sample"]
+source_file="res://Sounds/Voices/Mrs. Duval Voice.wav"
+dest_files=["res://.godot/imported/Mrs. Duval Voice.wav-5874f4cc13a60b115246a6da7e31ddc3.sample"]
 
 [params]
 

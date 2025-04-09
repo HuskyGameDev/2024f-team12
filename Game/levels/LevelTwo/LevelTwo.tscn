@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://dvx3svk6wr1j1"]
+[gd_scene load_steps=46 format=4 uid="uid://dvx3svk6wr1j1"]
 
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/level_two.gd" id="1_b5p0r"]
@@ -12,13 +12,15 @@
 [ext_resource type="Script" path="res://Common/resources/interaction_info.gd" id="6_s4m5l"]
 [ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_sbmx7"]
 [ext_resource type="PackedScene" uid="uid://bofbidbwi71je" path="res://Entities/Interactions/mob_boss_interaction.tscn" id="8_fajru"]
-[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Moreau_Voice.wav" id="9_lcjgr"]
+[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Voices/Moreau_Voice.wav" id="9_lcjgr"]
 [ext_resource type="Texture2D" uid="uid://cv0tsrqkeb4jf" path="res://Aseprite-Art/Mob-Boss.png" id="10_rjiyk"]
-[ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/ModBoss Voice.wav" id="10_xiyit"]
+[ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/Voices/ModBoss Voice.wav" id="10_xiyit"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/lockbox.gd" id="15_sp6ch"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/lockbox_2.gd" id="17_od1hh"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/cocahine.gd" id="18_px61j"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/dirty_money.gd" id="19_i38kw"]
+[ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_d14gi"]
+[ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="20_ri1b4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
 texture = ExtResource("2_cx3uv")
@@ -574,3 +576,14 @@ script = ExtResource("19_i38kw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DirtyMoney/InteractionArea"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_qsy1x")
+
+[node name="MusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_ri1b4")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="IndoorRain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_d14gi")
+volume_db = -5.0
+autoplay = true

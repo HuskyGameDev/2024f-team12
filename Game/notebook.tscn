@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://1sfle8ux11ac"]
 
-[ext_resource type="Script" path="res://Game/ingredient_book/book.gd" id="1_uerip"]
+[ext_resource type="Script" path="res://Game/notebook/book.gd" id="1_uerip"]
 [ext_resource type="Texture2D" uid="uid://w8okvx8go1b5" path="res://Game/notebook/Notebook Page.png" id="2_fbxir"]
+
 
 [node name="Book" type="Node2D"]
 script = ExtResource("1_uerip")

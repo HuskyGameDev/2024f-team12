@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bn0xy4jjx7su3" path="res://Aseprite-Art/Moreau-Cutscene-200.png" id="7_ypnx0"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/filing_cabinet_interaction.gd" id="8_t0jfh"]
 [ext_resource type="Texture2D" uid="uid://bqwnjncaoee4i" path="res://Aseprite-Art/Woman-BW.png" id="8_u0o6y"]
-[ext_resource type="AudioStream" uid="uid://b7qt3hldl6h7g" path="res://Sounds/Mrs. Duval Voice.wav" id="9_5sq3f"]
+[ext_resource type="AudioStream" uid="uid://b7qt3hldl6h7g" path="res://Sounds/Voices/Mrs. Duval Voice.wav" id="9_5sq3f"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/window_interaction.gd" id="9_m21r0"]
-[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Moreau_Voice.wav" id="10_0b55f"]
+[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Voices/Moreau_Voice.wav" id="10_0b55f"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/cork_board_interaction.gd" id="10_qkad4"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://Game/levels/LevelOne/leave_office.gd" id="21_2q6k4"]
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="21_nsktu"]
 [ext_resource type="Resource" uid="uid://cxs6e61ye1cjs" path="res://Common/resources/thing1.tres" id="21_shhoy"]
-[ext_resource type="AudioStream" uid="uid://bbjnq5k7gtgyl" path="res://Sounds/Investigation.mp3" id="22_t841a"]
+[ext_resource type="AudioStream" uid="uid://bbjnq5k7gtgyl" path="res://Sounds/Music/Investigation.mp3" id="22_t841a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3p2h"]
 texture = ExtResource("13_hhd26")
@@ -612,7 +612,6 @@ tile_map_data = PackedByteArray("AAAdABUAAgAAAAUAAAAeABUAAgAAAAUAAAAfABUAAgAAAAU
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
-visible = false
 
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
 visible = false
