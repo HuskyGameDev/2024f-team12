@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dr72wmvgmhfml"]
+[gd_scene load_steps=14 format=3 uid="uid://dr72wmvgmhfml"]
 
 [ext_resource type="Script" path="res://Entities/main_menu.gd" id="1_yafju"]
 [ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_pm0ke"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="5_ftjtf"]
 [ext_resource type="Script" path="res://Entities/settings.gd" id="6_hikwo"]
 [ext_resource type="FontFile" uid="uid://dchpm1lksy6ar" path="res://Fonts/MinecraftStandard.otf" id="7_l1wpv"]
+[ext_resource type="PackedScene" uid="uid://dkqs0tbqseenl" path="res://Game/audio_slider_settings.tscn" id="8_51rke"]
+[ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="9_g2luc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec74g"]
 
@@ -121,9 +123,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5gusu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b4vkf")
 text = "Exit"
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ftjtf")
-
 [node name="Settings" type="Control" parent="."]
 visible = false
 layout_mode = 1
@@ -188,25 +187,25 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Mute" type="CheckBox" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider Settings" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("8_51rke")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("7_l1wpv")
-text = "Mute"
+bus_name = "Master"
 
-[node name="Master_Volume" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider Settings2" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("8_51rke")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("7_l1wpv")
-text = "Master Volume"
+bus_name = "Music"
 
-[node name="Master" type="HSlider" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider Settings3" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("8_51rke")]
 layout_mode = 2
+bus_name = "Sfx"
 
 [node name="Graphics" type="TabBar" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer"]
 visible = false
@@ -265,45 +264,11 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Keys" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("7_l1wpv")
-text = "Not yet implemented
-"
-
-[node name="Accessibility" type="TabBar" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Accessibility"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Accessibility/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="Idk" type="Label" parent="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("7_l1wpv")
-text = "Not yet implemented"
 
 [node name="Options_Exit" type="Button" parent="Settings/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
@@ -314,11 +279,21 @@ theme_override_fonts/font = ExtResource("7_l1wpv")
 theme_override_font_sizes/font_size = 16
 text = "Back"
 
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ftjtf")
+bus = &"Sfx"
+
+[node name="MusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g2luc")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="tab_clicked" from="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" to="Settings" method="_on_tab_container_tab_clicked"]
-[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/VBoxContainer/Master" to="Settings" method="_on_master_value_changed"]
 [connection signal="item_selected" from="Settings/MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/VBoxContainer/Resolutions" to="Settings" method="_on_resolutions_item_selected"]
 [connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/Options_Exit" to="." method="_on_options_exit_pressed"]

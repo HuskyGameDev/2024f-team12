@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dc1feg5ya1yaw"]
+[gd_scene load_steps=22 format=4 uid="uid://dc1feg5ya1yaw"]
 
 [ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="1_eirfc"]
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_evdvj"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="4_h5tu5"]
 [ext_resource type="Texture2D" uid="uid://c0jkvcp8mugjp" path="res://Aseprite-Art/Kitchen-Tileset.png" id="4_q2g1g"]
 [ext_resource type="Texture2D" uid="uid://bq5574fseegxu" path="res://Aseprite-Art/Alley-Tileset.png" id="5_vcqhx"]
+[ext_resource type="AudioStream" uid="uid://bbjnq5k7gtgyl" path="res://Sounds/Music/Investigation.mp3" id="8_sn2uy"]
+[ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="9_tvcde"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oefjp"]
 texture = ExtResource("1_eirfc")
@@ -508,3 +510,16 @@ text = "Press [E] to pew (placeholder for interactions)"
 
 [node name="Cutscene" parent="." instance=ExtResource("4_h5tu5")]
 visible = false
+
+[node name="MusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_sn2uy")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="IndoorRain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tvcde")
+volume_db = -5.0
+autoplay = true
+bus = &"Sfx"

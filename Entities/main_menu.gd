@@ -8,6 +8,7 @@ func button_pressed():
 
 func _on_start_pressed() -> void:
 	$Click.play()
+	$MusicLoop.stop()
 	hide()
 
 

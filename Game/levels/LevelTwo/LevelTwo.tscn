@@ -581,9 +581,11 @@ shape = SubResource("RectangleShape2D_qsy1x")
 stream = ExtResource("20_ri1b4")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="IndoorRain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_d14gi")
 volume_db = -5.0
 autoplay = true
+bus = &"Sfx"
