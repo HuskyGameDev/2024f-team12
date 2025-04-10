@@ -13,6 +13,6 @@ func _on_interact():
 
 func _send_text():
 	$"..".evidencefound[2] = 1
-	text_box.queue_cutscene("Moreau", 0, "Looks like some drugs that the Mob has been moving. Might be able to use this as a bargaining chip.")
+	text_box.queue_text("Moreau", "\"Looks like some drugs that the Mob has been moving. Might be able to use this as a bargaining chip.\"")
 	text_box.time_to_output = true
 	pass

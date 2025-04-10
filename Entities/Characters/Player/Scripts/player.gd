@@ -69,3 +69,7 @@ func _process(delta: float) -> void:
 		if(curdir == direction.RIGHT):
 			$"Player Sprite".play("Idle_right")
 	
+
+func look_down():
+	curdir = direction.DOWN
+	$"Player Sprite".play("Idle_down")

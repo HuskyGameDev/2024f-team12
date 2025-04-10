@@ -14,6 +14,6 @@ func _on_interact():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _send_text():
 	$"..".evidencefound[3] = 1
-	text_box.queue_cutscene("Moreau", 0, "This is definitely dirty money. Might be able to use this when I talk to him.")
+	text_box.queue_text("Moreau", "\"This is definitely dirty money. Might be able to use this when I talk to him.\"")
 	text_box.time_to_output = true
 	pass
