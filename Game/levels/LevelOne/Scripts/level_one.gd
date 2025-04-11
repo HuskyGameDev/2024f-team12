@@ -15,7 +15,6 @@ var voiceplaying = false
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if text_box.blackscreen == true && blackscreen.z_index == 0:
