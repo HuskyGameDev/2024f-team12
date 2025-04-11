@@ -43,6 +43,7 @@ visible = false
 position = Vector2(161, 78)
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/Journal"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.837

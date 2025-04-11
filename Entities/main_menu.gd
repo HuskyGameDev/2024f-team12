@@ -1,6 +1,5 @@
 extends Control
 
-
 func button_pressed():
 	$Click.play()
 	hide()
@@ -10,6 +9,8 @@ func _on_start_pressed() -> void:
 	$Click.play()
 	$MusicLoop.stop()
 	hide()
+	await get_tree().create_timer(.5).timeout
+	$"../Journal/Button".show()
 
 
 func _on_options_pressed() -> void:
