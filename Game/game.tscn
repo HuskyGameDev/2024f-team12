@@ -56,6 +56,7 @@ offset_right = 8.00897
 offset_bottom = 6.004
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4mwop")
 
 [node name="Sprite2D" type="TextureRect" parent="CanvasLayer/UI/Journal/Button"]
