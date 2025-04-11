@@ -17,6 +17,6 @@ func _on_interact():
 		text_box.time_to_output = true
 	else:
 		dooropen.play()
-		playernode.position.x = 982
-		playernode.position.y = -252
+		playernode.position.x = 984
+		playernode.position.y = -282
 		playernode.look_down()

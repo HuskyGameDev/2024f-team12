@@ -10,6 +10,6 @@ func _ready() -> void:
 
 func _on_interact():
 	dooropen.play()
-	playernode.position.x = 518
-	playernode.position.y = 194
+	playernode.position.x = 520
+	playernode.position.y = 166
 	playernode.look_down()

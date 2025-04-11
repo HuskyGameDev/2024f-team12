@@ -51,5 +51,5 @@ func _process(delta: float) -> void:
 	
 	if text_box.level2cutscene[1] > 0:
 		print("EndOfLevel2")
-		var game_node: Game = get_tree().get_nodes_in_group("game")[0] as Game
+		var game_node: Gamesd = get_tree().get_nodes_in_group("game")[0] as Game
 		SceneManager.swap_scenes("res://Game/levels/LevelThree/LevelThree.tscn", game_node.screen_holder, $"." , "fade_to_dark")
