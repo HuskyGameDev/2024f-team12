@@ -116,12 +116,12 @@ texture = ExtResource("2_cx3uv")
 8:2/size_in_atlas = Vector2i(1, 2)
 8:2/0 = 0
 8:2/0/texture_origin = Vector2i(0, -8)
-8:2/0/y_sort_origin = 24
+8:2/0/y_sort_origin = 8
 8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 23.5, -8, 23.75)
 9:2/size_in_atlas = Vector2i(1, 2)
 9:2/0 = 0
 9:2/0/texture_origin = Vector2i(0, -8)
-9:2/0/y_sort_origin = 24
+9:2/0/y_sort_origin = 8
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 23.5, -8, 23.75)
 1:4/0 = 0
 2:4/0 = 0
@@ -474,9 +474,10 @@ position = Vector2(573, 595)
 speed = 48
 
 [node name="Camera2D" type="Camera2D" parent="ySort/Player"]
-position = Vector2(0, -40)
+position = Vector2(0, -8)
 
 [node name="Control" type="Control" parent="ySort/Player/Camera2D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -141.0
