@@ -34,6 +34,10 @@ window/vsync/vsync_mode=0
 
 project/assembly_name="Moreau"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/vision_cone_2d/plugin.cfg")
+
 [global_group]
 
 player=""

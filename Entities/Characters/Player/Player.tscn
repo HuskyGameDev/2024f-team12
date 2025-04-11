@@ -208,7 +208,6 @@ animations = [{
 radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-position = Vector2(-252, -189)
 collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_vgpfv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dvx3svk6wr1j1"]
+[gd_scene load_steps=58 format=4 uid="uid://dvx3svk6wr1j1"]
 
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/level_two.gd" id="1_b5p0r"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/dirty_money.gd" id="19_i38kw"]
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_d14gi"]
 [ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="20_ri1b4"]
+[ext_resource type="PackedScene" uid="uid://bulute7i5ksyy" path="res://addons/vision_cone_2d/examples/enemy.tscn" id="22_knxy3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
 texture = ExtResource("2_cx3uv")
@@ -445,6 +446,42 @@ size = Vector2(20, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsy1x"]
 size = Vector2(20, 38)
 
+[sub_resource type="Curve2D" id="Curve2D_favpu"]
+_data = {
+"points": PackedVector2Array(-29.968, 0.117984, 29.968, -0.117984, 369, 351, 0, 0, 0, 0, 786, 352, 28.75, 1, -28.75, -1, 785, 367, 0, 0, 0, 0, 705, 368, 16.3998, 0, -16.3998, 0, 369, 368, 0, 0, 0, 0, 369, 351)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66gov"]
+size = Vector2(191, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_156yx"]
+size = Vector2(351, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcfe3"]
+size = Vector2(30, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nwe6"]
+size = Vector2(194, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwbu6"]
+size = Vector2(62, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6f7y"]
+size = Vector2(143, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0u4g"]
+size = Vector2(58, 531)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ftha"]
+size = Vector2(470, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt1ya"]
+size = Vector2(41, 531)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jwo3"]
+size = Vector2(523, 20)
+
 [node name="Level Two" type="Node2D"]
 script = ExtResource("1_b5p0r")
 
@@ -604,3 +641,147 @@ stream = ExtResource("20_d14gi")
 volume_db = -5.0
 autoplay = true
 bus = &"Sfx"
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("move_on_path") instance=ExtResource("22_knxy3")]
+position = Vector2(438, 349)
+rotation = -0.482968
+scale = Vector2(0.4, 0.4)
+rotation_speed = 1.0
+move_on_path = NodePath("../Path2D/PathFollow2D")
+movement_speed = 1.0
+
+[node name="VisionCone2D" parent="Enemy3" index="1"]
+angle_deg = 75
+ray_count = 60
+max_distance = 200.0
+collision_layer_mask = 16
+
+[node name="VisionConeRenderer" parent="Enemy3/VisionCone2D" index="0"]
+z_index = -1
+
+[node name="Explanation" type="Label" parent="Enemy3"]
+visible = false
+offset_left = 18.0
+offset_top = 13.0
+offset_right = 260.0
+offset_bottom = 39.0
+text = "This enemy has a vision cone, but it is not rendering it to a polygon 2d as the write_polygon2d is null. It is still being written to a collider so it can act on it. This is useful if you want to use it for AI, but don't want to show the cone to the player. You can still use the debug mode to display an outline while working on it"
+
+[node name="Explanation2" type="Label" parent="Enemy3"]
+visible = false
+offset_left = 36.0
+offset_top = 26.0
+offset_right = 2460.0
+offset_bottom = 52.0
+text = "Notice that since this cone is not visualized by the player, the minimum_recalculate_time_msec can be set to a higher value to improve performance, since this can be slightly more approximate than a cone that is visible"
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_favpu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(369, 351)
+rotation = -0.00393688
+
+[node name="VisionWalls" type="Node2D" parent="."]
+
+[node name="Area2D1" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(362, 422)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D1"]
+position = Vector2(85.5, 7.5)
+shape = SubResource("RectangleShape2D_66gov")
+
+[node name="Area2D2" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(411, 326)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D2"]
+position = Vector2(165.5, -7.5)
+shape = SubResource("RectangleShape2D_156yx")
+
+[node name="Area2D3" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(523, 456)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D3"]
+position = Vector2(5, 47)
+shape = SubResource("RectangleShape2D_mcfe3")
+
+[node name="Area2D4" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(618, 438)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D4"]
+position = Vector2(87, -8)
+shape = SubResource("RectangleShape2D_8nwe6")
+
+[node name="Area2D5" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(432, 266)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D5"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_lwbu6")
+
+[node name="Area2D6" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(619, 534)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D6"]
+position = Vector2(61.5, 8)
+shape = SubResource("RectangleShape2D_b6f7y")
+
+[node name="Area2D7" type="StaticBody2D" parent="VisionWalls"]
+position = Vector2(586, 472)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D7"]
+
+[node name="OuterWalls" type="Node2D" parent="VisionWalls"]
+
+[node name="Left" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
+position = Vector2(303, 354)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Left"]
+position = Vector2(19, 15.5)
+shape = SubResource("RectangleShape2D_r0u4g")
+
+[node name="Top" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
+position = Vector2(340, 186)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Top"]
+position = Vector2(225, 13.5)
+shape = SubResource("RectangleShape2D_0ftha")
+
+[node name="Right" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
+position = Vector2(832, 331)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Right"]
+position = Vector2(-10.5, 44.5)
+shape = SubResource("RectangleShape2D_wt1ya")
+
+[node name="Bottom" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
+position = Vector2(524, 618)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Bottom"]
+position = Vector2(58.5, 0)
+shape = SubResource("RectangleShape2D_1jwo3")
+
+[editable path="Enemy3"]
+[editable path="Enemy3/VisionCone2D"]
