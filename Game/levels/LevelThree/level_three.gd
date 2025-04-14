@@ -15,20 +15,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var curtext = null
 	if text_box.blackscreen == true && blackscreenvisible == false:
 		blackscreen.show()
 		blackscreenvisible = true
 	elif text_box.blackscreen == false && blackscreenvisible == true:
 		blackscreen.hide()
 		blackscreenvisible = false
-	
-	if voiceplaying == false && text_box.curspeaker == "Police Officer":
+	if text_box.time_to_output == true:
+		curtext = $Cutscene/TextboxContainer/MarginContainer/HBoxContainer/Label.text
+	if voiceplaying == false && text_box.curspeaker == "Police Officer" && curtext != "\"...\"":
 		$"Po-Po/AudioStreamPlayer2D".play()
 		voiceplaying = true
-	if voiceplaying == false && text_box.curspeaker == "Moreau":
+	if voiceplaying == false && text_box.curspeaker == "Moreau" && curtext != "\"...\"":
 		$Player/MoreauVoice.play()
 		voiceplaying = true
-	if voiceplaying == false && text_box.curspeaker == "Mrs. Duval":
+	if voiceplaying == false && text_box.curspeaker == "Mrs. Duval" && curtext != "\"...\"":
 		$MrsDuval/WomanVoice.play()
 		voiceplaying = true
 	if voiceplaying == true && text_box.curspeaker == "":
@@ -36,4 +38,5 @@ func _process(delta: float) -> void:
 		$Player/MoreauVoice.stop()
 		$MrsDuval/WomanVoice.stop()
 		voiceplaying = false
+		curtext = null
 	

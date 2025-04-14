@@ -79,7 +79,7 @@ size_flags_vertical = 1
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_ck6t5")
 theme_override_font_sizes/font_size = 6
-text = "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test "
+text = "He told me that about four months ago he even had to send some of his boys out to kill some cops wife… said he was “snooping around too much for business” or something."
 vertical_alignment = 1
 autowrap_mode = 3
 text_overrun_behavior = 3
@@ -96,7 +96,7 @@ custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_h1bbo")
 theme_override_font_sizes/font_size = 8
-text = "Test Text"
+text = "Who asked"
 horizontal_alignment = 1
 autowrap_mode = 3
 
