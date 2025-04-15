@@ -12,7 +12,7 @@ func _on_interact():
 
 
 func _send_text():
-	text_box.set_cutscene(1)
+	text_box.set_cutscene(4)
 	text_box.queue_cutscene("Moreau", 1, "\"How’d you end up in this state?\"")
 	text_box.queue_cutscene("???", 2, "\"Oh, thank goodness! I was just going about my daily duties at the restaurant when these mafia thugs jumped me taking out the trash.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Oh, so you must be Mr. Tony Duval?\"")
@@ -36,8 +36,13 @@ func _send_text():
 	text_box.queue_cutscene("Tony", 0, "\"That’s part of the reason that my wife and I feared so much for our lives while we were caught up in the whole mess of it.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"...\"")
 	text_box.queue_cutscene("Tony", 0, "\" I mean, who wouldn’t be intimidated by one of the strongest corrupt forces of the city underworld?\"")
-	text_box.queue_cutscene("Moreau", 0, "\"........\"")
+	text_box.queue_cutscene("Moreau", 0, "\"...\"")
 	text_box.queue_cutscene("Tony", 0, "\"It’s really pretty crazy looking back on- erm… are you alright there Mr. Detective?\"")
-	text_box.queue_cutscene("Moreau", 0, "\"That bastard!\"")	
+	text_box.queue_cutscene("Moreau", -1, "\"That BASTARD!\"")
+	text_box.queue_cutscene("", 0, "\"I ALWAYS KNEW THERE WAS MORE\"")
+	text_box.queue_cutscene("", 0, "\"IT JUST COULDN'T BE THAT SIMPLE\"")
+	text_box.queue_cutscene("", 0, "\"COULDN'T BE THAT EASY\"")
+	text_box.queue_cutscene("", 0, "\"COULDN'T BE THE WAY IT ENDED\"")
+	text_box.queue_cutscene("", 0, "\"IT JUST COULDN'T BE...\"")
 	text_box.time_to_output = true
 	pass
