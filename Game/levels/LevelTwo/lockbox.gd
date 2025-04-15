@@ -13,7 +13,7 @@ func _on_interact():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _send_text():
-	$"..".evidencefound[0] = 1
+	$".."._FindEvidence(0)
 	text_box.lockpickmode = true
 	text_box.queue_cutscene("Moreau", 0, "Some sort of lockbox. Maybe it has some useful information in it")
 	text_box.queue_cutscene("Moreau", 0, "Looks like some faked tax reports. I bet the IRS will love this.")

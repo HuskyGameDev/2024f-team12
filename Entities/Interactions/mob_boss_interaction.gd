@@ -12,7 +12,7 @@ func _on_interact():
 
 
 func _send_text():
-	var evidence = $"..".evidencefound
+	var evidence = $".."._GetEvidence()
 	
 	text_box.set_cutscene(3)
 	text_box.queue_cutscene("", 1, "*Moreau opens the door*")
