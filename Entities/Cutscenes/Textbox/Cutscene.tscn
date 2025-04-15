@@ -96,7 +96,7 @@ custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_h1bbo")
 theme_override_font_sizes/font_size = 8
-text = "Who asked"
+text = "Frank"
 horizontal_alignment = 1
 autowrap_mode = 3
 

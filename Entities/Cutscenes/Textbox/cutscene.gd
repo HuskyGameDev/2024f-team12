@@ -108,7 +108,7 @@ func _process(delta):
 					updatecutscene()
 					wathistry = false
 					if curcutscene != 5:
-						blackscreen == false
+						blackscreen = false
 					curcutscene = 0
 					hide_textbox()
 					time_to_output = false
