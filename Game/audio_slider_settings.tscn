@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkqs0tbqseenl"]
+[gd_scene load_steps=3 format=3 uid="uid://dkqs0tbqseenl"]
 
 [ext_resource type="Script" path="res://Game/audio_slider_settings.gd" id="1_ymnpn"]
+[ext_resource type="FontFile" uid="uid://dchpm1lksy6ar" path="res://Fonts/MinecraftStandard.otf" id="2_6yxjc"]
 
 [node name="Audio_Slider Settings" type="Control"]
 layout_mode = 3
@@ -20,7 +21,8 @@ theme_override_constants/separation = 42
 [node name="Audio_Name_Lbl" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("2_6yxjc")
+theme_override_font_sizes/font_size = 26
 text = "Master Volume"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
@@ -39,5 +41,6 @@ layout_mode = 2
 [node name="Audio_Num_Lbl2" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("2_6yxjc")
+theme_override_font_sizes/font_size = 26
 text = "99.2"

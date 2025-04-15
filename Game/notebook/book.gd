@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	if ui_node != null:
 		if !ui_node.inDialogue: #If not in dialogue the player can see the notebook & the button
 			get_parent().show()
-			if Input.is_action_just_pressed("J"):
+			if Input.is_action_just_pressed("notebook"):
 				if !visible:
 					show()
 				elif visible:
