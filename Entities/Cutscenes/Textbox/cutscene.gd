@@ -34,6 +34,8 @@ var curcutscene = 0 # Number is based on order of the following arrays
 var level1cutscene = [0, 0, 0] # if active, if succeeded, num of fails
 var level1exit = [0, 0, 0] # if active, if succeeded, num of fails
 var level2cutscene = [0, 0, 0] # if active, if succeeded, num of fails 
+var level3cutscene = [0, 0, 0] # if active, if succeeded, num of fails 
+var finalcutscene = [0, 0, 0] # if active, if succeeded, num of fails 
 
 var time_to_output = false
 var blackscreen = false
@@ -105,10 +107,11 @@ func _process(delta):
 				if text_queue.is_empty():
 					updatecutscene()
 					wathistry = false
+					if curcutscene != 5:
+						blackscreen == false
 					curcutscene = 0
 					hide_textbox()
 					time_to_output = false
-					blackscreen = false
 					speakerone = false
 					speakertwo = false
 					# ui_node.inDialogue = false
@@ -188,6 +191,9 @@ func display_text():
 	else:
 		skip_promt.hide()
 	speaker.text = speakers.pop_front()
+	if spk == -1:
+		speakerone = false
+		speakertwo = false
 	if spk == 1:
 		if speakerone == true:
 			speakerone = false
@@ -334,6 +340,14 @@ func set_cutscene(cutname):
 	if cutname == 3:
 		level2cutscene[0] = 1
 		curcutscene = 3
+	
+	if cutname == 4:
+		level3cutscene[0] = 1
+		curcutscene = 4
+	
+	if cutname == 5:
+		finalcutscene[0] = 1
+		curcutscene = 5
 
 func updatecutscene():
 	var success = 2
@@ -350,3 +364,9 @@ func updatecutscene():
 		3:
 			level2cutscene[success] += 1
 			level2cutscene[0] = 0
+		4:
+			level3cutscene[success] += 1
+			level3cutscene[0] = 0
+		5:
+			finalcutscene[success] += 1
+			finalcutscene[0] = 0

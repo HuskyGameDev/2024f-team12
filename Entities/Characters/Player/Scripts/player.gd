@@ -3,8 +3,8 @@ extends CharacterBody2D
 # Change this value to adjust how fast the character moves
 @export var speed = 2
 
-
-var moving = false
+var warehousep1done: bool = false
+var moving: bool = false
 var movdir = 0
 @onready var text_box = $"../Cutscene"
 
@@ -73,3 +73,12 @@ func _process(delta: float) -> void:
 func look_down():
 	curdir = direction.DOWN
 	$"Player Sprite".play("Idle_down")
+
+func _toggleWarehouse():
+	if warehousep1done:
+		warehousep1done = false
+	else:
+		warehousep1done = true
+
+func _getWarehouse():
+	return warehousep1done
