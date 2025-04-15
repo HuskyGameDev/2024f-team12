@@ -11,13 +11,46 @@ script = ExtResource("1_wtaap")
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_ud7fm")
 
-[node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -118.0
+[node name="Note 1" type="Label" parent="Sprite2D"]
+offset_left = -120.0
 offset_top = -85.0
-offset_right = -11.0
-offset_bottom = -34.0
+offset_right = -12.0
+offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xdagx")
 theme_override_font_sizes/font_size = 6
-text = "This is evidence, I am finding"
-autowrap_mode = 1
+text = "This is evidence, I am finding."
+autowrap_mode = 2
+
+[node name="Note 2" type="Label" parent="Sprite2D"]
+offset_left = -120.0
+offset_top = -48.0
+offset_right = -12.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xdagx")
+theme_override_font_sizes/font_size = 6
+text = "This is evidence, I am finding."
+autowrap_mode = 2
+
+[node name="Note 3" type="Label" parent="Sprite2D"]
+offset_left = 12.3077
+offset_top = -84.6154
+offset_right = 120.308
+offset_bottom = 74.3846
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xdagx")
+theme_override_font_sizes/font_size = 6
+text = "This is evidence, I am finding."
+autowrap_mode = 2
+
+[node name="Note 4" type="Label" parent="Sprite2D"]
+offset_left = 12.3077
+offset_top = -47.6923
+offset_right = 120.308
+offset_bottom = 75.3077
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xdagx")
+theme_override_font_sizes/font_size = 6
+text = "This is evidence, I am finding."
+autowrap_mode = 2

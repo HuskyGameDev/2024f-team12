@@ -24,3 +24,7 @@ func _on_button_pressed() -> void:
 		show()
 	elif visible:
 		hide()
+
+
+func on_evidence_found() -> void:
+	pass
