@@ -15,6 +15,7 @@ script = ExtResource("1_jbnbe")
 [node name="ScreenHolder" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
 
 [node name="UI" type="Control" parent="CanvasLayer" groups=["ui"]]
 layout_mode = 3
@@ -23,10 +24,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_xum5a")
 
 [node name="MainMenu" parent="CanvasLayer/UI" instance=ExtResource("1_eoxss")]
 layout_mode = 1
+mouse_filter = 1
 
 [node name="PauseMenu" parent="CanvasLayer/UI" instance=ExtResource("3_y6uf2")]
 visible = false
@@ -37,6 +40,7 @@ offset_left = 3.0
 offset_top = 8.0
 offset_right = 46.0
 offset_bottom = 34.0
+mouse_filter = 1
 
 [node name="Book" parent="CanvasLayer/UI/Journal" instance=ExtResource("5_w53pr")]
 visible = false

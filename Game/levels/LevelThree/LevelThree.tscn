@@ -810,7 +810,6 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_ikj1i")
 
 [node name="Player" parent="." instance=ExtResource("1_evdvj")]
-visible = true
 y_sort_enabled = true
 position = Vector2(513, 278)
 speed = 48
