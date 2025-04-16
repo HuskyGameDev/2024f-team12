@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dvx3svk6wr1j1"]
+[gd_scene load_steps=59 format=4 uid="uid://dvx3svk6wr1j1"]
 
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
 [ext_resource type="Script" path="res://Game/levels/LevelTwo/level_two.gd" id="1_b5p0r"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_d14gi"]
 [ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="20_ri1b4"]
 [ext_resource type="PackedScene" uid="uid://bulute7i5ksyy" path="res://addons/vision_cone_2d/examples/enemy.tscn" id="22_knxy3"]
+[ext_resource type="PackedScene" uid="uid://bldn4gtgrg2wv" path="res://Entities/PatrollingEnemy/patrolling_enemy.tscn" id="24_5pj7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
 texture = ExtResource("2_cx3uv")
@@ -477,8 +478,14 @@ size = Vector2(41, 531)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jwo3"]
 size = Vector2(523, 20)
 
+[sub_resource type="Curve2D" id="Curve2D_ygwq0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 369, 360, 0, 0, 0, 0, 784, 360, 0, 0, 0, 0, 369, 360, 0, 0, 0, 0, 369, 360)
+}
+point_count = 4
+
 [node name="Level Two" type="Node2D"]
-position = Vector2(0, -1)
+position = Vector2(0, -3)
 script = ExtResource("1_b5p0r")
 
 [node name="Floorings" type="Node2D" parent="."]
@@ -633,6 +640,7 @@ autoplay = true
 bus = &"Sfx"
 
 [node name="Enemy3" parent="." node_paths=PackedStringArray("move_on_path") instance=ExtResource("22_knxy3")]
+visible = false
 position = Vector2(438, 349)
 rotation = -0.482968
 scale = Vector2(0.4, 0.4)
@@ -664,6 +672,11 @@ offset_top = 26.0
 offset_right = 2460.0
 offset_bottom = 52.0
 text = "Notice that since this cone is not visualized by the player, the minimum_recalculate_time_msec can be set to a higher value to improve performance, since this can be slightly more approximate than a cone that is visible"
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("move_on_path") instance=ExtResource("24_5pj7b")]
+rotation = 4.03171
+move_on_path = NodePath("../Path2D2/PathFollow2D")
+movement_speed = 0.6
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_favpu")
@@ -773,6 +786,12 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Bottom"]
 position = Vector2(58.5, 0)
 shape = SubResource("RectangleShape2D_1jwo3")
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ygwq0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(369, 360)
 
 [editable path="Enemy3"]
 [editable path="Enemy3/VisionCone2D"]
