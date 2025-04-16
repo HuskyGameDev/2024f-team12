@@ -29,6 +29,9 @@ var speakertwo = false
 var speakers = []
 var speakerson = []
 
+var sfxplay1 = false
+var sfxplay2 = false
+
 var curspeaker = ""
 var curcutscene = 0 # Number is based on order of the following arrays
 var level1cutscene = [0, 0, 0] # if active, if succeeded, num of fails
@@ -85,7 +88,7 @@ func _process(delta):
 	match current_state:
 		State.READY:
 			if !text_queue.is_empty() && time_to_output == true:
-				ui_node.inDialogue = true
+				# ui_node.inDialogue = true
 				display_text()
 			
 		State.READ:
@@ -114,7 +117,7 @@ func _process(delta):
 					time_to_output = false
 					speakerone = false
 					speakertwo = false
-					ui_node.inDialogue = false
+					# ui_node.inDialogue = false
 			# if minigame == true && minigamevisible == false:
 				# LOM.show()
 				# LOM.board_wipe()
@@ -194,6 +197,14 @@ func display_text():
 	if spk == -1:
 		speakerone = false
 		speakertwo = false
+	if spk == -2:
+		speakerone = false
+		speakertwo = false
+		sfxplay1 = true
+	if spk == -3:
+		speakerone = false
+		speakertwo = false
+		sfxplay2 = true
 	if spk == 1:
 		if speakerone == true:
 			speakerone = false

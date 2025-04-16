@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 		_resetRoundTwo()
 	
 	if text_box.blackscreen == true && blackscreenvisible == false:
+		$MusicLoop.play()
 		blackscreen.show()
 		blackscreenvisible = true
 	elif text_box.blackscreen == false && blackscreenvisible == true:
@@ -57,6 +58,15 @@ func _process(delta: float) -> void:
 		moreauvoice.stop()
 		mobbossvoice.stop()
 		voiceplaying = false
+	
+	if text_box.sfxplay1 == true:
+		$ySort/Cutscene/GunUnholster.play()
+		text_box.sfxplay1 = false
+	
+	if text_box.sfxplay2 == true:
+		$MusicLoop.stop()
+		$ySort/Cutscene/GunShot.play()
+		text_box.sfxplay2 = false
 	
 	if text_box.finalcutscene[1] > 0 && endcardvisible == false:
 		print("EndOfGame")

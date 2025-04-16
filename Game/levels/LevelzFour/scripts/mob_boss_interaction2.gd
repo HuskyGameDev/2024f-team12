@@ -27,6 +27,10 @@ func _send_text_second():
 	text_box.queue_cutscene("Moreau", 0, "\"...\"")
 	text_box.queue_cutscene("???", 0, "\"Y’know I never give you a bad offer Leo. I’ve always valued what we’ve had, what you’ve done. The renowned detective, LEO MOREAU!\"")
 	text_box.queue_cutscene("Moreau", 0, "\"She was special, you know... only she and my closest friends could call me Leo. And, if I’m being honest... I intend to keep it that way.\"")
-	text_box.queue_cutscene("", -1, "*Two guns were drawn in that room. Answered with a single, echoing 'bang'.*")
+	text_box.queue_cutscene("", -2, "*Two guns were drawn in that room,*")
+	text_box.queue_cutscene("", 0, "*Answered with*")
+	text_box.queue_cutscene("", 0, "*A single*")
+	text_box.queue_cutscene("", 0, "*deafening*")
+	text_box.queue_cutscene("", -3, "...")
 	
 	text_box.time_to_output = true

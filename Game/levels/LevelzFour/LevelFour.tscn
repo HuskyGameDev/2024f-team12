@@ -513,8 +513,7 @@ shape = SubResource("RectangleShape2D_8h38k")
 
 [node name="MusicLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_5n88r")
-volume_db = -80.0
-autoplay = true
+volume_db = -10.0
 bus = &"Music"
 parameters/looping = true
 
