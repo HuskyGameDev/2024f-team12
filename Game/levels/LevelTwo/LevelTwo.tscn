@@ -237,12 +237,12 @@ texture = ExtResource("2_cx3uv")
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
-0:0/0/y_sort_origin = 6
+0:0/0/y_sort_origin = 8
 0:0/0/probability = 1.5
 1:0/size_in_atlas = Vector2i(1, 2)
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 8)
-1:0/0/y_sort_origin = 6
+1:0/0/y_sort_origin = 8
 1:0/0/probability = 1.5
 
 [sub_resource type="TileSet" id="TileSet_lagm8"]
@@ -547,11 +547,9 @@ sprite_frames = SubResource("SpriteFrames_3hlaw")
 
 [node name="MoreauVoice" type="AudioStreamPlayer" parent="ySort/Cutscene"]
 stream = ExtResource("9_lcjgr")
-bus = &"Sfx"
 
 [node name="MobBossVoice" type="AudioStreamPlayer" parent="ySort/Cutscene"]
 stream = ExtResource("10_xiyit")
-bus = &"Sfx"
 
 [node name="Sprite2D" type="Sprite2D" parent="ySort/Cutscene"]
 visible = false
