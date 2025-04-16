@@ -1,31 +1,23 @@
-[gd_scene load_steps=57 format=4 uid="uid://dvx3svk6wr1j1"]
+[gd_scene load_steps=32 format=4 uid="uid://urbhda43cdr2"]
 
-[ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_2x4m1"]
-[ext_resource type="Script" path="res://Game/levels/LevelTwo/level_two.gd" id="1_b5p0r"]
-[ext_resource type="Texture2D" uid="uid://78vi66spod41" path="res://Aseprite-Art/Warehouse-TileSet.png" id="2_cx3uv"]
-[ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="3_3awoc"]
-[ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="3_7vp1j"]
-[ext_resource type="Texture2D" uid="uid://iv68uvn7twwj" path="res://Aseprite-Art/Warehouse-Concept-400.png" id="3_swrx1"]
-[ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="5_u6g7p"]
-[ext_resource type="Texture2D" uid="uid://bn0xy4jjx7su3" path="res://Aseprite-Art/Moreau-Cutscene-200.png" id="5_vfr6j"]
-[ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="6_qqsqw"]
-[ext_resource type="Script" path="res://Common/resources/interaction_info.gd" id="6_s4m5l"]
-[ext_resource type="PackedScene" uid="uid://hun6u6rotecx" path="res://Entities/Interactions/InteractionArea/InteractionArea.tscn" id="7_sbmx7"]
-[ext_resource type="PackedScene" uid="uid://bofbidbwi71je" path="res://Entities/Interactions/mob_boss_interaction.tscn" id="8_fajru"]
-[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Voices/Moreau_Voice.wav" id="9_lcjgr"]
-[ext_resource type="Texture2D" uid="uid://cv0tsrqkeb4jf" path="res://Aseprite-Art/Mob-Boss.png" id="10_rjiyk"]
-[ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/Voices/ModBoss Voice.wav" id="10_xiyit"]
-[ext_resource type="Texture2D" uid="uid://c85jj53i6q1p4" path="res://Sprites/placeholderend.jpg" id="12_bm0t1"]
-[ext_resource type="Script" path="res://Game/levels/LevelTwo/lockbox.gd" id="15_sp6ch"]
-[ext_resource type="Script" path="res://Game/levels/LevelTwo/lockbox_2.gd" id="17_od1hh"]
-[ext_resource type="Script" path="res://Game/levels/LevelTwo/cocahine.gd" id="18_px61j"]
-[ext_resource type="Script" path="res://Game/levels/LevelTwo/dirty_money.gd" id="19_i38kw"]
-[ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_d14gi"]
-[ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="20_ri1b4"]
-[ext_resource type="PackedScene" uid="uid://bulute7i5ksyy" path="res://addons/vision_cone_2d/examples/enemy.tscn" id="22_knxy3"]
+[ext_resource type="Script" path="res://Game/levels/LevelzFour/scripts/level_four.gd" id="1_3iyli"]
+[ext_resource type="Texture2D" uid="uid://78vi66spod41" path="res://Aseprite-Art/Warehouse-TileSet.png" id="2_w6la7"]
+[ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="3_11fl2"]
+[ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="4_0g51j"]
+[ext_resource type="Texture2D" uid="uid://iv68uvn7twwj" path="res://Aseprite-Art/Warehouse-Concept-400.png" id="5_kdwkf"]
+[ext_resource type="PackedScene" uid="uid://dcon53b86l4sh" path="res://Entities/Cutscenes/Textbox/Cutscene.tscn" id="6_1c0c6"]
+[ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="7_45fne"]
+[ext_resource type="Texture2D" uid="uid://cv0tsrqkeb4jf" path="res://Aseprite-Art/Mob-Boss.png" id="8_s5qpw"]
+[ext_resource type="Texture2D" uid="uid://bn0xy4jjx7su3" path="res://Aseprite-Art/Moreau-Cutscene-200.png" id="9_osjd3"]
+[ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Voices/Moreau_Voice.wav" id="10_2nt71"]
+[ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/Voices/ModBoss Voice.wav" id="11_4218a"]
+[ext_resource type="Texture2D" uid="uid://c85jj53i6q1p4" path="res://Sprites/placeholderend.jpg" id="12_smyew"]
+[ext_resource type="PackedScene" uid="uid://cox8qj08bxyyi" path="res://Game/levels/LevelzFour/mob_boss_interaction2.tscn" id="15_ov2it"]
+[ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="21_5n88r"]
+[ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="22_wfa6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
-texture = ExtResource("2_cx3uv")
+texture = ExtResource("2_w6la7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -63,7 +55,7 @@ texture = ExtResource("2_cx3uv")
 sources/0 = SubResource("TileSetAtlasSource_4osmw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vboqx"]
-texture = ExtResource("2_cx3uv")
+texture = ExtResource("2_w6la7")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.125, 8, 4.25, 8, 8, -8, 8)
 1:0/0 = 0
@@ -133,7 +125,7 @@ texture = ExtResource("2_cx3uv")
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h26l8"]
-texture = ExtResource("3_3awoc")
+texture = ExtResource("3_11fl2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -193,7 +185,7 @@ sources/0 = SubResource("TileSetAtlasSource_vboqx")
 sources/1 = SubResource("TileSetAtlasSource_h26l8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcwio"]
-texture = ExtResource("2_cx3uv")
+texture = ExtResource("2_w6la7")
 2:0/0 = 0
 2:0/0/y_sort_origin = 11
 3:0/0 = 0
@@ -247,7 +239,7 @@ texture = ExtResource("2_cx3uv")
 sources/0 = SubResource("TileSetAtlasSource_qcwio")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xyrk"]
-texture = ExtResource("6_qqsqw")
+texture = ExtResource("7_45fne")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -374,11 +366,11 @@ texture = ExtResource("6_qqsqw")
 sources/1 = SubResource("TileSetAtlasSource_3xyrk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41l8f"]
-atlas = ExtResource("10_rjiyk")
+atlas = ExtResource("8_s5qpw")
 region = Rect2(0, 0, 83, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i34i5"]
-atlas = ExtResource("10_rjiyk")
+atlas = ExtResource("8_s5qpw")
 region = Rect2(0, 50, 83, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbvxf"]
@@ -396,11 +388,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ib062"]
-atlas = ExtResource("5_vfr6j")
+atlas = ExtResource("9_osjd3")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ng2a"]
-atlas = ExtResource("5_vfr6j")
+atlas = ExtResource("9_osjd3")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3hlaw"]
@@ -417,66 +409,11 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="Resource" id="Resource_2u4s0"]
-script = ExtResource("6_s4m5l")
-speaking_character = Array[int]([0])
-text = Array[String](["\"FRA-GEE-LAY? Must be Italian.\""])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g3r1"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h38k"]
 size = Vector2(750, 59)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ilje"]
-size = Vector2(17, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yis3l"]
-size = Vector2(34, 43)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ijap"]
-size = Vector2(20, 48)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsy1x"]
-size = Vector2(20, 38)
-
-[sub_resource type="Curve2D" id="Curve2D_favpu"]
-_data = {
-"points": PackedVector2Array(-29.968, 0.117984, 29.968, -0.117984, 369, 351, 0, 0, 0, 0, 786, 352, 28.75, 1, -28.75, -1, 785, 367, 0, 0, 0, 0, 705, 368, 16.3998, 0, -16.3998, 0, 369, 368, 0, 0, 0, 0, 369, 351)
-}
-point_count = 6
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66gov"]
-size = Vector2(191, 35)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_156yx"]
-size = Vector2(351, 35)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcfe3"]
-size = Vector2(30, 114)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nwe6"]
-size = Vector2(194, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwbu6"]
-size = Vector2(62, 106)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6f7y"]
-size = Vector2(143, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0u4g"]
-size = Vector2(58, 531)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ftha"]
-size = Vector2(470, 47)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt1ya"]
-size = Vector2(41, 531)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jwo3"]
-size = Vector2(523, 20)
-
-[node name="Level Two" type="Node2D"]
-script = ExtResource("1_b5p0r")
+[node name="Level Four" type="Node2D"]
+script = ExtResource("1_3iyli")
 
 [node name="Floorings" type="Node2D" parent="."]
 
@@ -498,7 +435,7 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAuABEAAAADAAAAAAAqABEAAAADAAAAAAAmABEAAAADAAAAAAAhABEAAAADAAAAAAAdABEAAAADAAAAAAAZABEAAAADAAAAAAAZABIAAAACAAAAAAAhABIAAAACAAAAAAAmABIAAAACAAAAAAAqABIAAAACAAAAAAAuABIAAAACAAAAAAAtABIAAAADAAEAAAAsABIAAAACAAEAAAArABIAAAADAAEAAAAcABIAAAADAAEAAAAaABIAAAACAAEAAAAfABIAAAAAAAAAAAAgABIAAAAFAAAAAAAoABIAAAABAAAAAAAnABIAAAAFAAAAAAAaABEAAAAAAAAAAAAkABIAAAACAAEAAAAjABIAAAACAAEAAAAbABEAAAABAAAAAAAcABEAAAABAAAAAAAbAA0AAAAAAAAAAAAaAA0AAAABAAAAAAAbAA8AAAAAAAAAAAAbABAAAAAAAAAAAAAaABAAAAAAAAAAAAAaAA8AAAABAAAAAAAaAA4AAAABAAAAAAAbAA4AAAABAAAAAAAcAA8AAAADAAAAAAAZAA8AAAADAAAAAAAZABAAAAACAAAAAAAcABAAAAACAAAAAAAWABoAAAABAAAAAAAYABoAAAABAAAAAAAZABkAAAACAAAAAAAZABgAAAADAAAAAAAXABoAAAAAAAAAAAAbABkAAAABAAAAAAAdABkAAAACAAAAAAAfABkAAAABAAAAAAAgABkAAAAAAAAAAAAdABgAAAADAAAAAAAhABkAAAACAAAAAAAhABgAAAADAAAAAAAhABwAAAABAAAAAAAgABwAAAAAAAAAAAAgAB0AAAAAAAAAAAAhAB0AAAABAAAAAAAgAB4AAAABAAAAAAAhAB4AAAAAAAAAAAAhAB8AAAADAAAAAAAhACAAAAACAAAAAAAgACAAAAAAAAAAAAAfACAAAAAFAAAAAAAeACAAAAABAAAAAAAdACAAAAACAAAAAAAdAB8AAAADAAAAAAAZAB8AAAADAAAAAAAaACAAAAABAAAAAAAZACAAAAACAAAAAAAcACAAAAAAAAAAAAAmACAAAAACAAAAAAAoACAAAAABAAAAAAAqACAAAAACAAAAAAArACAAAAAFAAAAAAAsACAAAAAFAAAAAAAtACAAAAABAAAAAAAuACAAAAACAAAAAAAqAB8AAAADAAAAAAAuAB8AAAADAAAAAAAmAB8AAAADAAAAAAAmACIAAAAAAAAAAAAmACMAAAAAAAAAAAAmACQAAAABAAAAAAAmACUAAAABAAAAAAAoACUAAAABAAAAAAAoACQAAAAAAAAAAAAnACMAAAAAAAAAAAAnACQAAAABAAAAAAAnACUAAAABAAAAAAAmABkAAAACAAAAAAAmABgAAAADAAAAAAAnABkAAAAFAAAAAAAoABkAAAABAAAAAAArABkAAAABAAAAAAAqABkAAAACAAAAAAAqABgAAAADAAAAAAAuABgAAAADAAAAAAAuABkAAAACAAAAAAAwABoAAAAAAAAAAAAvABoAAAAAAAAAAAAcAAwAAAADAAAAAAAZAAwAAAADAAAAAAAiABIAAAAFAAAAAAAlABIAAAAFAAAAAAAxABoAAAACAAQAAAAZACEAAAACAAAAAAAdACEAAAACAAAAAAAhACEAAAACAAAAAAAmACEAAAACAAAAAAAqACEAAAACAAAAAAAuACEAAAACAAAAAAAuABoAAAACAAAAAAAqABoAAAACAAAAAAAmABoAAAACAAAAAAAhABoAAAACAAAAAAAdABoAAAACAAAAAAAZABoAAAACAAAAAAAdABMAAAACAAAAAAAhABMAAAACAAAAAAAmABMAAAACAAAAAAAqABMAAAACAAAAAAAuABMAAAACAAAAAAAaABMAAAADAAEAAAAbABMAAAACAAEAAAAcABMAAAAFAAAAAAAeABMAAAAAAAAAAAAgABMAAAAFAAAAAAAiABMAAAADAAEAAAAkABMAAAACAAEAAAAlABMAAAAFAAAAAAAnABMAAAABAAAAAAArABMAAAACAAEAAAAsABMAAAAFAAAAAAAtABMAAAACAAEAAAApABoAAAAFAAAAAAAoABoAAAACAAEAAAAnABoAAAACAAEAAAAgABoAAAAFAAAAAAAcABoAAAAFAAAAAAAbABoAAAABAAAAAAAeACEAAAAAAAAAAAAfACEAAAABAAAAAAAnACEAAAABAAAAAAAoACEAAAAAAAAAAAApACEAAAAAAAAAAAAsACEAAAABAAAAAAAdABIAAAACAAAAAAAbACAAAAAAAAAAAAAcACEAAAAAAAAAAAAbACEAAAAFAAAAAAAaACEAAAAFAAAAAAAgACEAAAAFAAAAAAApACAAAAAFAAAAAAAnACAAAAAFAAAAAAArACEAAAAAAAAAAAAtACEAAAAFAAAAAAAtABoAAAABAAAAAAAsABoAAAABAAAAAAArABoAAAAFAAAAAAAsABkAAAABAAAAAAAtABkAAAAFAAAAAAAeABoAAAAFAAAAAAAfABoAAAAAAAAAAAAeABkAAAAAAAAAAAAcABkAAAAFAAAAAAAaABkAAAABAAAAAAApABkAAAAFAAAAAAApABMAAAAFAAAAAAAoABMAAAAFAAAAAAApABIAAAAAAAAAAAAeABIAAAAFAAAAAAAfABMAAAAFAAAAAAAaABoAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_lagm8")
 
-[node name="Player" parent="ySort" instance=ExtResource("1_2x4m1")]
+[node name="Player" parent="ySort" instance=ExtResource("4_0g51j")]
 y_sort_enabled = true
 position = Vector2(573, 595)
 speed = 48
@@ -518,9 +455,9 @@ offset_bottom = 76.0
 [node name="Warehouse-concept-400" type="Sprite2D" parent="ySort"]
 position = Vector2(848, 972)
 scale = Vector2(0.414062, 0.357812)
-texture = ExtResource("3_swrx1")
+texture = ExtResource("5_kdwkf")
 
-[node name="Cutscene" parent="ySort" instance=ExtResource("3_7vp1j")]
+[node name="Cutscene" parent="ySort" instance=ExtResource("6_1c0c6")]
 
 [node name="blackscreen" type="TileMapLayer" parent="ySort/Cutscene"]
 visible = false
@@ -543,29 +480,16 @@ position = Vector2(194, 87)
 sprite_frames = SubResource("SpriteFrames_3hlaw")
 
 [node name="MoreauVoice" type="AudioStreamPlayer" parent="ySort/Cutscene"]
-stream = ExtResource("9_lcjgr")
+stream = ExtResource("10_2nt71")
 
 [node name="MobBossVoice" type="AudioStreamPlayer" parent="ySort/Cutscene"]
-stream = ExtResource("10_xiyit")
+stream = ExtResource("11_4218a")
 
 [node name="Sprite2D" type="Sprite2D" parent="ySort/Cutscene"]
 visible = false
 position = Vector2(155, 86)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_bm0t1")
-
-[node name="SecretInteraction2" type="Sprite2D" parent="ySort"]
-position = Vector2(696, 332)
-script = ExtResource("5_u6g7p")
-resource = SubResource("Resource_2u4s0")
-
-[node name="InteractionArea" parent="ySort/SecretInteraction2" instance=ExtResource("7_sbmx7")]
-position = Vector2(0, -1)
-action_name = "inspect"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ySort/SecretInteraction2/InteractionArea"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_4g3r1")
+texture = ExtResource("12_smyew")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -573,202 +497,18 @@ shape = SubResource("RectangleShape2D_4g3r1")
 position = Vector2(569, 708)
 shape = SubResource("RectangleShape2D_8h38k")
 
-[node name="MobBossInteraction" parent="." instance=ExtResource("8_fajru")]
-position = Vector2(575, 225)
-
-[node name="Lockbox" type="Node2D" parent="."]
-position = Vector2(520, 559)
-script = ExtResource("15_sp6ch")
-
-[node name="InteractionArea" parent="Lockbox" instance=ExtResource("7_sbmx7")]
-action_name = "investigate"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lockbox/InteractionArea"]
-shape = SubResource("RectangleShape2D_0ilje")
-
-[node name="Lockbox2" type="Node2D" parent="."]
-position = Vector2(719, 229)
-script = ExtResource("17_od1hh")
-
-[node name="InteractionArea" parent="Lockbox2" instance=ExtResource("7_sbmx7")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lockbox2/InteractionArea"]
-position = Vector2(1, 5)
-shape = SubResource("RectangleShape2D_yis3l")
-
-[node name="Cocahine" type="Node2D" parent="."]
-position = Vector2(424, 437)
-script = ExtResource("18_px61j")
-
-[node name="InteractionArea" parent="Cocahine" instance=ExtResource("7_sbmx7")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cocahine/InteractionArea"]
-position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_2ijap")
-
-[node name="DirtyMoney" type="Node2D" parent="."]
-position = Vector2(793, 434)
-script = ExtResource("19_i38kw")
-
-[node name="InteractionArea" parent="DirtyMoney" instance=ExtResource("7_sbmx7")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtyMoney/InteractionArea"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_qsy1x")
-
 [node name="MusicLoop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_ri1b4")
+stream = ExtResource("21_5n88r")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="IndoorRain" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_d14gi")
+stream = ExtResource("22_wfa6u")
 volume_db = -5.0
 autoplay = true
 bus = &"Sfx"
 
-[node name="Enemy3" parent="." node_paths=PackedStringArray("move_on_path") instance=ExtResource("22_knxy3")]
-position = Vector2(438, 349)
-rotation = -0.482968
-scale = Vector2(0.4, 0.4)
-rotation_speed = 1.0
-move_on_path = NodePath("../Path2D/PathFollow2D")
-movement_speed = 1.0
-
-[node name="VisionCone2D" parent="Enemy3" index="1"]
-angle_deg = 75
-ray_count = 60
-max_distance = 200.0
-collision_layer_mask = 16
-
-[node name="VisionConeRenderer" parent="Enemy3/VisionCone2D" index="0"]
-z_index = -1
-
-[node name="Explanation" type="Label" parent="Enemy3"]
-visible = false
-offset_left = 18.0
-offset_top = 13.0
-offset_right = 260.0
-offset_bottom = 39.0
-text = "This enemy has a vision cone, but it is not rendering it to a polygon 2d as the write_polygon2d is null. It is still being written to a collider so it can act on it. This is useful if you want to use it for AI, but don't want to show the cone to the player. You can still use the debug mode to display an outline while working on it"
-
-[node name="Explanation2" type="Label" parent="Enemy3"]
-visible = false
-offset_left = 36.0
-offset_top = 26.0
-offset_right = 2460.0
-offset_bottom = 52.0
-text = "Notice that since this cone is not visualized by the player, the minimum_recalculate_time_msec can be set to a higher value to improve performance, since this can be slightly more approximate than a cone that is visible"
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_favpu")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(369, 351)
-rotation = -0.00393688
-
-[node name="VisionWalls" type="Node2D" parent="."]
-
-[node name="Area2D1" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(362, 422)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D1"]
-position = Vector2(85.5, 7.5)
-shape = SubResource("RectangleShape2D_66gov")
-
-[node name="Area2D2" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(411, 326)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D2"]
-position = Vector2(165.5, -7.5)
-shape = SubResource("RectangleShape2D_156yx")
-
-[node name="Area2D3" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(523, 456)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D3"]
-position = Vector2(5, 47)
-shape = SubResource("RectangleShape2D_mcfe3")
-
-[node name="Area2D4" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(618, 438)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D4"]
-position = Vector2(87, -8)
-shape = SubResource("RectangleShape2D_8nwe6")
-
-[node name="Area2D5" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(432, 266)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D5"]
-position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_lwbu6")
-
-[node name="Area2D6" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(619, 534)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D6"]
-position = Vector2(61.5, 8)
-shape = SubResource("RectangleShape2D_b6f7y")
-
-[node name="Area2D7" type="StaticBody2D" parent="VisionWalls"]
-position = Vector2(586, 472)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/Area2D7"]
-
-[node name="OuterWalls" type="Node2D" parent="VisionWalls"]
-
-[node name="Left" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
-position = Vector2(303, 354)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Left"]
-position = Vector2(19, 15.5)
-shape = SubResource("RectangleShape2D_r0u4g")
-
-[node name="Top" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
-position = Vector2(340, 186)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Top"]
-position = Vector2(225, 13.5)
-shape = SubResource("RectangleShape2D_0ftha")
-
-[node name="Right" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
-position = Vector2(832, 331)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Right"]
-position = Vector2(-10.5, 44.5)
-shape = SubResource("RectangleShape2D_wt1ya")
-
-[node name="Bottom" type="StaticBody2D" parent="VisionWalls/OuterWalls"]
-position = Vector2(524, 618)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionWalls/OuterWalls/Bottom"]
-position = Vector2(58.5, 0)
-shape = SubResource("RectangleShape2D_1jwo3")
-
-[editable path="Enemy3"]
-[editable path="Enemy3/VisionCone2D"]
+[node name="MobBossInteraction2" parent="." instance=ExtResource("15_ov2it")]
+position = Vector2(576, 225)

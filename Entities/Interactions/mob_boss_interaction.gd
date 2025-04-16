@@ -7,7 +7,9 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	var visitation = $"../ySort/Player"._getWarehouse()
+	var visitation: bool = false
+	if text_box.level2cutscene[1] == 1:
+		visitation = true
 	if text_box.time_to_output == false:
 		if visitation:
 			_send_text_second()
@@ -35,8 +37,6 @@ func _send_text_second():
 
 func _send_text_first():
 	var evidence = $".."._GetEvidence()
-	
-	$"../ySort/Player"._toggleWarehouse()
 	
 	text_box.set_cutscene(3)
 	text_box.queue_cutscene("", 1, "*Moreau opens the door*")
