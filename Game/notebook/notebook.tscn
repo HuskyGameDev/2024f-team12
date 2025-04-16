@@ -12,45 +12,67 @@ scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_ud7fm")
 
 [node name="Note 1" type="Label" parent="Sprite2D"]
-offset_left = -120.0
-offset_top = -85.0
+offset_left = -117.0
+offset_top = -82.0
 offset_right = -12.0
-offset_bottom = 74.0
+offset_bottom = -34.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xdagx")
 theme_override_font_sizes/font_size = 6
-text = "This is evidence, I am finding."
+text = "* I love you honey. I'll find whover killed you..."
 autowrap_mode = 2
 
 [node name="Note 2" type="Label" parent="Sprite2D"]
-offset_left = -120.0
-offset_top = -48.0
-offset_right = -12.0
-offset_bottom = 74.0
+offset_left = -116.923
+offset_top = -27.6923
+offset_right = -10.9231
+offset_bottom = 20.3077
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xdagx")
 theme_override_font_sizes/font_size = 6
-text = "This is evidence, I am finding."
+text = "* Her husband is missing, and the Mob Boss is involved."
 autowrap_mode = 2
 
 [node name="Note 3" type="Label" parent="Sprite2D"]
-offset_left = 12.3077
-offset_top = -84.6154
-offset_right = 120.308
-offset_bottom = 74.3846
+offset_left = -118.462
+offset_top = 26.1538
+offset_right = -12.4615
+offset_bottom = 73.1538
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xdagx")
 theme_override_font_sizes/font_size = 6
-text = "This is evidence, I am finding."
+text = "* With so much evidence, it should be easy to get info."
 autowrap_mode = 2
 
 [node name="Note 4" type="Label" parent="Sprite2D"]
-offset_left = 12.3077
-offset_top = -47.6923
-offset_right = 120.308
-offset_bottom = 75.3077
+offset_left = 14.0
+offset_top = -82.0
+offset_right = 116.0
+offset_bottom = -34.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xdagx")
 theme_override_font_sizes/font_size = 6
-text = "This is evidence, I am finding."
+text = "* He blames the gang, but something doesn't seem right."
+autowrap_mode = 2
+
+[node name="Note 5" type="Label" parent="Sprite2D"]
+offset_left = 13.8462
+offset_top = -27.6923
+offset_right = 119.846
+offset_bottom = 20.3077
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xdagx")
+theme_override_font_sizes/font_size = 6
+text = "* Tony said he murdered a cop's wife... it can't be."
+autowrap_mode = 2
+
+[node name="Note 6" type="Label" parent="Sprite2D"]
+offset_left = 13.8462
+offset_top = 26.1538
+offset_right = 119.846
+offset_bottom = 74.1538
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xdagx")
+theme_override_font_sizes/font_size = 6
+text = "* That bastard is going to pay for what he did to her!!!"
 autowrap_mode = 2
