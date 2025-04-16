@@ -7,6 +7,7 @@ var warehousep1done: bool = false
 var moving: bool = false
 var movdir = 0
 @onready var text_box = $"../Cutscene"
+@onready var footstep: AudioStreamPlayer = $Footstep as AudioStreamPlayer
 
 enum direction
 {
@@ -82,3 +83,7 @@ func _toggleWarehouse():
 
 func _getWarehouse():
 	return warehousep1done
+
+
+func loud_steps():
+	footstep.set_volume_db(10)

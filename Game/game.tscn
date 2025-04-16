@@ -33,10 +33,10 @@ layout_mode = 1
 
 [node name="Panel2" type="Panel" parent="CanvasLayer/UI/MainMenu"]
 layout_mode = 0
-offset_left = -776.0
-offset_top = -472.0
-offset_right = -400.0
-offset_bottom = 100.0
+offset_left = -796.0
+offset_top = -820.0
+offset_right = -420.0
+offset_bottom = -248.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_k7arm")
 
 [node name="PauseMenu" parent="CanvasLayer/UI" instance=ExtResource("3_y6uf2")]

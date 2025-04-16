@@ -12,6 +12,7 @@ scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_ud7fm")
 
 [node name="Note 1" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = -117.0
 offset_top = -82.0
 offset_right = -12.0
@@ -23,6 +24,7 @@ text = "* I love you honey. I'll find whover killed you..."
 autowrap_mode = 2
 
 [node name="Note 2" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = -116.923
 offset_top = -27.6923
 offset_right = -10.9231
@@ -34,6 +36,7 @@ text = "* Her husband is missing, and the Mob Boss is involved."
 autowrap_mode = 2
 
 [node name="Note 3" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = -118.462
 offset_top = 26.1538
 offset_right = -12.4615
@@ -45,6 +48,7 @@ text = "* With so much evidence, it should be easy to get info."
 autowrap_mode = 2
 
 [node name="Note 4" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = 14.0
 offset_top = -82.0
 offset_right = 116.0
@@ -56,6 +60,7 @@ text = "* He blames the gang, but something doesn't seem right."
 autowrap_mode = 2
 
 [node name="Note 5" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = 13.8462
 offset_top = -27.6923
 offset_right = 119.846
@@ -67,6 +72,7 @@ text = "* Tony said he murdered a cop's wife... it can't be."
 autowrap_mode = 2
 
 [node name="Note 6" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = 13.8462
 offset_top = 26.1538
 offset_right = 119.846
