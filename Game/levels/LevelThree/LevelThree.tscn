@@ -923,14 +923,14 @@ action_name = "open"
 shape = SubResource("RectangleShape2D_clf2s")
 
 [node name="AlleyTransit" type="Node2D" parent="."]
-position = Vector2(426, -231)
+position = Vector2(423, -225)
 script = ExtResource("12_vgqjd")
 
 [node name="InteractionArea" parent="AlleyTransit" instance=ExtResource("10_nqyxe")]
 action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlleyTransit/InteractionArea"]
-position = Vector2(0, 14)
+position = Vector2(-9, 19)
 shape = SubResource("RectangleShape2D_1prq0")
 
 [node name="DinerReturn" type="Node2D" parent="."]

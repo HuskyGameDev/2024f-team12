@@ -7,12 +7,22 @@ extends Node2D
 @onready var womanvoice = $Cutscene/WomanVoice
 @onready var moreauvoice = $Cutscene/MoreauVoice
 
+@onready var player = $Player
+
+var ui_node: Control
+
 var voiceplaying = false
 
 # Main script for the first level of the game
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player.show()
+	var ui_nodes = get_tree().get_nodes_in_group("ui")
+	if ui_nodes.size() > 0:
+		ui_node = ui_nodes[0] as Control
+	else:
+		ui_node = null 
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,6 +59,7 @@ func _process(delta: float) -> void:
 		voiceplaying = false
 	
 	if text_box.level1cutscene[1] > 0  && $DeskInteraction.visible:
+		ui_node.evidencefound[1] = true
 		$DeskInteraction.hide()
 		$DeskInteraction.position.x = 10000
 		$LeaveOffice.position.y = 150

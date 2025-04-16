@@ -5,6 +5,8 @@ extends Node2D
 @onready var moreau = $Cutscene/Moreau
 @onready var tony = $Cutscene/Tony
 
+@onready var player = $ySort/Player
+
 var voiceplaying: bool = false
 var alleydoorunlocked: bool = false
 var kitchenkey: bool = false
@@ -12,6 +14,7 @@ var blackscreenvisible: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player.show()
 	pass # Replace with function body.
 
 

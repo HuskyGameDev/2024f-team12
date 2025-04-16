@@ -208,7 +208,7 @@ animations = [{
 radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-position = Vector2(-165, -137)
+visible = false
 collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_vgpfv")
@@ -216,8 +216,10 @@ script = ExtResource("1_vgpfv")
 [node name="Player Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_xm8wp")
-animation = &"Idle_down"
+animation = &"walk_right"
 autoplay = "Placeholder"
+frame = 1
+frame_progress = 0.370812
 
 [node name="Player Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.25)
