@@ -14,5 +14,7 @@ func _on_interact():
 func _send_text():
 	$".."._FindEvidence(2)
 	text_box.queue_text("Moreau", "\"Looks like some drugs that the Mob has been moving. Might be able to use this as a bargaining chip.\"")
+	position.y = 10000
+	position.x = 10000
 	text_box.time_to_output = true
 	pass

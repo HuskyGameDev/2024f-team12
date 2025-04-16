@@ -14,8 +14,20 @@ func _on_interact():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _send_text():
 	$".."._FindEvidence(0)
+	
+	var arr = $".."._GetEvidence()
+	
 	text_box.lockpickmode = true
-	text_box.queue_cutscene("Moreau", 0, "Some sort of lockbox. Maybe it has some useful information in it")
+	
+	match arr[1]:
+		0:
+			text_box.queue_cutscene("Moreau", 0, "Some sort of lockbox. Maybe it has some useful information in it")
+		1:
+			text_box.queue_cutscene("Moreau", 0, "Another lockbox, hopefully it has more evidence like the last one.")
+	
 	text_box.queue_cutscene("Moreau", 0, "Looks like some faked tax reports. I bet the IRS will love this.")
+	position.y = 10000
+	position.x = 10000
+	
 	text_box.time_to_output = true
 	pass
