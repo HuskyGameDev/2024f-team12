@@ -5,7 +5,7 @@ extends Node2D
 @onready var moreau = $Cutscene/Moreau
 @onready var tony = $Cutscene/Tony
 
-@onready var player = $ySort/Player
+@onready var player = $Player
 
 var voiceplaying: bool = false
 var alleydoorunlocked: bool = false

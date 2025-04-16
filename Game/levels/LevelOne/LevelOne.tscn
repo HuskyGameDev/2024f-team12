@@ -712,7 +712,7 @@ action_name = "examine"
 shape = SubResource("CapsuleShape2D_x05nv")
 
 [node name="DeadWifeInteraction" type="Node2D" parent="."]
-position = Vector2(234, 95)
+position = Vector2(193, 119)
 scale = Vector2(2, 2)
 script = ExtResource("11_57t0l")
 

@@ -10,12 +10,14 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	if $"..".kitchenkey == false:
-		text_box.queue_text("Moreau", "\"I need a key to get in. I probably shouldn't pick the lock with the officer right next to me\"")
-		text_box.time_to_output = true
-	else:
-		dooropen.play()
-		playernode.position.x = 472
-		playernode.position.y = -249
-		playernode.look_down()
+	if text_box.time_to_output == false:
+		if $"..".kitchenkey == false:
+			text_box.queue_text("Moreau", "\"I need a key to get in. I probably shouldn't pick the lock with the officer right next to me\"")
+			text_box.time_to_output = true
+		else:
+			dooropen.play()
+			playernode.position.x = 472
+			playernode.position.y = -249
+			playernode.look_down()
+	
 	

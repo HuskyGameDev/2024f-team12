@@ -10,6 +10,8 @@ func _ready() -> void:
 
 func _on_interact():
 	dooropen.play()
-	playernode.position.x = 427
-	playernode.position.y = -232
+	playernode.position.x = 425
+	playernode.position.y = -218
 	playernode.look_down()
+	$"../OutdoorRain".stop()
+	$"../IndoorRain".play()

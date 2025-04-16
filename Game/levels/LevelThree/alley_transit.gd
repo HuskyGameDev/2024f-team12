@@ -10,13 +10,17 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	if $"..".alleydoorunlocked == false:
-		$"..".alleydoorunlocked = true
-		text_box.lockpickmode = true
-		text_box.queue_cutscene("Moreau", 0, "\"Looks like the door to the alleyway is locked, maybe there's evidence out there.\"")
-		text_box.time_to_output = true
-	else:
-		dooropen.play()
-		playernode.position.x = 984
-		playernode.position.y = -282
-		playernode.look_down()
+	if text_box.time_to_output == false:
+		if $"..".alleydoorunlocked == false:
+			$"..".alleydoorunlocked = true
+			text_box.lockpickmode = true
+			text_box.queue_cutscene("Moreau", 0, "\"Looks like the door to the alleyway is locked, maybe there's evidence out there.\"")
+			text_box.time_to_output = true
+		else:
+			dooropen.play()
+			playernode.position.x = 984
+			playernode.position.y = -282
+			playernode.look_down()
+			$"../IndoorRain".stop()
+			$"../OutdoorRain".play()
+	

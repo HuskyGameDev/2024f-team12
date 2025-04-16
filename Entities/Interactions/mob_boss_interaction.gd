@@ -3,7 +3,14 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var text_box = $"../ySort/Cutscene"
 
+var ui_node: Control
+
 func _ready():
+	var ui_nodes = get_tree().get_nodes_in_group("ui")
+	if ui_nodes.size() > 0:
+		ui_node = ui_nodes[0] as Control
+	else:
+		ui_node = null 
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
@@ -14,6 +21,7 @@ func _on_interact():
 		if visitation:
 			_send_text_second()
 		else:
+			ui_node.evidencefound[3] = true
 			_send_text_first()
 
 func _send_text_second():

@@ -11,7 +11,7 @@ position = Vector2(0, 1)
 script = ExtResource("1_n827k")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_jravs")]
-action_name = "'talk'"
+action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_2yash")

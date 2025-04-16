@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bulute7i5ksyy" path="res://addons/vision_cone_2d/examples/enemy.tscn" id="22_knxy3"]
 [ext_resource type="PackedScene" uid="uid://bldn4gtgrg2wv" path="res://Entities/PatrollingEnemy/patrolling_enemy.tscn" id="24_5pj7b"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osmw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lt17d"]
 texture = ExtResource("2_cx3uv")
 0:0/0 = 0
 1:0/0 = 0
@@ -61,9 +61,9 @@ texture = ExtResource("2_cx3uv")
 9:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2qvkf"]
-sources/0 = SubResource("TileSetAtlasSource_4osmw")
+sources/0 = SubResource("TileSetAtlasSource_lt17d")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vboqx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oe3ca"]
 texture = ExtResource("2_cx3uv")
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -133,7 +133,7 @@ texture = ExtResource("2_cx3uv")
 1:0/0/texture_origin = Vector2i(0, 8)
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h26l8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pxbv"]
 texture = ExtResource("3_3awoc")
 0:0/0 = 0
 1:0/0 = 0
@@ -190,10 +190,10 @@ texture = ExtResource("3_3awoc")
 
 [sub_resource type="TileSet" id="TileSet_grfbs"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_vboqx")
-sources/1 = SubResource("TileSetAtlasSource_h26l8")
+sources/0 = SubResource("TileSetAtlasSource_oe3ca")
+sources/1 = SubResource("TileSetAtlasSource_0pxbv")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcwio"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_813kp"]
 texture = ExtResource("2_cx3uv")
 2:0/0 = 0
 2:0/0/y_sort_origin = 11
@@ -246,7 +246,7 @@ texture = ExtResource("2_cx3uv")
 1:0/0/probability = 1.5
 
 [sub_resource type="TileSet" id="TileSet_lagm8"]
-sources/0 = SubResource("TileSetAtlasSource_qcwio")
+sources/0 = SubResource("TileSetAtlasSource_813kp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xyrk"]
 texture = ExtResource("6_qqsqw")
