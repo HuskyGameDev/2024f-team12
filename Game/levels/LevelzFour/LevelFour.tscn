@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://urbhda43cdr2"]
+[gd_scene load_steps=34 format=4 uid="uid://urbhda43cdr2"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelzFour/scripts/level_four.gd" id="1_3iyli"]
 [ext_resource type="Texture2D" uid="uid://78vi66spod41" path="res://Aseprite-Art/Warehouse-TileSet.png" id="2_w6la7"]
@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://bkpbh5lrlugs6" path="res://Sounds/Voices/Moreau_Voice.wav" id="10_2nt71"]
 [ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/Voices/ModBoss Voice.wav" id="11_4218a"]
 [ext_resource type="Texture2D" uid="uid://c85jj53i6q1p4" path="res://Sprites/placeholderend.jpg" id="12_smyew"]
+[ext_resource type="AudioStream" uid="uid://dhpq0o6w1w67t" path="res://Sounds/Pistol_Unholster.mp3" id="13_amrdl"]
+[ext_resource type="AudioStream" uid="uid://coodtgqh54dxt" path="res://Sounds/Gunshot2.mp3" id="14_8lmon"]
 [ext_resource type="PackedScene" uid="uid://cox8qj08bxyyi" path="res://Game/levels/LevelzFour/mob_boss_interaction2.tscn" id="15_ov2it"]
 [ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="21_5n88r"]
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="22_wfa6u"]
@@ -490,6 +492,17 @@ visible = false
 position = Vector2(155, 86)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("12_smyew")
+
+[node name="GunUnholster" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
+stream = ExtResource("13_amrdl")
+volume_db = 4.685
+bus = &"Sfx"
+
+[node name="GunShot" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
+stream = ExtResource("14_8lmon")
+volume_db = 19.726
+pitch_scale = 0.85
+bus = &"Sfx"
 
 [node name="Area2D" type="Area2D" parent="."]
 

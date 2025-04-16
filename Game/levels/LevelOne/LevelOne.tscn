@@ -630,9 +630,11 @@ frame_progress = 0.0809704
 [node name="WomanVoice" type="AudioStreamPlayer" parent="Cutscene"]
 stream = ExtResource("9_5sq3f")
 pitch_scale = 1.12
+bus = &"Sfx"
 
 [node name="MoreauVoice" type="AudioStreamPlayer" parent="Cutscene"]
 stream = ExtResource("10_0b55f")
+bus = &"Sfx"
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
 z_index = 1

@@ -810,7 +810,7 @@ shape = SubResource("RectangleShape2D_ikj1i")
 
 [node name="Player" parent="." instance=ExtResource("1_evdvj")]
 y_sort_enabled = true
-position = Vector2(495, 291)
+position = Vector2(513, 285)
 speed = 48
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -818,6 +818,7 @@ position = Vector2(0, -9)
 
 [node name="MoreauVoice" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("15_0gfm6")
+bus = &"Sfx"
 
 [node name="Po-Po" type="CharacterBody2D" parent="."]
 position = Vector2(441, 171)
@@ -896,6 +897,7 @@ sprite_frames = SubResource("SpriteFrames_us1g0")
 [node name="TonyVoice" type="AudioStreamPlayer2D" parent="Cutscene"]
 stream = ExtResource("20_gpug2")
 pitch_scale = 0.92
+bus = &"Sfx"
 
 [node name="MusicLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_sn2uy")
@@ -954,6 +956,7 @@ shape = SubResource("RectangleShape2D_7iqys")
 [node name="DoorSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_5sbve")
 pitch_scale = 0.67
+bus = &"Sfx"
 
 [node name="TonyCutscene" type="Node2D" parent="."]
 position = Vector2(918, -187)

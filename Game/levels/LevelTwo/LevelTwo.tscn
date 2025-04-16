@@ -547,9 +547,11 @@ sprite_frames = SubResource("SpriteFrames_3hlaw")
 
 [node name="MoreauVoice" type="AudioStreamPlayer" parent="ySort/Cutscene"]
 stream = ExtResource("9_lcjgr")
+bus = &"Sfx"
 
 [node name="MobBossVoice" type="AudioStreamPlayer" parent="ySort/Cutscene"]
 stream = ExtResource("10_xiyit")
+bus = &"Sfx"
 
 [node name="Sprite2D" type="Sprite2D" parent="ySort/Cutscene"]
 visible = false
