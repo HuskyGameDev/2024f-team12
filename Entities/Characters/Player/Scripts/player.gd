@@ -87,3 +87,4 @@ func _getWarehouse():
 
 func loud_steps():
 	footstep.set_volume_db(10)
+	footstep.pitch_scale = 0.85

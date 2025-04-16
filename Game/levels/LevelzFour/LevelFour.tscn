@@ -520,7 +520,7 @@ parameters/looping = true
 
 [node name="IndoorRain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wfa6u")
-volume_db = 6.306
+volume_db = 4.0
 autoplay = true
 bus = &"Sfx"
 
