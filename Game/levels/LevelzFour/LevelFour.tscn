@@ -437,8 +437,8 @@ tile_set = SubResource("TileSet_lagm8")
 
 [node name="Player" parent="ySort" instance=ExtResource("4_0g51j")]
 y_sort_enabled = true
-position = Vector2(573, 595)
-speed = 48
+position = Vector2(573, 594)
+speed = 35
 
 [node name="Camera2D" type="Camera2D" parent="ySort/Player"]
 position = Vector2(0, -8)
@@ -499,14 +499,14 @@ shape = SubResource("RectangleShape2D_8h38k")
 
 [node name="MusicLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_5n88r")
-volume_db = -10.0
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="IndoorRain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wfa6u")
-volume_db = -5.0
+volume_db = -3.126
 autoplay = true
 bus = &"Sfx"
 

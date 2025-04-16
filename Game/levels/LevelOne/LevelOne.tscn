@@ -756,7 +756,7 @@ autoplay = true
 bus = &"Sfx"
 
 [node name="LeaveOffice" type="Node2D" parent="."]
-position = Vector2(136, 134)
+position = Vector2(143, 211)
 script = ExtResource("21_2q6k4")
 
 [node name="InteractionArea" parent="LeaveOffice" instance=ExtResource("7_3wlxe")]
