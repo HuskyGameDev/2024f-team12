@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://dc1feg5ya1yaw"]
+[gd_scene load_steps=68 format=4 uid="uid://dc1feg5ya1yaw"]
 
 [ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="1_eirfc"]
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_evdvj"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://Game/levels/LevelThree/tony_cutscene.gd" id="27_pqt1l"]
 [ext_resource type="Script" path="res://Game/levels/LevelThree/wrong_dumpster.gd" id="28_1ovsw"]
 [ext_resource type="Script" path="res://Game/levels/LevelThree/right_dumpster.gd" id="28_vn748"]
+[ext_resource type="Script" path="res://Game/levels/LevelThree/ladder.gd" id="31_lgqft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oefjp"]
 texture = ExtResource("1_eirfc")
@@ -781,6 +782,8 @@ size = Vector2(32, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e2eu"]
 size = Vector2(32, 35)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlh6t"]
+
 [node name="Level Three" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xtju5")
@@ -984,3 +987,13 @@ action_name = "investigate"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightDumpster/InteractionArea"]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_6e2eu")
+
+[node name="Ladder" type="Node2D" parent="."]
+position = Vector2(872, -288)
+script = ExtResource("31_lgqft")
+
+[node name="InteractionArea" parent="Ladder" instance=ExtResource("10_nqyxe")]
+action_name = "investigate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/InteractionArea"]
+shape = SubResource("RectangleShape2D_jlh6t")
