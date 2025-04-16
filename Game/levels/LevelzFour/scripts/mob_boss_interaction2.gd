@@ -17,7 +17,7 @@ func _send_text_second():
 	text_box.queue_cutscene("???", 2, "\"Why the hell are you back here, Moreau? I gave you your info.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"I never thought you'd truly have the guts to do it... Never thought you'd make me have to set things right...\"")
 	text_box.queue_cutscene("???", 0, "\"Have to do what? You know that what I had the boys do was just a bit of business. You just got a little too nosy for your own good, Leo...\"")
-	text_box.queue_cutscene("Moreau", 0, "\"Oh, I got a little nosy, huh? That's really funny, you got your damn nose in every aspect of this city!\"")
+	text_box.queue_cutscene("Moreau", 0, "\"Oh, I got a little nosy, huh? That's really funny. You've got your damn nose in every aspect of this city!\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Hell, your influence runs so deep, I wouldn't be able to find an honest job here even if my life depended on it.\"")
 	text_box.queue_cutscene("???", 0, "\"Well Leo... maybe your life does depend on it. Nobody, and I mean NOBODY comes into my work, and talks to me like THAT!\"")
 	text_box.queue_cutscene("???", 0, "*Cough*")
