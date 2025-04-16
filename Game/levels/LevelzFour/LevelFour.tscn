@@ -497,6 +497,7 @@ texture = ExtResource("12_smyew")
 [node name="GunUnholster" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
 stream = ExtResource("13_amrdl")
 volume_db = 4.685
+pitch_scale = 0.8
 bus = &"Sfx"
 
 [node name="GunShot" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
