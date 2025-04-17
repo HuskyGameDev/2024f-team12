@@ -502,7 +502,7 @@ bus = &"Sfx"
 
 [node name="GunShot" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
 stream = ExtResource("14_1ae83")
-volume_db = 24.0
+volume_db = -10.0
 pitch_scale = 0.85
 bus = &"Sfx"
 
