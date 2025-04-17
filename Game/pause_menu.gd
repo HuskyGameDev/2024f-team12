@@ -21,3 +21,15 @@ func _on_exit_pressed():
 	$Click.play()
 	await get_tree().create_timer(.3).timeout
 	get_tree().quit()
+
+func _on_settings_pressed():
+	hide()
+	get_tree().paused = false
+	$"..".inDialogue = true
+	$"../MainMenu".show()
+	$"../MainMenu"._on_options_pressed()
+	await $"../MainMenu".exitSettings
+	$"..".inDialogue = false
+	$"../MainMenu".hide()
+	get_tree().paused = true
+	show()

@@ -19,7 +19,7 @@ func _ready() -> void:
 	current_level = screen_holder.get_child(0) as MyLevel
 
 func _process(delta):
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") && !$CanvasLayer/UI/MainMenu.visible:
 		get_tree().paused = true
 		pause_menu.show()
 

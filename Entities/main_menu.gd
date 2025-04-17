@@ -1,5 +1,7 @@
 extends Control
 
+signal exitSettings
+
 func button_pressed():
 	$Click.play()
 	hide()
@@ -23,6 +25,7 @@ func _on_options_exit_pressed() -> void:
 	$Click.play()
 	$VBoxContainer.visible = true
 	$Settings.visible = false
+	exitSettings.emit()
 
 
 func _on_exit_pressed():
