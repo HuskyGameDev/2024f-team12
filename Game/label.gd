@@ -14,6 +14,16 @@ var ui_node: Control
 @onready var animatioin: AnimatedSprite2D = $"../../AnimatedSprite2D"
 
 func _ready() -> void:
+	var ui_nodes = get_tree().get_nodes_in_group("ui")
+	if ui_nodes.size() > 0:
+		ui_node = ui_nodes[0] as Control
+	else:
+		ui_node = null 
+	
+	animatioin.play()
+	
+	ui_node.inDialogue = true
+	
 	scroll_text(credits)
 	await get_tree().create_timer(10).timeout
 	scroll_text(credits2)
