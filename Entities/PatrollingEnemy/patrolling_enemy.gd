@@ -22,7 +22,6 @@ extends CharacterBody2D
 
 @export var sceneToUnload: Node
 
-
 var isDetected: bool = false
 var timeToSwitch: bool = false
 
@@ -65,8 +64,12 @@ func _physics_process(delta: float) -> void:
 	if is_rotating:
 		rotation = rot_start + sin(Time.get_ticks_msec()/1000. * rotation_speed) * deg_to_rad(rotation_angle/2.)
 	if move_on_path:
-		move_on_path.progress += movement_speed
-		global_position = move_on_path.position
+		if !isDetected:
+			move_on_path.progress += movement_speed
+			global_position = move_on_path.position
+		else:
+			sprite.play("idle")
+		
 		if move_on_path.progress_ratio >= 0.5:
 			rotation = PI
 			sprite.flip_v = true
@@ -76,30 +79,30 @@ func _physics_process(delta: float) -> void:
 		#rotation = move_on_path.rotation
 	
 	#region Direction
-		# Get motion vector between previous and current position
-	var motion = position - _position_last_frame
-	# If the node actually moved, we'll recompute its direction.
-	# If it didn't, we'll just the last known one.
-	if motion.length() > 0.0001:
-		# Now if you want a value between N.S.W.E,
-		# you can use the angle of the motion.
-		# I came up with this formula last time I needed it:
-		_cardinal_direction = int(4.0 * (motion.rotated(PI / 4.0).angle() + PI) / TAU)
-	# And now you have it!
-	# You can even use it with an array since it's like an index
-	match _cardinal_direction:
-		0:
-			print("West")
-		1:
-			print("North")
-		2:
-			print("East")
-		3:
-			print("South")
-
-	# Remember our current position for next frame
-	_position_last_frame = position
-	
+		## Get motion vector between previous and current position
+	#var motion = position - _position_last_frame
+	## If the node actually moved, we'll recompute its direction.
+	## If it didn't, we'll just the last known one.
+	#if motion.length() > 0.0001:
+		## Now if you want a value between N.S.W.E,
+		## you can use the angle of the motion.
+		## I came up with this formula last time I needed it:
+		#_cardinal_direction = int(4.0 * (motion.rotated(PI / 4.0).angle() + PI) / TAU)
+	## And now you have it!
+	## You can even use it with an array since it's like an index
+	#match _cardinal_direction:
+		#0:
+			#print("West")
+		#1:
+			#print("North")
+		#2:
+			#print("East")
+		#3:
+			#print("South")
+#
+	## Remember our current position for next frame
+	#_position_last_frame = position
+	#
 	#endregion
 	
 	
