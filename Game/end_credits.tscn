@@ -1,8 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://catqpwsfo6cji"]
+[gd_scene load_steps=10 format=3 uid="uid://catqpwsfo6cji"]
 
+[ext_resource type="Texture2D" uid="uid://d1asj1cgwg0vj" path="res://Aseprite-Art/EndScene-Sheet.png" id="1_2uggi"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="1_07hl8"]
 [ext_resource type="AudioStream" uid="uid://bbjnq5k7gtgyl" path="res://Sounds/Music/Investigation.mp3" id="2_r4ohy"]
 [ext_resource type="Script" path="res://Game/label.gd" id="3_8pd81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f61i7"]
+atlas = ExtResource("1_2uggi")
+region = Rect2(0, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv8dn"]
+atlas = ExtResource("1_2uggi")
+region = Rect2(160, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx5ey"]
+atlas = ExtResource("1_2uggi")
+region = Rect2(320, 0, 160, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eagnt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f61i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv8dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx5ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv8dn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njb4v"]
 
 [node name="EndCredits" type="Node2D"]
 
@@ -18,17 +53,34 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
+position = Vector2(160, 90)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_eagnt")
+frame_progress = 0.0483683
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 12
 alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_njb4v")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_07hl8")
 theme_override_font_sizes/font_size = 8
-text = "This is the end credits"
+text = "Developers:
+Brett Leonard
+Andrew Radke
+Ben Kornas
+Dustin Krontz
+Josiah Parrott"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_8pd81")

@@ -2,13 +2,16 @@ extends Label
 
 
 var credits = "Developed by Team 12\n\nMade in association with:\nHusky Game Development"
-var credits2 = "Developers:\nBrett Leonard\nAndrew Radke\nBen Kornas\nDustin Krontz"
+var credits2 = "Developers:\nBrett Leonard\nAndrew Radke\nBen Kornas\nDustin Krontz\nJosiah Parrott"
 var credits3 = "Artists:\nJosiah Parrott\nGabe Molnar"
 var credits4 = "Writer:\nDustin Krontz"
 var credits5 = "Sound Team:\nNate Lyons\nZach Brouckman"
 var credits6 = "Music Team:\nZach Broukman"
 var credits7 = "Thank you for playing!!!"
 
+var ui_node: Control
+
+@onready var animatioin: AnimatedSprite2D = $"../../AnimatedSprite2D"
 
 func _ready() -> void:
 	scroll_text(credits)
@@ -25,7 +28,15 @@ func _ready() -> void:
 	await get_tree().create_timer(10).timeout
 	scroll_text(credits7)
 	await get_tree().create_timer(10).timeout
-	get_tree().change_scene_to_file("res://Entities/main_menu.tscn")
+	ui_node.inDialogue = false
+	
+	# TEST
+	# var game_node: Game = get_tree().get_nodes_in_group("game")[0] as Game
+	# SceneManager.swap_scenes("res://Entities/main_menu.tscn", game_node.screen_holder, $"." , "fade_to_dark")
+	# TEST
+	
+	await get_tree().create_timer(.3).timeout
+	get_tree().quit()
 
 
 func scroll_text(input_text : String) -> void:

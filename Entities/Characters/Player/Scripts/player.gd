@@ -6,8 +6,9 @@ extends CharacterBody2D
 var warehousep1done: bool = false
 var moving: bool = false
 var movdir = 0
-@onready var text_box = $"../Cutscene"
 @onready var footstep: AudioStreamPlayer = $Footstep as AudioStreamPlayer
+
+var ui_node: Control
 
 enum direction
 {
@@ -21,11 +22,16 @@ var curdir = direction.UP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var ui_nodes = get_tree().get_nodes_in_group("ui")
+	if ui_nodes.size() > 0:
+		ui_node = ui_nodes[0] as Control
+	else:
+		ui_node = null 
 	$"Player Sprite".play("Idle_up") # Replace with function body.
 
 func _process(delta: float) -> void:
 	# User Input
-	if(text_box.time_to_output == false):
+	if(ui_node.inDialogue == false):
 		if(Input.is_anything_pressed()):
 			var input_direction = Input.get_vector("left","right","up","down")
 			velocity = input_direction * speed

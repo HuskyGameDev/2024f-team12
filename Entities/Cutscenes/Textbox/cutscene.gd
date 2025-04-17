@@ -88,7 +88,7 @@ func _process(delta):
 	match current_state:
 		State.READY:
 			if !text_queue.is_empty() && time_to_output == true:
-				# ui_node.inDialogue = true
+				ui_node.inDialogue = true
 				display_text()
 			
 		State.READ:
@@ -117,7 +117,7 @@ func _process(delta):
 					time_to_output = false
 					speakerone = false
 					speakertwo = false
-					# ui_node.inDialogue = false
+					ui_node.inDialogue = false
 			# if minigame == true && minigamevisible == false:
 				# LOM.show()
 				# LOM.board_wipe()
