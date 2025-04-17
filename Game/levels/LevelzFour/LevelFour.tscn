@@ -502,7 +502,7 @@ bus = &"Sfx"
 
 [node name="GunShot" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
 stream = ExtResource("14_8lmon")
-volume_db = 19.726
+volume_db = 24.0
 pitch_scale = 0.85
 bus = &"Sfx"
 
@@ -520,7 +520,6 @@ parameters/looping = true
 
 [node name="IndoorRain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wfa6u")
-volume_db = 4.0
 autoplay = true
 bus = &"Sfx"
 

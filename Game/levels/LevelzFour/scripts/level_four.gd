@@ -71,7 +71,8 @@ func _process(delta: float) -> void:
 	if text_box.finalcutscene[1] > 0 && endcardvisible == false:
 		print("EndOfGame")
 		endcardvisible = true
-		endcard.show()
+		var game_node: Game = get_tree().get_nodes_in_group("game")[0] as Game
+		SceneManager.swap_scenes("res://Game/end_credits.tscn", game_node.screen_holder, $"." , "fade_to_dark")
 
 func _FindEvidence(evnum):
 	evidencefound[evnum] = 1
