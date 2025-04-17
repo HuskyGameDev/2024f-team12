@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://yb52t4hijc40" path="res://Sounds/Voices/ModBoss Voice.wav" id="11_4218a"]
 [ext_resource type="Texture2D" uid="uid://c85jj53i6q1p4" path="res://Sprites/placeholderend.jpg" id="12_smyew"]
 [ext_resource type="AudioStream" uid="uid://dhpq0o6w1w67t" path="res://Sounds/Pistol_Unholster.mp3" id="13_amrdl"]
-[ext_resource type="AudioStream" uid="uid://coodtgqh54dxt" path="res://Sounds/Gunshot2.mp3" id="14_8lmon"]
+[ext_resource type="AudioStream" uid="uid://ckkrs7i42ggyg" path="res://Sounds/Gunshot2 (1).mp3" id="14_1ae83"]
 [ext_resource type="PackedScene" uid="uid://cox8qj08bxyyi" path="res://Game/levels/LevelzFour/mob_boss_interaction2.tscn" id="15_ov2it"]
 [ext_resource type="AudioStream" uid="uid://b3b2ssswi562t" path="res://Sounds/Music/Moreau.mp3" id="21_5n88r"]
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="22_wfa6u"]
@@ -501,7 +501,7 @@ pitch_scale = 0.8
 bus = &"Sfx"
 
 [node name="GunShot" type="AudioStreamPlayer2D" parent="ySort/Cutscene"]
-stream = ExtResource("14_8lmon")
+stream = ExtResource("14_1ae83")
 volume_db = 24.0
 pitch_scale = 0.85
 bus = &"Sfx"
