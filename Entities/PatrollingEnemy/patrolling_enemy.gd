@@ -107,12 +107,17 @@ func _physics_process(delta: float) -> void:
 	
 	
 
-
+var ui_node: Control
 
 
 func _player_detected():
 	# This is the function that
-	
+	var ui_nodes = get_tree().get_nodes_in_group("ui")
+	if ui_nodes.size() > 0:
+		ui_node = ui_nodes[0] as Control
+	else:
+		ui_node = null 
+	ui_node.evidencefound[2] = false
 	text_box.queue_text("Goony","HEY! What do you think you're doin in here?!")
 	text_box.queue_text("Moreau", "Uh Oh")
 	text_box.time_to_output = true
