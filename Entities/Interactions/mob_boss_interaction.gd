@@ -21,7 +21,7 @@ func _on_interact():
 		if visitation:
 			_send_text_second()
 		else:
-			ui_node.evidencefound[3] = true
+			
 			_send_text_first()
 
 func _send_text_second():
@@ -89,7 +89,7 @@ func _send_text_first():
 	# TEST
 	text_box.queue_cutscene("???", 0, "\"Fine, I'll help you out. What do you want?\"")
 	text_box.queue_cutscene("Moreau", 0, "\"So what can you tell me about a Tony Duval? He came up missing a couple days ago.\"")
-	text_box.queue_cutscene("???", 0, "\"Ah, him... my boys have been having some trouble with *The Gang* lately.\"")
+	text_box.queue_cutscene("???", -10, "\"Ah, him... my boys have been having some trouble with *The Gang* lately.\"")
 	text_box.queue_cutscene("???", 0, "\"I know we've lost three boys in the past to their turf wars, and that's just- that's not the point.\"")
 	text_box.queue_cutscene("???", 0, "\"If you were really gonna go looking, I'd start with the damn gang.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"I appreciate the help… and if you wouldn’t mind, it would be awfully convenient to be able to just walk in next time.\"")
@@ -97,4 +97,8 @@ func _send_text_first():
 	text_box.queue_cutscene("Moreau", 9, "*Leaves through fire exit*")
 	text_box.queue_cutscene("Moreau", 1, "\"I probably shouldn’t just take his word for it, I need to go check out this restaurant to see what actually happened.\"")
 	text_box.time_to_output = true
+	
+	await text_box.textevent
+	ui_node.evidencefound[3] = true
+	
 	pass

@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _on_interact():
 	if text_box.time_to_output == false:
-		ui_node.evidencefound[2] = true
+		
 		_send_text()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,4 +38,8 @@ func _send_text():
 	position.x = 10000
 	
 	text_box.time_to_output = true
+	
+	await text_box.outputcomplete
+	ui_node.evidencefound[2] = true
+	
 	pass

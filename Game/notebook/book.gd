@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_update_evidence()
 	if ui_node != null:
-		if !ui_node.inDialogue: #If not in dialogue the player can see the notebook & the button
+		if !ui_node.endScene: #If not in dialogue the player can see the notebook & the button
 			get_parent().show()
 			if Input.is_action_just_pressed("notebook"):
 				if !visible:

@@ -15,8 +15,7 @@ func _ready():
 
 func _on_interact():
 	if text_box.time_to_output == false:
-		ui_node.evidencefound[4] = true
-		ui_node.evidencefound[5] = true
+		
 		_send_text()
 
 
@@ -41,7 +40,7 @@ func _send_text():
 	text_box.queue_cutscene("Tony", 0, "\"When I started dealing with the mafia boss, he told me about all the dealings that they get up to around the city.\"")
 	text_box.queue_cutscene("Tony", 0, "\"He mentioned that aside from loan sharking, they will do just about anything for a buck or favor.\"")
 	text_box.queue_cutscene("Tony", 0, "\"He told me that about four months ago he even had to send some of his boys out to kill some cops wife…\"")
-	text_box.queue_cutscene("Tony", 0, "\"Said he was \'snooping around too much for business\' or something like that.\"")
+	text_box.queue_cutscene("Tony", -10, "\"Said he was \'snooping around too much for business\' or something like that.\"")
 	text_box.queue_cutscene("Tony", 0, "\"That’s part of the reason that my wife and I feared so much for our lives while we were caught up in the whole mess of it.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"...\"")
 	text_box.queue_cutscene("Tony", 0, "\" I mean, who wouldn’t be intimidated by one of the strongest forces of the city underworld?\"")
@@ -54,4 +53,10 @@ func _send_text():
 	text_box.queue_cutscene("", 0, "\"COULDN'T BE THE WAY IT ENDED\"")
 	text_box.queue_cutscene("", 0, "\"IT JUST COULDN'T BE...\"")
 	text_box.time_to_output = true
+	
+	await text_box.textevent
+	ui_node.evidencefound[4] = true
+	await text_box.outputcomplete
+	ui_node.evidencefound[5] = true
+	
 	pass

@@ -59,7 +59,6 @@ func _process(delta: float) -> void:
 		voiceplaying = false
 	
 	if text_box.level1cutscene[1] > 0  && $DeskInteraction.visible:
-		ui_node.evidencefound[1] = true
 		$DeskInteraction.hide()
 		$DeskInteraction.position.x = 10000
 		$LeaveOffice.position.y = 150

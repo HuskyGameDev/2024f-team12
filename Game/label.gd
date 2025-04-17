@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	animatioin.play()
 	
-	ui_node.inDialogue = true
+	ui_node.endScene = true
 	
 	scroll_text(credits)
 	await get_tree().create_timer(10).timeout

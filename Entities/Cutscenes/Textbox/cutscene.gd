@@ -19,6 +19,10 @@ var CHAR_READ_RATE = 0.04
 
 @onready var camera = $"../Player/Camera2D"
 
+signal outputcomplete
+
+signal textevent
+
 var cameraprevloc = [0, 0]
 
 @onready var speaker = $TextboxContainer/MarginContainer/HBoxContainer/VBoxContainer/Speaker
@@ -165,7 +169,6 @@ func hide_textbox():
 	if $LockPickGame.visible:
 		$LockPickGame.hide()
 		$LockPickGame/LockpickLockpick.playtime = false
-
 	if mcv:
 		multichoice.hide()
 		mcv = false
@@ -173,6 +176,7 @@ func hide_textbox():
 	skip_promt.text = ""
 	speaker.text = ""
 	textbox_container.hide()
+	outputcomplete.emit()
 
 func show_textbox():
 	skip_promt.text = "Space to skip"
@@ -205,6 +209,8 @@ func display_text():
 		speakerone = false
 		speakertwo = false
 		sfxplay2 = true
+	if spk == -10:
+		textevent.emit()
 	if spk == 1:
 		if speakerone == true:
 			speakerone = false

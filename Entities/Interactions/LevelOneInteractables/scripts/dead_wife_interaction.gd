@@ -15,11 +15,13 @@ func _ready():
 
 func _on_interact():
 	if text_box.time_to_output == false:
-		ui_node.evidencefound[0] = true
+		
 		_send_text()
 
 func _send_text():
 	text_box.queue_text("","*It's a picture of a woman.*")
 	text_box.queue_text("Moreau","\"I know you're out there somewhere.\"")
 	text_box.time_to_output = true
+	await text_box.outputcomplete
+	ui_node.evidencefound[0] = true
 	pass

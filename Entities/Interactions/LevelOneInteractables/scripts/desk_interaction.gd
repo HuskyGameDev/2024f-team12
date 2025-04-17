@@ -3,7 +3,14 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var text_box = $"../Cutscene"
 
+var ui_node: Control
+
 func _ready():
+	var ui_nodes = get_tree().get_nodes_in_group("ui")
+	if ui_nodes.size() > 0:
+		ui_node = ui_nodes[0] as Control
+	else:
+		ui_node = null 
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
@@ -36,7 +43,7 @@ func _send_text():
 	# TEST
 	# text_box.queue_cutscene("Moreau", 0, "\"What can you tell me about your husband Tony?\"")
 	text_box.queue_cutscene("Woman", 0, "\"I think he got involved with some bad people. We run a restaurant together, and we’ve fallen on tough times lately.\"")
-	text_box.queue_cutscene("Woman", 0, "\"He mentioned something about The Mafia being able to help us with our issues so that we can stay afloat.\"")
+	text_box.queue_cutscene("Woman", -10, "\"He mentioned something about The Mafia being able to help us with our issues so that we can stay afloat.\"")
 	text_box.queue_cutscene("Moreau", 0, "\" Is there anything else you can think of, did anyone have any reason to hurt your husband or your business?\"")
 	text_box.queue_cutscene("Woman", 0, "\"No, not that I can think of, we are just honest business owners.\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Ah, I see... and what was your name, Mrs.-?\"")
@@ -46,4 +53,7 @@ func _send_text():
 	text_box.queue_cutscene("Moreau", 9, "*Puffs cigarette*")
 	text_box.queue_cutscene("Moreau", 1, "\"This is all too familiar. I better get down to the warehouses to see what he knows about this whole ordeal.\"")
 	text_box.time_to_output = true
+	
+	await text_box.textevent
+	ui_node.evidencefound[1] = true
 	pass
