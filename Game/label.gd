@@ -3,7 +3,7 @@ extends Label
 
 var credits = "Developed by Team 12\n\nMade in association with:\nHusky Game Development"
 var credits2 = "Developers:\nBrett Leonard\nAndrew Radke\nBen Kornas\nDustin Krontz"
-var credits3 = "Artists:\nJosiah Parrott\nGabe Newell"
+var credits3 = "Artists:\nJosiah Parrott\nGabe Molnar"
 var credits4 = "Writer:\nDustin Krontz"
 var credits5 = "Sound Team:\nNate Lyons\nZach Brouckman"
 var credits6 = "Music Team:\nZach Broukman"
@@ -25,7 +25,7 @@ func _ready() -> void:
 	await get_tree().create_timer(10).timeout
 	scroll_text(credits7)
 	await get_tree().create_timer(10).timeout
-	
+	get_tree().change_scene_to_file("res://Entities/main_menu.tscn")
 
 
 func scroll_text(input_text : String) -> void:
