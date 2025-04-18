@@ -36,11 +36,10 @@ mouse_filter = 1
 visible = false
 
 [node name="Journal" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
 anchors_preset = 0
-offset_left = 3.0
-offset_top = 8.0
-offset_right = 46.0
-offset_bottom = 34.0
+offset_right = 43.0
+offset_bottom = 26.0
 mouse_filter = 1
 
 [node name="Book" parent="CanvasLayer/UI/Journal" instance=ExtResource("5_w53pr")]
@@ -50,17 +49,8 @@ position = Vector2(161, 78)
 [node name="Button" type="Button" parent="CanvasLayer/UI/Journal"]
 visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 6.837
-anchor_top = 0.516
-anchor_right = 6.837
-anchor_bottom = 0.516
-offset_left = -7.99103
-offset_top = -9.996
-offset_right = 8.00897
-offset_bottom = 6.004
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 16.0
+offset_bottom = 16.0
 focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4mwop")
 
