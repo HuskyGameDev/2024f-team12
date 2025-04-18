@@ -22,6 +22,7 @@ var CHAR_READ_RATE = 0.04
 signal outputcomplete
 
 signal textevent
+signal textevent2
 
 var cameraprevloc = [0, 0]
 
@@ -211,6 +212,9 @@ func display_text():
 		sfxplay2 = true
 	if spk == -10:
 		textevent.emit()
+	if spk == -11:
+		textevent.emit()
+		spk = 9
 	if spk == 1:
 		if speakerone == true:
 			speakerone = false
