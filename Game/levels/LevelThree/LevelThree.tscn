@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://dc1feg5ya1yaw"]
+[gd_scene load_steps=70 format=4 uid="uid://dc1feg5ya1yaw"]
 
 [ext_resource type="Texture2D" uid="uid://drar5id1s7ed7" path="res://Aseprite-Art/Office-TileSet-BW.png" id="1_eirfc"]
 [ext_resource type="PackedScene" uid="uid://dsb6qweu63nh3" path="res://Entities/Characters/Player/Player.tscn" id="1_evdvj"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" path="res://Game/levels/LevelThree/wrong_dumpster.gd" id="28_1ovsw"]
 [ext_resource type="Script" path="res://Game/levels/LevelThree/right_dumpster.gd" id="28_vn748"]
 [ext_resource type="Script" path="res://Game/levels/LevelThree/ladder.gd" id="31_lgqft"]
+[ext_resource type="AudioStream" uid="uid://cvqiawyomscly" path="res://Sounds/Bell2.wav" id="33_n1b3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oefjp"]
 texture = ExtResource("1_eirfc")
@@ -811,7 +812,7 @@ shape = SubResource("RectangleShape2D_ikj1i")
 
 [node name="Player" parent="." instance=ExtResource("1_evdvj")]
 y_sort_enabled = true
-position = Vector2(513, 278)
+position = Vector2(514, 294)
 speed = 48
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1006,3 +1007,6 @@ action_name = "investigate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/InteractionArea"]
 shape = SubResource("RectangleShape2D_jlh6t")
+
+[node name="Dingaling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_n1b3d")

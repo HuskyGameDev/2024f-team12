@@ -77,5 +77,6 @@ texture = ExtResource("4_fxpgg")
 stream = ExtResource("7_iqjtv")
 volume_db = -10.306
 pitch_scale = 1.29
+bus = &"Sfx"
 
 [connection signal="pressed" from="CanvasLayer/UI/Journal/Button" to="CanvasLayer/UI/Journal/Book" method="_on_button_pressed"]

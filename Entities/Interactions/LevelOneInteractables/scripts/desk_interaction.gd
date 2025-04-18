@@ -24,7 +24,7 @@ func _send_text():
 	text_box.queue_cutscene("Moreau", 1, "\"Man, I've gotta work on cleaning this place up.\"")
 	#screen shakes? Woman enters
 	
-	text_box.queue_cutscene("Woman", 2, "\"Are you detective Moreau?!? I need your help!\"")
+	text_box.queue_cutscene("Woman", -12, "\"Are you detective Moreau?!? I need your help!\"")
 	text_box.queue_cutscene("Moreau", 0, "\"Indeed, I'm Moreau. What can I do for you?\"")
 	text_box.queue_cutscene("Woman", 0, "\"My husband Tony is missing! I don’t know what I’m going to do, I need someone to help me find him!\"")
 	text_box.queue_cutscene("Moreau", 0, "\"What can you tell-\"")
@@ -53,6 +53,9 @@ func _send_text():
 	text_box.queue_cutscene("Moreau", -11, "*Puffs cigarette*")
 	text_box.queue_cutscene("Moreau", 1, "\"This is all too familiar. I better get down to the warehouses to see what he knows about this whole ordeal.\"")
 	text_box.time_to_output = true
+	
+	await text_box.textevent
+	$"../Cutscene/WomanEnter".play()
 	
 	await text_box.textevent
 	ui_node.updateEvidence(1, true)

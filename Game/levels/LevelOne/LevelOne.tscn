@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://ds48r3xyl0b6t"]
+[gd_scene load_steps=50 format=4 uid="uid://ds48r3xyl0b6t"]
 
 [ext_resource type="Script" path="res://Game/levels/LevelOne/Scripts/level_one.gd" id="1_5k5ub"]
 [ext_resource type="Texture2D" uid="uid://b1kixrj5x0ik2" path="res://Sprites/Environment Sprites/PlaceHolderArt/placeholder_concrete.png.png" id="2_lfocg"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_wife_interaction.gd" id="11_57t0l"]
 [ext_resource type="Script" path="res://Entities/Interactions/LevelOneInteractables/scripts/dead_plant_interaction.gd" id="12_h2iin"]
 [ext_resource type="AudioStream" uid="uid://jtqt4wkt07l0" path="res://Sounds/Cigarette2.mp3" id="12_l2l4b"]
+[ext_resource type="AudioStream" uid="uid://cihp165nnrkji" path="res://Sounds/DoorOpen2.wav" id="13_ajccv"]
 [ext_resource type="Texture2D" uid="uid://bqfjeb4wbfysu" path="res://Sprites/Environment Sprites/blackscreen.png" id="13_hhd26"]
 [ext_resource type="AudioStream" uid="uid://c6gmof2d7axqp" path="res://Sounds/IndoorRain.wav" id="20_ihkaf"]
 [ext_resource type="Script" path="res://Common/resources/text_interaction.gd" id="20_x2lce"]
@@ -640,6 +641,13 @@ bus = &"Sfx"
 [node name="cigarettePuff" type="AudioStreamPlayer" parent="Cutscene"]
 stream = ExtResource("12_l2l4b")
 volume_db = 9.369
+bus = &"Sfx"
+
+[node name="WomanEnter" type="AudioStreamPlayer" parent="Cutscene"]
+stream = ExtResource("13_ajccv")
+volume_db = 6.559
+pitch_scale = 0.79
+bus = &"Sfx"
 
 [node name="Player" parent="." instance=ExtResource("2_rgidp")]
 z_index = 1
@@ -763,7 +771,7 @@ autoplay = true
 bus = &"Sfx"
 
 [node name="LeaveOffice" type="Node2D" parent="."]
-position = Vector2(143, 211)
+position = Vector2(145, 142)
 script = ExtResource("21_2q6k4")
 
 [node name="InteractionArea" parent="LeaveOffice" instance=ExtResource("7_3wlxe")]

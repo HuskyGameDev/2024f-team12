@@ -215,6 +215,12 @@ func display_text():
 	if spk == -11:
 		textevent.emit()
 		spk = 9
+	if spk == -12:
+		if speakertwo == true:
+			speakertwo = false
+		else:
+			speakertwo = true
+		textevent.emit()
 	if spk == 1:
 		if speakerone == true:
 			speakerone = false

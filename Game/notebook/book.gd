@@ -70,3 +70,6 @@ func _update_evidence() -> void:
 			if vistext[i] != ui_node.evidencefound[i]:
 				vistext[i] = ui_node.evidencefound[i]
 				_toggle_note(i, vistext[i])
+				$"../sfxnotebook".play()
+				await get_tree().create_timer(0.5).timeout
+				$"../sfxnotebook".stop()
