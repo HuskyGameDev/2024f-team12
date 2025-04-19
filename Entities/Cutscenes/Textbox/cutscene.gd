@@ -170,6 +170,7 @@ func hide_textbox():
 	if $LockPickGame.visible:
 		$LockPickGame.hide()
 		$LockPickGame/LockpickLockpick.playtime = false
+		$LockPickGame._ready()
 	if mcv:
 		multichoice.hide()
 		mcv = false

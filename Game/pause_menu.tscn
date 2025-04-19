@@ -2,15 +2,12 @@
 
 [ext_resource type="Script" path="res://Game/pause_menu.gd" id="1_s31eo"]
 [ext_resource type="Texture2D" uid="uid://ce5ug3rg1yk08" path="res://Aseprite-Art/Moreau-Title-Game.png" id="2_5j1i6"]
+[ext_resource type="Theme" uid="uid://di8p8brl5yl8j" path="res://Game/Buttonstyle.tres" id="3_5egal"]
 [ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="3_dvqt8"]
 [ext_resource type="AudioStream" uid="uid://dfpk7f8cddr4a" path="res://Sounds/Button2.wav" id="3_ghqy7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igqlw"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Theme" id="Theme_wn6o5"]
-default_font = ExtResource("3_dvqt8")
-default_font_size = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl3nt"]
 content_margin_left = 4.0
@@ -103,7 +100,7 @@ expand_mode = 5
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_wn6o5")
+theme = ExtResource("3_5egal")
 theme_override_fonts/font = ExtResource("3_dvqt8")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxFlat_hl3nt")
@@ -121,7 +118,7 @@ text = "Resume"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_wn6o5")
+theme = ExtResource("3_5egal")
 theme_override_fonts/font = ExtResource("3_dvqt8")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxFlat_hl3nt")

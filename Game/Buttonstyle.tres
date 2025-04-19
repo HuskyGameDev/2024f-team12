@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://di8p8brl5yl8j"]
+
+[ext_resource type="FontFile" uid="uid://bblovjnurwso5" path="res://Fonts/PublicPixel-rv0pA.ttf" id="1_6ajdc"]
+
+[resource]
+default_font = ExtResource("1_6ajdc")
+default_font_size = 16

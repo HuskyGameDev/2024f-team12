@@ -27,6 +27,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var curtext = null
 	if text_box.blackscreen == true && blackscreen.z_index == 0:
 		blackscreen.z_index = 30
 	elif text_box.blackscreen == false && blackscreen.z_index == 30:
@@ -44,13 +45,16 @@ func _process(delta: float) -> void:
 		moreau.stop()
 		moreau.hide()
 	
+	if text_box.time_to_output == true:
+		curtext = $Cutscene/TextboxContainer/MarginContainer/HBoxContainer/Label.text
+	
 	if text_box.curspeaker == "Woman" && voiceplaying == false:
 		womanvoice.play()
 		voiceplaying = true
 	if text_box.curspeaker == "Mrs. Duval" && voiceplaying == false:
 		womanvoice.play()
 		voiceplaying = true
-	elif text_box.curspeaker == "Moreau" && voiceplaying == false:
+	elif text_box.curspeaker == "Moreau" && voiceplaying == false && curtext != "\"...\"":
 		moreauvoice.play()
 		voiceplaying = true
 	elif text_box.curspeaker == "" && voiceplaying == true:

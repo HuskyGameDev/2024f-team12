@@ -622,6 +622,7 @@ radius = 8.1
 [sub_resource type="CircleShape2D" id="CircleShape2D_lcfs3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eg3ga"]
+radius = 7.89691
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhjwe"]
 
@@ -649,7 +650,6 @@ tile_map_data = PackedByteArray("AAAdABUAAgAAAAUAAAAeABUAAgAAAAUAAAAfABUAAgAAAAU
 tile_set = SubResource("TileSet_edjw7")
 
 [node name="Cutscene" parent="." instance=ExtResource("21_nsktu")]
-visible = false
 
 [node name="MoreauCutscene" type="AnimatedSprite2D" parent="Cutscene"]
 visible = false
@@ -761,8 +761,7 @@ action_name = "examine"
 shape = SubResource("CapsuleShape2D_x05nv")
 
 [node name="DeadWifeInteraction" type="Node2D" parent="."]
-visible = false
-position = Vector2(191, 129)
+position = Vector2(197, 112)
 scale = Vector2(2, 2)
 script = ExtResource("11_57t0l")
 
@@ -773,8 +772,7 @@ action_name = "examine"
 shape = SubResource("CircleShape2D_lcfs3")
 
 [node name="DeadPlantInteraction" type="Node2D" parent="."]
-visible = false
-position = Vector2(190, 88)
+position = Vector2(199, 84)
 scale = Vector2(2, 1.5)
 script = ExtResource("12_h2iin")
 

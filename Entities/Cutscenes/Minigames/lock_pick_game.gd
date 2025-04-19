@@ -20,6 +20,7 @@ var curcorrect = 0
 var curwrong = 0
 
 func _ready() -> void:
+	correctorder.shuffle()
 	reset_pins()
 
 func reset_pins():
