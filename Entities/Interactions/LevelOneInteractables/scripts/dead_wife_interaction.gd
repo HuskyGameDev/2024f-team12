@@ -20,7 +20,7 @@ func _on_interact():
 
 func _send_text():
 	text_box.queue_text("","*It's a picture of a woman.*")
-	text_box.queue_text("Moreau","\"I know you're out there somewhere.\"")
+	text_box.queue_text("Moreau","\"I know whoever killed you is out there somewhere.\"")
 	text_box.time_to_output = true
 	await text_box.outputcomplete
 	ui_node.evidencefound[0] = true
